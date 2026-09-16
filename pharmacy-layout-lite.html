@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>K-Pharmacy Layout Lite · 약국 레이아웃 간략 시뮬레이터</title>
+    <style>
+      :root {
+        --bg: #f2f5f8;
+        --panel: #fff;
+        --line: #e3e8ef;
+        --line2: #cfd8e3;
+        --ink: #16233a;
+        --muted: #667085;
+        --brand: #1176b6;
+        --gold: #c79100;
+        --shadow: 0 10px 30px rgba(16, 24, 40, 0.09);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR",
+          sans-serif;
+        font-size: 13px;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .app {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 56px 1fr 26px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 14px;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-right: 12px;
+      }
+      .logo b {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #1176b6, #15a1d2);
+        color: #fff;
+      }
+      .logo span {
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+      }
+      .logo small {
+        display: block;
+        font-size: 9px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .btn {
+        height: 32px;
+        padding: 0 11px;
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #344054;
+      }
+      .btn:hover {
+        background: #f6f9fb;
+        border-color: #b9c6d4;
+      }
+      .btn.primary {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+      }
+      .btn.dark {
+        background: #16233a;
+        border-color: #16233a;
+        color: #fff;
+      }
+      .btn.sm {
+        height: 28px;
+        padding: 0 8px;
+        font-size: 11px;
+      }
+      .spacer {
+        margin-left: auto;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 236px minmax(0, 1fr) 272px;
+        min-height: 0;
+      }
+      aside {
+        background: #f8fafc;
+        overflow: auto;
+        padding: 11px;
+      }
+      aside.l {
+        border-right: 1px solid var(--line);
+      }
+      aside.r {
+        border-left: 1px solid var(--line);
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+      .card h3 {
+        margin: 0;
+        padding: 9px 11px;
+        font-size: 12px;
+        border-bottom: 1px solid #eef2f6;
+      }
+      .card .b {
+        padding: 10px 11px;
+      }
+      label.f {
+        display: block;
+        font-size: 10px;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+      label.f input,
+      label.f select {
+        width: 100%;
+        margin-top: 3px;
+        border: 1px solid var(--line2);
+        border-radius: 7px;
+        padding: 6px 7px;
+        background: #fff;
+        color: var(--ink);
+      }
+      .g2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .g3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+      .full {
+        width: 100%;
+      }
+      .fixtures {
+        display: grid;
+        gap: 6px;
+      }
+      .fx {
+        display: grid;
+        grid-template-columns: 8px 1fr auto;
+        gap: 8px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 7px 8px;
+        background: #fff;
+        text-align: left;
+        font-size: 11px;
+      }
+      .fx:hover {
+        border-color: #8dc2dd;
+        background: #f9fdff;
+      }
+      .fx i {
+        width: 8px;
+        height: 26px;
+        border-radius: 3px;
+      }
+      .fx b {
+        display: block;
+        font-weight: 700;
+      }
+      .fx small {
+        color: var(--muted);
+        font-size: 9px;
+      }
+      .fx span {
+        color: #98a2b3;
+        font-size: 14px;
+      }
+      .stage {
+        position: relative;
+        background: #e8edf3;
+        min-width: 0;
+        overflow: hidden;
+      }
+      #plan {
+        width: 100%;
+        height: 100%;
+        display: block;
+        touch-action: none;
+        cursor: grab;
+      }
+      #plan.pan {
+        cursor: grabbing;
+      }
+      #plan .el {
+        cursor: move;
+      }
+      .tools {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        display: flex;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 4px;
+        box-shadow: var(--shadow);
+      }
+      .hint {
+        position: absolute;
+        left: 50%;
+        bottom: 14px;
+        transform: translateX(-50%);
+        background: rgba(17, 24, 39, 0.9);
+        color: #fff;
+        border-radius: 99px;
+        padding: 7px 13px;
+        font-size: 11px;
+        opacity: 0;
+        transition: 0.2s;
+        pointer-events: none;
+      }
+      .hint.on {
+        opacity: 1;
+      }
+      footer {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 0 12px;
+        font-size: 10px;
+        color: var(--muted);
+        background: #fff;
+        border-top: 1px solid var(--line);
+      }
+      .lv {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 6px;
+        align-items: center;
+        padding: 4px 6px;
+        border-radius: 7px;
+        margin-bottom: 4px;
+        background: #f8fafc;
+        border: 1px solid transparent;
+      }
+      .lv.gold {
+        background: #fffaeb;
+        border-color: #f0d68a;
+      }
+      .lv b {
+        font-size: 10px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .lv select {
+        width: 100%;
+        border: 1px solid var(--line2);
+        border-radius: 6px;
+        padding: 4px 5px;
+        font-size: 11px;
+        background: #fff;
+      }
+      .lv i {
+        display: block;
+        height: 3px;
+        border-radius: 99px;
+        margin-top: 3px;
+      }
+      .kpi {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+      .kpi div {
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 8px;
+        background: #fbfcfe;
+      }
+      .kpi span {
+        font-size: 9px;
+        color: var(--muted);
+      }
+      .kpi b {
+        display: block;
+        font-size: 15px;
+        margin-top: 2px;
+      }
+      .bar {
+        height: 6px;
+        border-radius: 99px;
+        background: #e8edf2;
+        overflow: hidden;
+        margin-top: 5px;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        border-radius: 99px;
+        background: var(--brand);
+      }
+      .empty {
+        text-align: center;
+        color: #98a2b3;
+        font-size: 11px;
+        padding: 16px 4px;
+      }
+      .note {
+        font-size: 10px;
+        color: var(--muted);
+        line-height: 1.55;
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 8px 9px;
+        margin-top: 8px;
+      }
+      .note.gold {
+        background: #fffaeb;
+        color: #92700c;
+      }
+      .zchips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .zchip {
+        border: 1px solid transparent;
+        border-radius: 99px;
+        padding: 4px 8px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      dialog {
+        border: 0;
+        border-radius: 16px;
+        padding: 0;
+        width: min(1080px, 95vw);
+        box-shadow: 0 24px 70px rgba(16, 24, 40, 0.3);
+      }
+      dialog::backdrop {
+        background: rgba(16, 24, 40, 0.5);
+      }
+      .dh {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+        font-weight: 800;
+      }
+      .dh small {
+        display: block;
+        font-size: 10px;
+        color: var(--muted);
+        font-weight: 500;
+        margin-top: 2px;
+      }
+      .df {
+        padding: 11px 15px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: flex-end;
+        gap: 7px;
+      }
+      .v3 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 216px;
+        height: min(640px, 72vh);
+      }
+      .v3 .st {
+        position: relative;
+        background: #eef4f9;
+      }
+      .v3 canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        cursor: grab;
+      }
+      .v3 aside {
+        border-left: 1px solid var(--line);
+        background: #fff;
+        padding: 12px;
+      }
+      .v3 label {
+        display: block;
+        font-size: 10px;
+        color: var(--muted);
+        font-weight: 600;
+        margin: 9px 0;
+      }
+      .v3 input[type="range"] {
+        width: 100%;
+      }
+      .views {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: flex;
+        gap: 4px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 3px;
+      }
+      .views button {
+        border: 0;
+        background: transparent;
+        border-radius: 6px;
+        padding: 5px 9px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #475467;
+      }
+      .views button.on {
+        background: var(--brand);
+        color: #fff;
+      }
+      .lgd {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px 8px;
+        background: rgba(255, 255, 255, 0.93);
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 6px 8px;
+        font-size: 10px;
+        color: #475467;
+        max-width: 70%;
+      }
+      .lgd i {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        display: inline-block;
+        margin-right: 3px;
+      }
+      .chk {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        color: #475467;
+        margin-top: 7px;
+      }
+      @media (max-width: 1080px) {
+        main {
+          grid-template-columns: 210px minmax(0, 1fr);
+        }
+        aside.r {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="logo">
+          <b>K</b>
+          <div>
+            <span>K-Pharmacy Layout Lite</span>
+            <small>약국 레이아웃 · 진열 간략 시뮬레이터</small>
+          </div>
+        </div>
+        <button class="btn" id="sampleBtn">예시 불러오기</button>
+        <button class="btn" id="codeBtn">진열대 코드</button>
+        <button class="btn" id="clearBtn">전체 지우기</button>
+        <span class="spacer"></span>
+        <button class="btn" id="fitBtn">화면 맞춤</button>
+        <button class="btn" id="pngBtn">PNG</button>
+        <button class="btn" id="jsonBtn">JSON</button>
+        <button class="btn dark" id="view3DBtn">3D 보기</button>
+      </header>
+      <main>
+        <aside class="l">
+          <section class="card">
+            <h3>매장 규격</h3>
+            <div class="b">
+              <div class="g2">
+                <label class="f">가로 (mm)<input id="sw" type="number" min="2000" step="100" /></label>
+                <label class="f">세로 (mm)<input id="sh" type="number" min="2000" step="100" /></label>
+              </div>
+              <div class="g2">
+                <label class="f">천장 (mm)<input id="sc" type="number" min="2000" step="100" /></label>
+                <label class="f">면적<input id="sp" type="text" readonly /></label>
+              </div>
+              <button class="btn primary full sm" id="applySize">규격 적용</button>
+            </div>
+          </section>
+          <section class="card">
+            <h3>매대 추가</h3>
+            <div class="b">
+              <label class="f">대카테고리<select id="newZone"></select></label>
+              <div class="fixtures" id="fixtures"></div>
+              <div class="note">항목을 클릭하면 화면 중앙에 추가됩니다. 매대를 끌어 옮기고, 선택 후 <b>Delete</b>로 삭제합니다.</div>
+            </div>
+          </section>
+          <section class="card">
+            <h3>조닝 영역</h3>
+            <div class="b"><div class="zchips" id="zchips"></div></div>
+          </section>
+        </aside>
+        <section class="stage" id="stage">
+          <svg id="plan" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="tools">
+            <button class="btn sm" id="zin">＋</button>
+            <button class="btn sm" id="zout">−</button>
+            <button class="btn sm" id="gridBtn">격자</button>
+            <button class="btn sm" id="view3DBtn2">3D</button>
+          </div>
+          <div class="hint" id="hint"></div>
+        </section>
+        <aside class="r">
+          <section class="card">
+            <h3>선택 항목</h3>
+            <div class="b" id="inspector"><div class="empty">매대를 선택하세요.</div></div>
+          </section>
+          <section class="card">
+            <h3>요약</h3>
+            <div class="b" id="summary"></div>
+          </section>
+        </aside>
+      </main>
+      <footer>
+        <span id="statInfo"></span><span class="spacer"></span
+        ><span>골든존 850~1500mm · 단 번호는 최하단이 1단</span>
+      </footer>
+    </div>
+
+    <dialog id="dlg3d">
+      <div class="dh">
+        3D 미리보기<small>드래그: 회전 · 휠: 확대 · 매대 클릭: 선택</small>
+      </div>
+      <div class="v3">
+        <div class="st">
+          <canvas id="cv3d"></canvas>
+          <div class="views">
+            <button data-v="iso">아이소</button><button data-v="front">정면</button
+            ><button data-v="top">평면</button><button data-v="eye">고객 시선</button>
+          </div>
+          <div class="lgd" id="lgd"></div>
+        </div>
+        <aside>
+          <label>좌우 회전<input id="ry" type="range" min="-180" max="180" step="1" value="-32" /></label>
+          <label>시점 높이<input id="rp" type="range" min="2" max="88" step="1" value="27" /></label>
+          <label>확대<input id="rz" type="range" min="0.3" max="4" step="0.05" value="1" /></label>
+          <label class="chk"><input id="c3levels" type="checkbox" checked /> 단별 진열 구분</label>
+          <label class="chk"><input id="c3labels" type="checkbox" checked /> 라벨</label>
+          <label class="chk"><input id="c3gold" type="checkbox" checked /> 골든존 강조</label>
+          <label class="chk"><input id="c3zones" type="checkbox" checked /> 바닥 조닝</label>
+          <label class="chk"><input id="c3walls" type="checkbox" checked /> 벽체</label>
+          <button class="btn full sm" id="reset3d" style="margin-top: 10px">기본 시점</button>
+          <button class="btn primary full sm" id="png3d" style="margin-top: 6px">3D PNG 저장</button>
+          <div class="note" id="sel3d">매대를 클릭하면 단별 계획이 표시됩니다.</div>
+        </aside>
+      </div>
+      <div class="df"><button class="btn" id="close3d">닫기</button></div>
+    </dialog>
+
+    <script>
+      (() => {
+        "use strict";
+        /* ============================ 데이터 ============================ */
+        const ZONES = {
+          상비약: { c: "#0098C9", cats: ["종합감기", "해열·진통", "소화·위장", "알레르기", "상처·연고", "파스·근육", "안약·구강"] },
+          영양제: { c: "#F47A25", cats: ["종합비타민", "비타민C", "비타민D", "오메가3", "유산균", "관절건강", "눈건강", "간건강"] },
+          "뷰티·가족건강": { c: "#E64291", cats: ["스킨케어", "선케어", "마스크팩", "구강건강", "여성용품", "유아용품", "탈모관리"] },
+          생활건강: { c: "#7FB13D", cats: ["드링크·숙취", "다이어트", "생활용품", "의료기기", "찜질·구급", "펫용품"] },
+          이벤트: { c: "#F4CC32", cats: ["시즌행사", "브랜드존", "기획세트", "선물세트"] },
+          "조제·계산": { c: "#7A8699", cats: ["조제실", "복약상담", "계산대", "대기공간"] },
+        };
+        const FIXTURES = [
+          { t: "wallShelf", n: "벽면 매대", w: 1200, d: 350, h: 2100, lv: 5 },
+          { t: "shelf", n: "양면 곤돌라", w: 1200, d: 450, h: 1650, lv: 5 },
+          { t: "endcap", n: "엔드캡", w: 700, d: 400, h: 1500, lv: 4 },
+          { t: "fridge", n: "냉장 쇼케이스", w: 1200, d: 750, h: 1900, lv: 5 },
+          { t: "counter", n: "상담대", w: 1400, d: 700, h: 1050, lv: 1 },
+          { t: "checkout", n: "계산대", w: 1600, d: 700, h: 1050, lv: 1 },
+        ];
+        const SHELF = new Set(["wallShelf", "shelf", "endcap", "fridge"]);
+        const GOLD = { lo: 850, hi: 1500 };
+        const TYPE_KO = {
+          wallShelf: "벽면 매대", shelf: "양면 곤돌라", endcap: "엔드캡",
+          fridge: "냉장 쇼케이스", counter: "상담대", checkout: "계산대", zone: "조닝",
+        };
+        const $ = (s) => document.querySelector(s);
+        const $$ = (s) => [...document.querySelectorAll(s)];
+        const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+        const fmt = (v) => Math.round(v || 0).toLocaleString("ko-KR");
+        const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+        const uid = () => "e" + Math.random().toString(36).slice(2, 9);
+
+        let S = {
+          store: { w: 14000, h: 9000, ceil: 2600, grid: 100, showGrid: true },
+          els: [],
+          sel: null,
+          view: { x: -800, y: -800, w: 15600, h: 10600 },
+        };
+        const svg = $("#plan");
+        let drag = null, pan = null, hintT = null;
+
+        /* ============================ 요소 ============================ */
+        function make(f, zone, x, y) {
+          const lv = f.lv || 1;
+          return {
+            id: uid(), type: f.t, name: f.n, code: "",
+            x, y, w: f.w, d: f.d, h: f.h, zone,
+            levels: Array.from({ length: lv }, () => ""),
+          };
+        }
+        /** 단 인덱스(0=최상단) → 바닥 기준 높이 구간 */
+        function band(e, i) {
+          const n = e.levels.length, base = Math.min(90, e.h * 0.08),
+            span = (e.h - base) / n, j = n - 1 - i;
+          return { z0: base + j * span, z1: base + (j + 1) * span };
+        }
+        const lvNo = (i, n) => n - i;
+        const isGold = (e, i) => {
+          const b = band(e, i), c = (b.z0 + b.z1) / 2;
+          return c >= GOLD.lo && c <= GOLD.hi;
+        };
+        const catZone = (cat) =>
+          Object.keys(ZONES).find((z) => ZONES[z].cats.includes(cat)) || "";
+        const lvColor = (e, i) => {
+          const z = catZone(e.levels[i]);
+          return z ? ZONES[z].c : null;
+        };
+        const zoneColor = (e) => ZONES[e.zone]?.c || "#98A2B3";
+
+        function addFixture(f) {
+          const zone = $("#newZone").value,
+            e = make(f, zone,
+              Math.round((S.view.x + S.view.w / 2 - f.w / 2) / 100) * 100,
+              Math.round((S.view.y + S.view.h / 2 - f.d / 2) / 100) * 100);
+          keepIn(e);
+          S.els.push(e);
+          S.sel = e.id;
+          autoCode(true);
+          render();
+          hint(`${f.n} 추가`);
+        }
+        function addZone(name) {
+          const e = {
+            id: uid(), type: "zone", name: name + " ZONE", code: "",
+            x: 600, y: 600, w: 4000, d: 2600, h: 0, zone: name, levels: [],
+          };
+          keepIn(e);
+          S.els.push(e);
+          S.sel = e.id;
+          render();
+        }
+        function keepIn(e) {
+          e.x = clamp(e.x, 0, Math.max(0, S.store.w - e.w));
+          e.y = clamp(e.y, 0, Math.max(0, S.store.h - e.d));
+          return e;
+        }
+        const getEl = (id) => S.els.find((e) => e.id === id);
+        const shelves = () => S.els.filter((e) => SHELF.has(e.type));
+
+        /** 벽면 근접도로 W(상단)·L(좌)·R(우)·B(하)·G(중앙) 코드를 부여 */
+        function autoCode(silent) {
+          const near = 1000, bk = { W: [], L: [], R: [], B: [], G: [] };
+          shelves().forEach((e) => {
+            const d = { W: e.y, B: S.store.h - (e.y + e.d), L: e.x, R: S.store.w - (e.x + e.w) },
+              best = Object.keys(d).sort((a, b) => d[a] - d[b])[0];
+            bk[d[best] <= near ? best : "G"].push(e);
+          });
+          const order = { W: (e) => e.x, B: (e) => e.x, L: (e) => e.y, R: (e) => e.y, G: (e) => e.y * 1e6 + e.x };
+          Object.keys(bk).forEach((k) =>
+            bk[k].sort((a, b) => order[k](a) - order[k](b))
+              .forEach((e, i) => (e.code = k + (i + 1))));
+          if (!silent) hint("진열대 코드를 갱신했습니다");
+        }
+
+        /* ============================ 2D 렌더 ============================ */
+        function render() {
+          const st = S.store;
+          svg.setAttribute("viewBox", `${S.view.x} ${S.view.y} ${S.view.w} ${S.view.h}`);
+          const grid = st.showGrid
+            ? `<rect x="0" y="0" width="${st.w}" height="${st.h}" fill="url(#g)"/>` : "";
+          const zones = S.els.filter((e) => e.type === "zone"),
+            rest = S.els.filter((e) => e.type !== "zone");
+          svg.innerHTML =
+            `<defs><pattern id="g0" width="500" height="500" patternUnits="userSpaceOnUse"><path d="M500 0 L0 0 0 500" fill="none" stroke="#dde3eb" stroke-width="6"/></pattern>` +
+            `<pattern id="g" width="1000" height="1000" patternUnits="userSpaceOnUse"><rect width="1000" height="1000" fill="url(#g0)"/><path d="M1000 0 L0 0 0 1000" fill="none" stroke="#c3cdd9" stroke-width="10"/></pattern>` +
+            `<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#101828" flood-opacity=".13"/></filter></defs>` +
+            `<rect x="${S.view.x}" y="${S.view.y}" width="${S.view.w}" height="${S.view.h}" fill="#e8edf3"/>` +
+            `<rect x="0" y="0" width="${st.w}" height="${st.h}" fill="#fff" stroke="#243244" stroke-width="40"/>` +
+            grid + zones.map(elSvg).join("") + rest.map(elSvg).join("") +
+            `<g><line x1="400" y1="${st.h - 320}" x2="1400" y2="${st.h - 320}" stroke="#344054" stroke-width="30"/>` +
+            `<text x="900" y="${st.h - 400}" text-anchor="middle" font-size="130" fill="#475467">1 m</text></g>`;
+          $("#gridBtn").style.color = st.showGrid ? "#1176b6" : "";
+          inspector();
+          summary();
+          $("#statInfo").textContent =
+            `${fmt(st.w)} × ${fmt(st.h)} mm · ${((st.w * st.h) / 1e6).toFixed(1)}㎡ (${((st.w * st.h) / 1e6 / 3.3058).toFixed(1)}평) · 항목 ${S.els.length}개`;
+          $("#sp").value = ((st.w * st.h) / 1e6 / 3.3058).toFixed(1) + "평";
+          if ($("#dlg3d").open) req3D();
+        }
+        function elSvg(e) {
+          const sel = S.sel === e.id, col = zoneColor(e);
+          if (e.type === "zone")
+            return `<g class="el" data-id="${e.id}" transform="translate(${e.x} ${e.y})">` +
+              `<rect width="${e.w}" height="${e.d}" rx="90" fill="${col}" fill-opacity=".13" stroke="${col}" stroke-width="${sel ? 34 : 20}" stroke-dasharray="110 70"/>` +
+              `<text x="${e.w / 2}" y="${Math.min(460, e.d * 0.24)}" text-anchor="middle" font-size="${Math.min(300, e.d * 0.14)}" font-weight="800" fill="${col}" fill-opacity=".6">${esc(e.name)}</text></g>`;
+          const n = e.levels.length;
+          let strip = "";
+          if (SHELF.has(e.type) && n > 1) {
+            const along = e.w >= e.d, t = clamp(Math.min(e.w, e.d) * 0.22, 50, 110);
+            for (let k = 0; k < n; k++) {
+              const c = lvColor(e, n - 1 - k) || "#E7ECF2";
+              strip += along
+                ? `<rect x="${(e.w * k) / n}" y="0" width="${e.w / n}" height="${t}" fill="${c}" stroke="#fff" stroke-width="9"/>`
+                : `<rect x="0" y="${(e.d * k) / n}" width="${t}" height="${e.d / n}" fill="${c}" stroke="#fff" stroke-width="9"/>`;
+            }
+          }
+          const cw = e.code ? Math.max(250, e.code.length * 100 + 80) : 0,
+            badge = e.code
+              ? `<rect x="0" y="-200" width="${cw}" height="165" rx="46" fill="#16233a" fill-opacity=".84"/>` +
+                `<text x="${cw / 2}" y="-122" text-anchor="middle" dominant-baseline="middle" font-size="125" font-weight="800" fill="#fff">${esc(e.code)}</text>`
+              : "";
+          const filled = e.levels.filter(Boolean).length,
+            sub = SHELF.has(e.type) ? `${filled}/${n}단 · H${fmt(e.h)}` : TYPE_KO[e.type],
+            fs = clamp(Math.min(e.w / (Math.max(3, e.name.length) * 0.68), e.d * 0.3), 85, 190);
+          return `<g class="el" data-id="${e.id}" transform="translate(${e.x} ${e.y})">` +
+            `<rect width="${e.w}" height="${e.d}" rx="55" fill="${col}59" stroke="${sel ? "#1176b6" : "#475467"}" stroke-width="${sel ? 36 : 20}" filter="url(#sh)"/>` +
+            strip +
+            `<text x="${e.w / 2}" y="${e.d * 0.56}" text-anchor="middle" font-size="${fs}" font-weight="800" fill="#22344a">${esc(e.name)}</text>` +
+            `<text x="${e.w / 2}" y="${e.d * 0.82}" text-anchor="middle" font-size="${fs * 0.55}" fill="#5b6c80">${esc(sub)}</text>` +
+            badge +
+            (sel ? `<rect x="-60" y="-60" width="${e.w + 120}" height="${e.d + 120}" fill="none" stroke="#1176b6" stroke-width="22" stroke-dasharray="70 45"/>` : "") +
+            `</g>`;
+        }
+
+        /* ============================ 우측 패널 ============================ */
+        function catOptions(sel) {
+          return `<option value="">분류 미지정</option>` +
+            Object.entries(ZONES).map(([z, v]) =>
+              `<optgroup label="${esc(z)}">` +
+              v.cats.map((c) => `<option ${c === sel ? "selected" : ""}>${esc(c)}</option>`).join("") +
+              `</optgroup>`).join("");
+        }
+        function inspector() {
+          const box = $("#inspector"), e = getEl(S.sel);
+          if (!e) { box.innerHTML = '<div class="empty">매대를 선택하세요.</div>'; return; }
+          const n = e.levels.length;
+          box.innerHTML =
+            `<label class="f">항목명<input id="iName" value="${esc(e.name)}"></label>` +
+            (SHELF.has(e.type) ? `<label class="f">진열대 코드<input id="iCode" value="${esc(e.code)}" maxlength="8"></label>` : "") +
+            `<div class="g3"><label class="f">가로<input id="iW" type="number" step="50" value="${e.w}"></label>` +
+            `<label class="f">폭<input id="iD" type="number" step="50" value="${e.d}"></label>` +
+            `<label class="f">높이<input id="iH" type="number" step="50" value="${e.h}"></label></div>` +
+            `<label class="f">대카테고리<select id="iZone">${Object.keys(ZONES).map((z) => `<option ${z === e.zone ? "selected" : ""}>${esc(z)}</option>`).join("")}</select></label>` +
+            (SHELF.has(e.type)
+              ? `<label class="f">단 수<input id="iLv" type="number" min="1" max="10" value="${n}"></label>` +
+                `<div style="font-size:10px;color:#667085;font-weight:600;margin:8px 0 5px">단별 진열 분류 (위 = 최상단)</div>` +
+                e.levels.map((c, i) => {
+                  const col = lvColor(e, i) || "#E7ECF2";
+                  return `<div class="lv${isGold(e, i) ? " gold" : ""}"><b>${lvNo(i, n)}단</b>` +
+                    `<span><select data-lv="${i}">${catOptions(c)}</select><i style="background:${col}"></i></span></div>`;
+                }).join("") +
+                `<div class="g2" style="margin-top:6px"><button class="btn sm" id="fillLv">대카테고리로 채우기</button><button class="btn sm" id="clrLv">비우기</button></div>` +
+                `<div class="note gold">골든존 ${GOLD.lo}~${GOLD.hi}mm(음영) 단에는 주력·고마진 카테고리를 우선 배치하세요.</div>`
+              : "") +
+            `<button class="btn sm full" id="delBtn" style="margin-top:8px;color:#d92d20">선택 항목 삭제</button>`;
+
+          const bind = (id, fn) => { const nd = $(id); if (nd) nd.onchange = () => fn(nd); };
+          bind("#iName", (nd) => { e.name = nd.value.slice(0, 40) || e.name; render(); });
+          bind("#iCode", (nd) => { e.code = nd.value.toUpperCase().slice(0, 8); render(); });
+          bind("#iW", (nd) => { e.w = clamp(+nd.value || e.w, 200, S.store.w); keepIn(e); render(); });
+          bind("#iD", (nd) => { e.d = clamp(+nd.value || e.d, 200, S.store.h); keepIn(e); render(); });
+          bind("#iH", (nd) => { e.h = clamp(+nd.value || e.h, 100, 3000); render(); });
+          bind("#iZone", (nd) => { e.zone = nd.value; render(); });
+          bind("#iLv", (nd) => {
+            const v = clamp(Math.round(+nd.value || 1), 1, 10);
+            while (e.levels.length > v) e.levels.pop();
+            while (e.levels.length < v) e.levels.unshift("");
+            render();
+          });
+          $$("[data-lv]").forEach((nd) => {
+            nd.onchange = () => { e.levels[+nd.dataset.lv] = nd.value; render(); };
+          });
+          if ($("#fillLv")) $("#fillLv").onclick = () => {
+            const cats = ZONES[e.zone].cats;
+            e.levels = e.levels.map((v, i) => v || cats[i % cats.length]);
+            render();
+          };
+          if ($("#clrLv")) $("#clrLv").onclick = () => { e.levels = e.levels.map(() => ""); render(); };
+          $("#delBtn").onclick = del;
+        }
+        function summary() {
+          const sh = shelves(),
+            lv = sh.reduce((s, e) => s + e.levels.length, 0),
+            filled = sh.reduce((s, e) => s + e.levels.filter(Boolean).length, 0),
+            gAll = sh.reduce((s, e) => s + e.levels.filter((v, i) => isGold(e, i)).length, 0),
+            gFill = sh.reduce((s, e) => s + e.levels.filter((v, i) => isGold(e, i) && v).length, 0),
+            area = S.els.filter((e) => e.type !== "zone").reduce((s, e) => s + e.w * e.d, 0) / 1e6,
+            total = (S.store.w * S.store.h) / 1e6,
+            occ = total ? area / total : 0,
+            fillR = lv ? filled / lv : 0,
+            goldR = gAll ? gFill / gAll : 0,
+            score = Math.round(
+              45 * fillR + 30 * goldR +
+              25 * (occ >= 0.12 && occ <= 0.45 ? 1 : occ ? 0.4 : 0));
+          $("#summary").innerHTML =
+            `<div class="kpi"><div><span>진열대</span><b>${sh.length}대</b></div>` +
+            `<div><span>총 진열 단</span><b>${lv}단</b></div>` +
+            `<div><span>집기 점유율</span><b>${(occ * 100).toFixed(1)}%</b></div>` +
+            `<div><span>진열 계획 점수</span><b>${score}</b></div></div>` +
+            `<div style="font-size:10px;color:#667085;margin-top:9px">단 분류 완성도 ${filled}/${lv}</div>` +
+            `<div class="bar"><i style="width:${(fillR * 100).toFixed(0)}%"></i></div>` +
+            `<div style="font-size:10px;color:#667085;margin-top:7px">골든존 활용 ${gFill}/${gAll}</div>` +
+            `<div class="bar"><i style="width:${(goldR * 100).toFixed(0)}%;background:${"#c79100"}"></i></div>` +
+            `<div class="note">점유율 12~45%가 통로·체류 공간을 확보한 일반적 범위입니다. 본 수치는 기획 검토용 참고값이며 법정 기준 판정을 대신하지 않습니다.</div>`;
+        }
+        function del() {
+          if (!S.sel) return;
+          S.els = S.els.filter((e) => e.id !== S.sel);
+          S.sel = null;
+          render();
+          hint("삭제했습니다");
+        }
+        function hint(t) {
+          const h = $("#hint");
+          h.textContent = t;
+          h.classList.add("on");
+          clearTimeout(hintT);
+          hintT = setTimeout(() => h.classList.remove("on"), 1600);
+        }
+        function pt(ev) {
+          const r = svg.getBoundingClientRect();
+          return {
+            x: S.view.x + ((ev.clientX - r.left) / r.width) * S.view.w,
+            y: S.view.y + ((ev.clientY - r.top) / r.height) * S.view.h,
+          };
+        }
+        function fit() {
+          const r = svg.getBoundingClientRect(),
+            asp = Math.max(0.2, r.width / Math.max(1, r.height)),
+            pad = 900;
+          let w = S.store.w + pad * 2, h = S.store.h + pad * 2;
+          if (w / h > asp) h = w / asp; else w = h * asp;
+          S.view = { x: S.store.w / 2 - w / 2, y: S.store.h / 2 - h / 2, w, h };
+          render();
+        }
+
+        /* ============================ 3D ============================ */
+        const V = {
+          yaw: -32, pitch: 27, dist: 1, tz: 900, fov: 44, preset: "iso",
+          levels: true, labels: true, gold: true, zones: true, walls: true,
+        };
+        let raf = null, d3 = null, picks = [];
+        const v3 = (x, y, z) => ({ x, y, z });
+        const sub = (a, b) => v3(a.x - b.x, a.y - b.y, a.z - b.z);
+        const dot = (a, b) => a.x * b.x + a.y * b.y + a.z * b.z;
+        const crs = (a, b) => v3(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+        const nrm = (a) => { const l = Math.hypot(a.x, a.y, a.z) || 1; return v3(a.x / l, a.y / l, a.z / l); };
+        const hex = (h) => { const n = parseInt(String(h).replace("#", "").slice(0, 6), 16); return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 }; };
+        const mix = (a, b, t) => { const x = hex(a), y = hex(b); return { r: x.r + (y.r - x.r) * t, g: x.g + (y.g - x.g) * t, b: x.b + (y.b - x.b) * t }; };
+        const toHex = (c) => "#" + [c.r, c.g, c.b].map((v) => clamp(Math.round(v), 0, 255).toString(16).padStart(2, "0")).join("");
+        const css = (c) => `rgb(${c.r | 0},${c.g | 0},${c.b | 0})`;
+        let LIGHT = nrm(v3(-0.4, -0.6, 0.7));
+        function lit(h, n) {
+          const b = hex(h), lam = Math.max(0, dot(n, LIGHT)),
+            k = clamp(0.58 + 0.12 * (n.z * 0.5 + 0.5) + 0.46 * lam, 0.3, 1.28);
+          return { r: b.r * k, g: b.g * k, b: b.b * k };
+        }
+        function cam3(cw, ch) {
+          const st = S.store, span = Math.max(st.w, st.h, 3000),
+            T = v3(st.w / 2, st.h / 2, V.tz),
+            R = (span * 1.28) / clamp(V.dist, 0.25, 6),
+            ya = (V.yaw * Math.PI) / 180, pi = (clamp(V.pitch, 1.5, 88) * Math.PI) / 180,
+            eye = v3(T.x + R * Math.cos(pi) * Math.sin(ya), T.y + R * Math.cos(pi) * Math.cos(ya), T.z + R * Math.sin(pi)),
+            f = nrm(sub(T, eye)), r = nrm(crs(v3(0, 0, 1), f)), u = crs(f, r);
+          return { eye, f, r, u, focal: ch / 2 / Math.tan(((V.fov * Math.PI) / 180) / 2), cx: cw / 2, cy: ch / 2, near: Math.max(40, R * 0.004) };
+        }
+        const view = (c, p) => { const d = sub(p, c.eye); return v3(dot(d, c.r), dot(d, c.u), dot(d, c.f)); };
+        const scr = (c, v) => { const k = c.focal / Math.max(v.z, 1e-6); return { x: c.cx + v.x * k, y: c.cy - v.y * k }; };
+        function proj(c, pts) {
+          const vp = pts.map((p) => view(c, p));
+          if (vp.every((p) => p.z >= c.near)) return vp.map((p) => scr(c, p));
+          const out = [];
+          for (let i = 0; i < vp.length; i++) {
+            const a = vp[i], b = vp[(i + 1) % vp.length], ai = a.z >= c.near, bi = b.z >= c.near;
+            if (ai) out.push(a);
+            if (ai !== bi) { const t = (c.near - a.z) / (b.z - a.z); out.push(v3(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t, c.near)); }
+          }
+          return out.length < 3 ? null : out.map((p) => scr(c, p));
+        }
+        const depth = (c, pts) => pts.reduce((s, p) => s + dot(sub(p, c.eye), c.f), 0) / pts.length;
+        function prism(poly, z0, z1) {
+          const cx = poly.reduce((s, p) => s + p.x, 0) / poly.length,
+            cy = poly.reduce((s, p) => s + p.y, 0) / poly.length, out = [];
+          for (let i = 0; i < poly.length; i++) {
+            const a = poly[i], b = poly[(i + 1) % poly.length],
+              ex = b.x - a.x, ey = b.y - a.y, L = Math.hypot(ex, ey) || 1;
+            let nx = ey / L, ny = -ex / L;
+            if (((a.x + b.x) / 2 - cx) * nx + ((a.y + b.y) / 2 - cy) * ny < 0) { nx = -nx; ny = -ny; }
+            out.push({ pts: [v3(a.x, a.y, z0), v3(b.x, b.y, z0), v3(b.x, b.y, z1), v3(a.x, a.y, z1)], n: v3(nx, ny, 0) });
+          }
+          out.push({ pts: poly.map((p) => v3(p.x, p.y, z1)), n: v3(0, 0, 1) });
+          return out;
+        }
+        const rectOf = (x0, y0, x1, y1) => [{ x: x0, y: y0 }, { x: x1, y: y0 }, { x: x1, y: y1 }, { x: x0, y: y1 }];
+        function path(ctx, p, fill, stroke, lw) {
+          if (!p || p.length < 3) return;
+          ctx.beginPath();
+          p.forEach((q, i) => (i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)));
+          ctx.closePath();
+          if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+          if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw || 1; ctx.stroke(); }
+        }
+        function build(e, out) {
+          const x0 = e.x, y0 = e.y, x1 = e.x + e.w, y1 = e.y + e.d,
+            body = SHELF.has(e.type) ? toHex(mix(zoneColor(e), "#F4F7FA", 0.78)) : zoneColor(e),
+            add = (fs, col, bias, outline) => fs.forEach((f) => out.push({ ...f, col, bias: bias || 0, outline, id: e.id }));
+          if (!SHELF.has(e.type)) { add(prism(rectOf(x0, y0, x1, y1), 0, e.h), body); return; }
+          const PA = Math.min(30, e.w / 6), BD = 26, BK = Math.min(24, e.d / 3),
+            n = e.levels.length, base = Math.min(90, e.h * 0.08),
+            dbl = e.type === "shelf";
+          add(prism(rectOf(x0 + 18, y0 + 18, x1 - 18, y1 - 18), 0, base), "#9AA7B6");
+          add(prism(rectOf(x0, y0, x0 + PA, y1), base, e.h), body);
+          add(prism(rectOf(x1 - PA, y0, x1, y1), base, e.h), body);
+          add(prism(dbl ? rectOf(x0 + PA, (y0 + y1) / 2 - BK / 2, x1 - PA, (y0 + y1) / 2 + BK / 2)
+                        : rectOf(x0 + PA, y1 - BK, x1 - PA, y1), base, e.h),
+              toHex(mix(body, "#000000", 0.08)));
+          for (let j = 0; j < n; j++) {
+            const i = n - 1 - j, b = band(e, i), lc = lvColor(e, i),
+              boardCol = lc ? toHex(mix(lc, "#FFFFFF", 0.58)) : "#EDF2F7";
+            add(prism(rectOf(x0 + PA, y0 + 6, x1 - PA, dbl ? (y0 + y1) / 2 - BK / 2 : y1 - BK), b.z0, b.z0 + BD), boardCol);
+            if (dbl) add(prism(rectOf(x0 + PA, (y0 + y1) / 2 + BK / 2, x1 - PA, y1 - 6), b.z0, b.z0 + BD), boardCol);
+            if (!V.levels) continue;
+            const z0 = b.z0 + BD, z1 = b.z1 - 4,
+              rh = clamp((z1 - z0) * 0.3, 40, 110),
+              gold = V.gold && z1 > GOLD.lo && z0 < GOLD.hi,
+              rc = lc || "#D3DCE6",
+              sides = dbl ? [{ y: y0 - 9, n: v3(0, -1, 0) }, { y: y1 + 9, n: v3(0, 1, 0) }]
+                          : [{ y: y0 - 9, n: v3(0, -1, 0) }],
+              rails = [], tiles = [];
+            sides.forEach(({ y, n: nn }) => {
+              rails.push({ pts: [v3(x0 + PA, y, z0), v3(x1 - PA, y, z0), v3(x1 - PA, y, z0 + rh), v3(x0 + PA, y, z0 + rh)], n: nn });
+              if (!lc) return;
+              const cols = clamp(Math.round((e.w - PA * 2) / 240), 2, 10),
+                gp = (e.w - PA * 2) / cols, t0 = z0 + rh + 14, t1 = t0 + (z1 - t0) * 0.88;
+              if (t1 - t0 < 55) return;
+              for (let c = 0; c < cols; c++) {
+                const a = x0 + PA + gp * c + gp * 0.15, bb = x0 + PA + gp * (c + 1) - gp * 0.15,
+                  hz = t1 - (c % 3) * (t1 - t0) * 0.12;
+                tiles.push({ pts: [v3(a, y, t0), v3(bb, y, t0), v3(bb, y, hz), v3(a, y, hz)], n: nn });
+              }
+            });
+            add(rails, rc, 8, gold ? "#C79100" : "rgba(28,42,60,.5)");
+            if (tiles.length) add(tiles, toHex(mix(rc, "#FFFFFF", 0.46)), 8, "rgba(60,80,104,.32)");
+          }
+          add(prism(rectOf(x0 + PA, y0 + 6, x1 - PA, y1 - 6), e.h - BD, e.h), toHex(mix(body, "#FFFFFF", 0.1)));
+          add(prism(rectOf(x0, y0, x1, y1), e.h, e.h + 55), zoneColor(e));
+        }
+        function draw3D() {
+          const cv = $("#cv3d");
+          if (!cv || !$("#dlg3d").open) return;
+          const r = cv.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1),
+            cw = Math.max(320, r.width), ch = Math.max(260, r.height);
+          if (cv.width !== Math.round(cw * dpr)) cv.width = Math.round(cw * dpr);
+          if (cv.height !== Math.round(ch * dpr)) cv.height = Math.round(ch * dpr);
+          const ctx = cv.getContext("2d");
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          const sky = ctx.createLinearGradient(0, 0, 0, ch);
+          sky.addColorStop(0, "#f5f9fc"); sky.addColorStop(1, "#d9e3ea");
+          ctx.fillStyle = sky; ctx.fillRect(0, 0, cw, ch);
+          const la = ((V.yaw + 30) * Math.PI) / 180;
+          LIGHT = nrm(v3(Math.sin(la) * 0.62, Math.cos(la) * 0.62, 0.74));
+          const c = cam3(cw, ch), st = S.store;
+          picks = [];
+          path(ctx, proj(c, [v3(0, 0, 0), v3(st.w, 0, 0), v3(st.w, st.h, 0), v3(0, st.h, 0)]), "#fbfdfe", "rgba(71,84,103,.3)", 1.2);
+          if (V.zones)
+            S.els.filter((e) => e.type === "zone").forEach((e) => {
+              const p = proj(c, [v3(e.x, e.y, 2), v3(e.x + e.w, e.y, 2), v3(e.x + e.w, e.y + e.d, 2), v3(e.x, e.y + e.d, 2)]);
+              if (!p) return;
+              const q = hex(zoneColor(e));
+              path(ctx, p, `rgba(${q.r},${q.g},${q.b},.16)`, `rgba(${q.r},${q.g},${q.b},.55)`, 1.4);
+            });
+          const faces = [];
+          if (V.walls) {
+            const t = 140, wh = Math.min(st.ceil, 2800);
+            [rectOf(-t, -t, st.w + t, 0), rectOf(-t, st.h, st.w + t, st.h + t),
+             rectOf(-t, 0, 0, st.h), rectOf(st.w, 0, st.w + t, st.h)].forEach((poly) => {
+              const mx = poly.reduce((s, p) => s + p.x, 0) / 4, my = poly.reduce((s, p) => s + p.y, 0) / 4,
+                inward = nrm(v3(st.w / 2 - mx, st.h / 2 - my, 0));
+              if (dot(inward, sub(c.eye, v3(mx, my, wh / 2))) < 0) return;
+              prism(poly, 0, wh).forEach((f) => faces.push({ ...f, col: "#DDE5EC", bias: 0 }));
+            });
+          }
+          S.els.filter((e) => e.type !== "zone").forEach((e) => build(e, faces));
+          const draws = [], pm = new Map();
+          faces.forEach((f) => {
+            const L = f.pts.length,
+              ctr = v3(f.pts.reduce((s, p) => s + p.x, 0) / L, f.pts.reduce((s, p) => s + p.y, 0) / L, f.pts.reduce((s, p) => s + p.z, 0) / L);
+            if (dot(f.n, sub(c.eye, ctr)) <= 0) return;
+            const sp = proj(c, f.pts);
+            if (!sp) return;
+            const dp = depth(c, f.pts);
+            draws.push({ sp, d: dp - (f.bias || 0), col: css(lit(f.col, f.n)), outline: f.outline, sel: f.id === S.sel });
+            if (f.id) { const pv = pm.get(f.id); if (!pv || dp < pv.d) pm.set(f.id, { id: f.id, d: dp, sp }); }
+          });
+          picks = [...pm.values()];
+          draws.sort((a, b) => b.d - a.d);
+          draws.forEach((x) => path(ctx, x.sp, x.col, x.sel ? "#1176b6" : x.outline || "rgba(48,64,84,.3)", x.sel ? 2 : 1));
+          if (V.labels) labels3D(ctx, c, cw, ch);
+          legend3D();
+          sel3D();
+        }
+        function labels3D(ctx, c, cw, ch) {
+          const cd = [];
+          S.els.filter((e) => e.type !== "zone").forEach((e) => {
+            const mx = e.x + e.w / 2, front = c.eye.y > e.y + e.d / 2,
+              hy = front ? e.y + e.d + 40 : e.y - 40,
+              hv = view(c, v3(mx, front ? e.y + e.d : e.y, e.h + 190));
+            if (hv.z > c.near) cd.push({ ...scr(c, hv), z: hv.z, t: `${e.code ? e.code + " · " : ""}${e.name}`, s: SHELF.has(e.type) ? `${e.levels.length}단 · H${fmt(e.h)}` : TYPE_KO[e.type], col: zoneColor(e), head: true });
+            if (!SHELF.has(e.type) || !V.levels) return;
+            const n = e.levels.length;
+            for (let i = 0; i < n; i++) {
+              if (!e.levels[i]) continue;
+              const b = band(e, i), a = view(c, v3(mx, hy, b.z0 + 10)), q = view(c, v3(mx, hy, b.z1 - 10));
+              if (a.z < c.near || q.z < c.near) continue;
+              const sa = scr(c, a), sb = scr(c, q);
+              if (Math.abs(sa.y - sb.y) < 11) continue;
+              cd.push({ x: (sa.x + sb.x) / 2, y: (sa.y + sb.y) / 2, z: (a.z + q.z) / 2, t: `${lvNo(i, n)}단 · ${e.levels[i]}`, col: lvColor(e, i) || "#98A2B3", gold: isGold(e, i) && V.gold });
+            }
+          });
+          cd.sort((a, b) => a.z - b.z);
+          const placed = [];
+          ctx.textBaseline = "middle";
+          cd.forEach((l) => {
+            ctx.font = l.head ? "800 11px sans-serif" : "700 10px sans-serif";
+            const tw = ctx.measureText(l.t).width, sw = l.head && l.s ? ctx.measureText(l.s).width : 0,
+              w = Math.max(tw, sw) + 20, h = l.head && l.s ? 30 : 19, x = l.x - w / 2, y = l.y - h / 2;
+            if (x < -w || x > cw || y < -h || y > ch) return;
+            if (placed.some((p) => x < p.x + p.w && x + w > p.x && y < p.y + p.h && y + h > p.y)) return;
+            placed.push({ x, y, w, h });
+            const rr = 6;
+            ctx.beginPath();
+            ctx.moveTo(x + rr, y); ctx.arcTo(x + w, y, x + w, y + h, rr);
+            ctx.arcTo(x + w, y + h, x, y + h, rr); ctx.arcTo(x, y + h, x, y, rr);
+            ctx.arcTo(x, y, x + w, y, rr); ctx.closePath();
+            ctx.fillStyle = "rgba(255,255,255,.94)"; ctx.fill();
+            ctx.strokeStyle = l.gold ? "#C79100" : "rgba(120,140,160,.5)";
+            ctx.lineWidth = l.gold ? 1.6 : 1; ctx.stroke();
+            ctx.fillStyle = l.col; ctx.fillRect(x + 4, y + 4, 3.5, h - 8);
+            ctx.textAlign = "left"; ctx.fillStyle = "#16263a";
+            if (l.head && l.s) {
+              ctx.fillText(l.t, x + 12, y + 10);
+              ctx.font = "600 8px sans-serif"; ctx.fillStyle = "#6b7c90";
+              ctx.fillText(l.s, x + 12, y + 22);
+            } else ctx.fillText(l.t, x + 12, y + h / 2);
+          });
+        }
+        function legend3D() {
+          const used = new Set();
+          shelves().forEach((e) => e.levels.forEach((c) => c && used.add(catZone(c))));
+          S.els.forEach((e) => e.type === "zone" && used.add(e.zone));
+          $("#lgd").innerHTML = [...used].filter(Boolean)
+            .map((z) => `<span><i style="background:${ZONES[z].c}"></i>${esc(z)}</span>`).join("")
+            || "<span>단별 분류를 입력하면 색상 범례가 표시됩니다</span>";
+        }
+        function sel3D() {
+          const e = getEl(S.sel);
+          if (!e || !SHELF.has(e.type)) { $("#sel3d").textContent = "매대를 클릭하면 단별 계획이 표시됩니다."; return; }
+          const n = e.levels.length;
+          $("#sel3d").innerHTML = `<b>${esc(e.code || "")} ${esc(e.name)}</b><br>` +
+            e.levels.map((c, i) => `${lvNo(i, n)}단 · ${esc(c || "미지정")}${isGold(e, i) ? " ★" : ""}`).join("<br>") +
+            `<br><span style="color:#98a2b3">★ = 골든존</span>`;
+        }
+        const req3D = () => { if (!raf) raf = requestAnimationFrame(() => { raf = null; draw3D(); }); };
+        function preset3D(name) {
+          V.preset = name;
+          if (name === "iso") Object.assign(V, { yaw: -32, pitch: 27, dist: 1, tz: 900, fov: 44 });
+          if (name === "front") Object.assign(V, { yaw: 0, pitch: 12, dist: 1.05, tz: 1100, fov: 42 });
+          if (name === "top") Object.assign(V, { yaw: 0, pitch: 86, dist: 1.15, tz: 0, fov: 40 });
+          if (name === "eye") Object.assign(V, { yaw: 0, pitch: 4, dist: Math.max(1.9, Math.max(S.store.w, S.store.h) / 7000), tz: 1450, fov: 62 });
+          sync3D(); req3D();
+        }
+        function sync3D() {
+          $("#ry").value = Math.round(V.yaw);
+          $("#rp").value = Math.round(V.pitch);
+          $("#rz").value = V.dist.toFixed(2);
+          $$("[data-v]").forEach((b) => b.classList.toggle("on", b.dataset.v === V.preset));
+        }
+        const inPoly = (p, poly) => {
+          let inside = false;
+          for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+            const a = poly[i], b = poly[j];
+            if (a.y > p.y !== b.y > p.y && p.x < ((b.x - a.x) * (p.y - a.y)) / (b.y - a.y || 1e-9) + a.x) inside = !inside;
+          }
+          return inside;
+        };
+
+        /* ============================ 이벤트 ============================ */
+        svg.addEventListener("pointerdown", (ev) => {
+          const g = ev.target.closest(".el");
+          if (g) {
+            S.sel = g.dataset.id;
+            const e = getEl(S.sel), p = pt(ev);
+            drag = { id: e.id, dx: p.x - e.x, dy: p.y - e.y };
+            svg.setPointerCapture(ev.pointerId);
+            render();
+          } else {
+            S.sel = null;
+            pan = { x: ev.clientX, y: ev.clientY, vx: S.view.x, vy: S.view.y };
+            svg.classList.add("pan");
+            svg.setPointerCapture(ev.pointerId);
+            render();
+          }
+        });
+        svg.addEventListener("pointermove", (ev) => {
+          if (drag) {
+            const e = getEl(drag.id), p = pt(ev), g = ev.altKey ? 10 : S.store.grid;
+            e.x = Math.round((p.x - drag.dx) / g) * g;
+            e.y = Math.round((p.y - drag.dy) / g) * g;
+            keepIn(e);
+            render();
+          } else if (pan) {
+            const r = svg.getBoundingClientRect();
+            S.view.x = pan.vx - ((ev.clientX - pan.x) * S.view.w) / r.width;
+            S.view.y = pan.vy - ((ev.clientY - pan.y) * S.view.h) / r.height;
+            render();
+          }
+        });
+        svg.addEventListener("pointerup", () => {
+          if (drag) autoCode(true);
+          drag = null; pan = null;
+          svg.classList.remove("pan");
+          render();
+        });
+        svg.addEventListener("wheel", (ev) => {
+          ev.preventDefault();
+          const p = pt(ev), f = ev.deltaY > 0 ? 1.12 : 0.89,
+            w = clamp(S.view.w * f, 2000, 200000), h = (w / S.view.w) * S.view.h;
+          S.view = { x: p.x - ((p.x - S.view.x) * w) / S.view.w, y: p.y - ((p.y - S.view.y) * h) / S.view.h, w, h };
+          render();
+        }, { passive: false });
+        window.addEventListener("keydown", (ev) => {
+          if (["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
+          if ($("#dlg3d").open) return;
+          if (ev.key === "Delete" || ev.key === "Backspace") { ev.preventDefault(); del(); }
+          if (ev.key === "Escape") { S.sel = null; render(); }
+          if (ev.key.toLowerCase() === "f") fit();
+        });
+
+        $("#applySize").onclick = () => {
+          S.store.w = clamp(+$("#sw").value || S.store.w, 2000, 100000);
+          S.store.h = clamp(+$("#sh").value || S.store.h, 2000, 100000);
+          S.store.ceil = clamp(+$("#sc").value || S.store.ceil, 2000, 6000);
+          S.els.forEach(keepIn);
+          autoCode(true);
+          fit();
+          hint("매장 규격을 적용했습니다");
+        };
+        $("#fitBtn").onclick = fit;
+        $("#zin").onclick = () => { S.view.w *= 0.85; S.view.h *= 0.85; render(); };
+        $("#zout").onclick = () => { S.view.w /= 0.85; S.view.h /= 0.85; render(); };
+        $("#gridBtn").onclick = () => { S.store.showGrid = !S.store.showGrid; render(); };
+        $("#codeBtn").onclick = () => { autoCode(); render(); };
+        $("#clearBtn").onclick = () => {
+          if (!S.els.length || !confirm("배치된 항목을 모두 삭제할까요?")) return;
+          S.els = []; S.sel = null; render();
+        };
+        $("#sampleBtn").onclick = loadSample;
+        const open3D = () => { $("#dlg3d").showModal(); sync3D(); requestAnimationFrame(draw3D); };
+        $("#view3DBtn").onclick = open3D;
+        $("#view3DBtn2").onclick = open3D;
+        $("#close3d").onclick = () => $("#dlg3d").close();
+        $("#reset3d").onclick = () => preset3D("iso");
+        $$("[data-v]").forEach((b) => (b.onclick = () => preset3D(b.dataset.v)));
+        [["#ry", "yaw"], ["#rp", "pitch"], ["#rz", "dist"]].forEach(([id, k]) =>
+          $(id).addEventListener("input", () => { V[k] = +$(id).value; V.preset = "free"; sync3D(); req3D(); }));
+        [["#c3levels", "levels"], ["#c3labels", "labels"], ["#c3gold", "gold"], ["#c3zones", "zones"], ["#c3walls", "walls"]]
+          .forEach(([id, k]) => $(id).addEventListener("change", () => { V[k] = $(id).checked; req3D(); }));
+        (() => {
+          const cv = $("#cv3d");
+          cv.addEventListener("pointerdown", (ev) => {
+            d3 = { x: ev.clientX, y: ev.clientY, yaw: V.yaw, pitch: V.pitch, moved: 0 };
+            cv.setPointerCapture(ev.pointerId);
+          });
+          cv.addEventListener("pointermove", (ev) => {
+            if (!d3) return;
+            const dx = ev.clientX - d3.x, dy = ev.clientY - d3.y;
+            d3.moved = Math.max(d3.moved, Math.hypot(dx, dy));
+            V.yaw = d3.yaw + dx * 0.4;
+            V.pitch = clamp(d3.pitch - dy * 0.28, 2, 88);
+            V.preset = "free";
+            sync3D(); req3D();
+          });
+          cv.addEventListener("pointerup", (ev) => {
+            if (d3 && d3.moved < 4) {
+              const r = cv.getBoundingClientRect(), p = { x: ev.clientX - r.left, y: ev.clientY - r.top },
+                hit = picks.filter((q) => inPoly(p, q.sp)).sort((a, b) => a.d - b.d)[0];
+              S.sel = hit ? hit.id : null;
+              render();
+            }
+            d3 = null;
+          });
+          cv.addEventListener("wheel", (ev) => {
+            ev.preventDefault();
+            V.dist = clamp(V.dist * (ev.deltaY > 0 ? 0.9 : 1.111), 0.3, 4);
+            sync3D(); req3D();
+          }, { passive: false });
+          new ResizeObserver(req3D).observe(cv.parentElement);
+        })();
+        $("#png3d").onclick = () => $("#cv3d").toBlob((b) => dl("pharmacy-3d.png", b), "image/png");
+        $("#pngBtn").onclick = () => {
+          const s = new XMLSerializer().serializeToString(svg),
+            img = new Image(), sc = 2;
+          img.onload = () => {
+            const cv = document.createElement("canvas");
+            cv.width = S.view.w / 10 * sc / 10; cv.height = S.view.h / 10 * sc / 10;
+            cv.width = 2000; cv.height = Math.round((2000 * S.view.h) / S.view.w);
+            const x = cv.getContext("2d");
+            x.fillStyle = "#fff"; x.fillRect(0, 0, cv.width, cv.height);
+            x.drawImage(img, 0, 0, cv.width, cv.height);
+            cv.toBlob((b) => dl("pharmacy-plan.png", b), "image/png");
+          };
+          img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(s);
+        };
+        $("#jsonBtn").onclick = () =>
+          dl("pharmacy-layout.json", new Blob([JSON.stringify({ store: S.store, els: S.els }, null, 2)], { type: "application/json" }));
+        function dl(name, blob) {
+          const u = URL.createObjectURL(blob), a = document.createElement("a");
+          a.href = u; a.download = name; a.click();
+          setTimeout(() => URL.revokeObjectURL(u), 900);
+        }
+
+        /* ============================ 초기화 ============================ */
+        function loadSample() {
+          S.store = { ...S.store, w: 14000, h: 9000, ceil: 2600 };
+          S.els = [];
+          const Z = (n, x, y, w, d) => S.els.push({ id: uid(), type: "zone", name: n + " ZONE", code: "", x, y, w, d, h: 0, zone: n, levels: [] });
+          Z("상비약", 400, 3600, 6200, 5000);
+          Z("영양제", 6900, 3600, 6700, 5000);
+          Z("뷰티·가족건강", 400, 400, 4200, 2800);
+          Z("이벤트", 4800, 400, 2600, 2800);
+          Z("조제·계산", 7600, 400, 6000, 2800);
+          const put = (t, name, zone, x, y, cats) => {
+            const f = FIXTURES.find((q) => q.t === t),
+              e = make(f, zone, x, y);
+            e.name = name;
+            if (cats) e.levels = e.levels.map((v, i) => cats[i] || "");
+            S.els.push(keepIn(e));
+            return e;
+          };
+          const V1 = ZONES["뷰티·가족건강"].cats, V2 = ZONES.영양제.cats, V3 = ZONES.상비약.cats;
+          put("wallShelf", "뷰티 벽면", "뷰티·가족건강", 600, 700, ["선케어", "스킨케어", "마스크팩", "구강건강", "여성용품"]).w = 3800;
+          put("endcap", "시즌 행사", "이벤트", 5300, 900, ["선물세트", "기획세트", "브랜드존", "시즌행사"]);
+          put("counter", "복약 상담", "조제·계산", 8000, 1600);
+          put("checkout", "계산대", "조제·계산", 10200, 1600);
+          [["상비약", 1000], ["상비약", 3400]].forEach(([z, x], k) =>
+            [4200, 6000, 7400].forEach((y, r) =>
+              put("shelf", V3[(k * 3 + r) % V3.length], z, x, y,
+                V3.slice((k * 3 + r) % 3).concat(V3).slice(0, 5))));
+          [["영양제", 7500], ["영양제", 10200]].forEach(([z, x], k) =>
+            [4200, 6000, 7400].forEach((y, r) =>
+              put("shelf", V2[(k * 3 + r) % V2.length], z, x, y,
+                V2.slice((k * 3 + r) % 4).concat(V2).slice(0, 5))));
+          put("fridge", "드링크 냉장", "생활건강", 12300, 900, ["드링크·숙취", "드링크·숙취", "생활용품", "다이어트", "찜질·구급"]);
+          S.sel = null;
+          autoCode(true);
+          fit();
+          hint("예시 약국 레이아웃을 불러왔습니다");
+        }
+
+        $("#newZone").innerHTML = Object.keys(ZONES).map((z) => `<option>${esc(z)}</option>`).join("");
+        $("#fixtures").innerHTML = FIXTURES.map((f, i) =>
+          `<button class="fx" data-fx="${i}"><i style="background:#1176b6"></i><span style="text-align:left"><b>${esc(f.n)}</b><small>${fmt(f.w)}×${fmt(f.d)}×H${fmt(f.h)} · ${f.lv}단</small></span><span>＋</span></button>`
+            .replace('<span style="text-align:left">', "<span>")).join("");
+        $$("[data-fx]").forEach((b) => (b.onclick = () => addFixture(FIXTURES[+b.dataset.fx])));
+        const paintFx = () => {
+          const c = ZONES[$("#newZone").value].c;
+          $$(".fx i").forEach((i) => (i.style.background = c));
+        };
+        $("#newZone").onchange = paintFx;
+        $("#zchips").innerHTML = Object.entries(ZONES).map(([z, v]) =>
+          `<button class="zchip" data-z="${esc(z)}" style="background:${v.c}22;border-color:${v.c}66;color:${v.c}">${esc(z)}</button>`).join("");
+        $$("[data-z]").forEach((b) => (b.onclick = () => addZone(b.dataset.z)));
+        $("#sw").value = S.store.w;
+        $("#sh").value = S.store.h;
+        $("#sc").value = S.store.ceil;
+        paintFx();
+        loadSample();
+        window.addEventListener("resize", () => { render(); req3D(); });
+      })();
+    </script>
+  </body>
+</html>
