@@ -1,0 +1,280 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:2000px;background:#fff;color:#16233A;
+ font-family:'Noto Sans KR',-apple-system,'Malgun Gothic',sans-serif;padding:26px 30px 20px}
+.top{display:flex;align-items:flex-end;gap:26px;border-bottom:2.5px solid #16233A;padding-bottom:12px}
+.logo{font-size:34px;font-weight:900;letter-spacing:-1.2px}
+.logo span{font-size:13px;font-weight:600;color:#8894A5;letter-spacing:0}
+.ttl{font-size:20px;font-weight:800}
+.ttl small{display:block;font-size:11.5px;font-weight:500;color:#7C8A9C;margin-top:3px}
+.chips{margin-left:auto;display:flex;gap:6px;align-items:center}
+.chip{font-size:10.5px;font-weight:700;padding:5px 10px;border-radius:20px}
+.rt{font-size:10px;color:#8894A5;font-weight:700;letter-spacing:.8px;margin-left:12px}
+.sec{display:flex;align-items:center;gap:8px;margin:16px 0 9px}
+.sn{background:#16233A;color:#fff;font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:4px}
+.st{font-size:15px;font-weight:800}
+.se{font-size:10px;color:#9AA6B6;font-weight:700;letter-spacing:.7px}
+.sr{margin-left:auto;font-size:10.5px;color:#7C8A9C}
+.grid2{display:grid;grid-template-columns:660px 1fr;gap:20px}
+.plan{width:100%;height:auto;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px}
+.lgs{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin-top:9px}
+.lg{font-size:10.5px;color:#475569;display:flex;align-items:center;gap:5px}
+.lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.bzs{margin-top:10px;border-top:1px solid #E2E8F0;padding-top:8px}
+.bzs h4{font-size:10.5px;color:#64748B;margin-bottom:5px;letter-spacing:.4px}
+.bzr{display:grid;grid-template-columns:52px 1fr auto;gap:6px;font-size:10px;padding:2.5px 0;
+ border-bottom:1px dotted #E8EDF3;align-items:baseline}
+.bzr b{font-weight:800} .bzr span{font-weight:700;color:#0F172A}
+.bzr small{color:#8894A5;font-size:9px}
+.row5{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.row8{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+.row6{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:1px solid var(--bd);border-radius:8px;overflow:hidden;background:#fff}
+.hd{background:var(--bg);padding:7px 9px;display:flex;justify-content:space-between;
+ align-items:flex-start;border-bottom:1px solid var(--bd)}
+.cd{font-size:15px;font-weight:900;color:var(--c);line-height:1}
+.nm{font-size:11px;font-weight:800;margin-top:3px}
+.rl{font-size:9px;color:#8894A5;margin-top:1px}
+.ic{font-size:14px;opacity:.75}
+.lvs{padding:3px 5px}
+.lv{display:grid;grid-template-columns:14px 1fr auto;gap:4px;align-items:baseline;
+ padding:3px 3px;border-bottom:1px solid #F1F5F9;font-size:9.5px}
+.lv:last-child{border:0}
+.lv b{font-size:9px;font-weight:800;color:var(--c);text-align:center}
+.lv .nd{font-weight:700;color:#1E293B;line-height:1.25}
+.lv .pr{display:block;font-size:8.5px;color:#64748B;grid-column:2;line-height:1.2}
+.lv i{font-style:normal;font-size:8.5px;color:#94A3B8;font-weight:700}
+.lv.gd{background:#FAFBFC} .lv.rs{background:#FDFDFB}
+.lv.new .pr{color:#0369A1}
+.mut{color:#A9B4C2}
+.ft{display:flex;gap:5px;align-items:center;padding:5px 7px;background:#FBFCFD;
+ border-top:1px solid #EEF2F6;font-size:8.5px;flex-wrap:wrap}
+.bz{color:#fff;font-weight:800;padding:2px 6px;border-radius:3px;font-size:8px;letter-spacing:.3px}
+.pd{color:#0369A1;font-weight:700}
+.ft .f{margin-left:auto;color:#94A3B8;font-weight:700}
+.gon{border:1px solid var(--bd);border-radius:9px;overflow:hidden}
+.g-top{background:var(--bg);padding:8px 10px;display:flex;justify-content:space-between;
+ border-bottom:1px solid var(--bd)}
+.g-top b{font-size:16px;font-weight:900;color:var(--c)}
+.g-top>div:first-child{font-size:12px;font-weight:800}
+.g-en{font-size:9px;color:#8894A5;font-weight:600;margin-top:1px}
+.g-face{padding:5px 6px 2px}
+.g-lab{font-size:8.5px;font-weight:800;color:#64748B;background:#F1F5F9;
+ padding:2px 6px;border-radius:3px;display:inline-block;margin-bottom:4px}
+.g-lab.u{background:#E8EEF5}
+.g-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.g-col{border:1px solid #EDF1F5;border-radius:5px;overflow:hidden}
+.g-hd{background:#F8FAFC;font-size:8.5px;font-weight:800;padding:3px 5px;color:var(--c);
+ border-bottom:1px solid #EDF1F5}
+.g-hd span{color:#475569;font-weight:700}
+.g-lv{display:grid;grid-template-columns:11px 1fr;gap:3px;font-size:8.5px;
+ padding:2.5px 4px;border-bottom:1px solid #F5F8FA;line-height:1.2}
+.g-lv:last-of-type{border:0}
+.g-lv b{color:#94A3B8;font-size:7.5px;text-align:center}
+.g-lv span{color:#334155}
+.g-bz{color:#fff;font-size:7.5px;font-weight:800;padding:2px 5px;text-align:center}
+.g-ends{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px 6px 6px}
+.end{border:1px solid #EDF1F5;border-radius:5px;padding:4px 6px;background:#FCFDFE}
+.e-hd{font-size:8.5px;font-weight:800;color:var(--c)}
+.e-bz{margin-top:3px;color:#fff;font-size:8px;font-weight:800;padding:2px 5px;border-radius:3px;text-align:center}
+.e-no{margin-top:2px;font-size:8px;color:#94A3B8}
+.foot{margin-top:14px;padding-top:9px;border-top:1px solid #E2E8F0;display:flex;
+ font-size:9.5px;color:#8894A5;gap:18px}
+.foot b{color:#475569}
+</style></head><body>
+<div class="top">
+  <div class="logo">K-Pharmacy <span>by ONNURI</span></div>
+  <div class="ttl">약국 조닝 &amp; 5단 선반 맵 — 오픈 배정본
+    <small>피부 고민부터 여행·영양까지, 위치와 상품군을 한눈에 · 63모듈 315선반 · 우선 진열 714행 / 738F</small></div>
+  <div class="chips">
+    <span class="chip" style="background:#EFF6FF;color:#1D4ED8">5단 선반</span>
+    <span class="chip" style="background:#F0FDF4;color:#15803D">증상별 선택</span>
+    <span class="chip" style="background:#FFFBEB;color:#B45309">영양·선물</span>
+    <span class="chip" style="background:#FDF2F8;color:#BE185D">브랜드 블록 9</span>
+    <span class="rt">FLOOR MAP / SHELF THEMES / BRAND ZONES</span>
+  </div>
+</div>
+
+<div class="grid2">
+ <div>
+  <div class="sec"><span class="sn">01</span><span class="st">전체 매장 위치도</span>
+    <span class="se">FLOOR MAP</span><span class="sr">10,512 × 10,338 mm · 32.9평</span></div>
+  <svg viewBox="-300 -300 11112 11238" class="plan"><rect x="0" y="0" width="10512" height="10338" fill="#fff" stroke="#233" stroke-width="70"/><rect x="200" y="0" width="940" height="400" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 670 200)"/><rect x="1140" y="0" width="940" height="400" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 1610 200)"/><rect x="2080" y="0" width="940" height="400" fill="#A16207" fill-opacity="0.55" stroke="#A16207" stroke-width="25" transform="rotate(180 2550 200)"/><rect x="3020" y="0" width="940" height="400" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25" transform="rotate(180 3490 200)"/><rect x="3960" y="0" width="940" height="400" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25" transform="rotate(180 4430 200)"/><rect x="-230" y="1096" width="940" height="349" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25" transform="rotate(90 240 1270)"/><rect x="-230" y="2036" width="940" height="349" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25" transform="rotate(90 240 2210)"/><rect x="-230" y="2976" width="940" height="349" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25" transform="rotate(90 240 3150)"/><rect x="-230" y="3916" width="940" height="349" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25" transform="rotate(90 240 4090)"/><rect x="1502" y="9989" width="940" height="349" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25"/><rect x="2442" y="9989" width="940" height="349" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25"/><rect x="3382" y="9989" width="940" height="349" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25"/><rect x="4322" y="9989" width="940" height="349" fill="#A16207" fill-opacity="0.55" stroke="#A16207" stroke-width="25"/><rect x="5262" y="9989" width="940" height="349" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25"/><rect x="6202" y="9989" width="940" height="349" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="7142" y="9989" width="940" height="349" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="8082" y="9989" width="940" height="349" fill="#A16207" fill-opacity="0.55" stroke="#A16207" stroke-width="25"/><rect x="1661" y="8232" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 2124 8408)"/><rect x="2586" y="8232" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 3048 8408)"/><rect x="3511" y="8232" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 3986 8408)"/><rect x="1661" y="7879" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="2586" y="7879" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="3511" y="7879" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="1661" y="6232" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 2124 6408)"/><rect x="2586" y="6232" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 3048 6408)"/><rect x="3511" y="6232" width="950" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 3986 6408)"/><rect x="1661" y="5879" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25"/><rect x="2586" y="5879" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25"/><rect x="3511" y="5879" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="1661" y="4232" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25" transform="rotate(180 2124 4408)"/><rect x="2586" y="4232" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 3048 4408)"/><rect x="3511" y="4232" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 3986 4408)"/><rect x="1661" y="3879" width="925" height="352" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25"/><rect x="2586" y="3879" width="925" height="352" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25"/><rect x="3511" y="3879" width="950" height="352" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25"/><rect x="1661" y="2148" width="925" height="352" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25" transform="rotate(180 2124 2324)"/><rect x="2586" y="2148" width="950" height="352" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25" transform="rotate(180 3061 2324)"/><rect x="1661" y="1795" width="925" height="352" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25"/><rect x="2586" y="1795" width="950" height="352" fill="#B45309" fill-opacity="0.55" stroke="#B45309" stroke-width="25"/><rect x="6051" y="8232" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 6514 8408)"/><rect x="6976" y="8232" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 7438 8408)"/><rect x="7901" y="8232" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(180 8376 8408)"/><rect x="6051" y="7879" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="6976" y="7879" width="925" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="7901" y="7879" width="950" height="352" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25"/><rect x="6051" y="6232" width="925" height="352" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25" transform="rotate(180 6514 6408)"/><rect x="6976" y="6232" width="925" height="352" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25" transform="rotate(180 7438 6408)"/><rect x="7901" y="6232" width="950" height="352" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25" transform="rotate(180 8376 6408)"/><rect x="6051" y="5879" width="925" height="352" fill="#C2410C" fill-opacity="0.55" stroke="#C2410C" stroke-width="25"/><rect x="6976" y="5879" width="925" height="352" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25"/><rect x="7901" y="5879" width="950" height="352" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25"/><rect x="1161" y="8084" width="705" height="295" fill="#C2410C" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(-90 1514 8232)"/><rect x="4256" y="8084" width="705" height="295" fill="#BE185D" fill-opacity="0.55" stroke="#BE185D" stroke-width="25" transform="rotate(90 4608 8232)"/><rect x="1161" y="6084" width="705" height="295" fill="#C2410C" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(-90 1514 6232)"/><rect x="4256" y="6084" width="705" height="295" fill="#C2410C" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(90 4608 6232)"/><rect x="1161" y="4084" width="705" height="295" fill="#BE185D" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(-90 1514 4232)"/><rect x="4256" y="4084" width="705" height="295" fill="#0369A1" fill-opacity="0.55" stroke="#0369A1" stroke-width="25" transform="rotate(90 4608 4232)"/><rect x="1161" y="2000" width="705" height="295" fill="#B45309" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(-90 1514 2148)"/><rect x="3331" y="2000" width="705" height="295" fill="#B45309" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(90 3684 2148)"/><rect x="5551" y="8084" width="705" height="295" fill="#BE185D" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(-90 5904 8232)"/><rect x="8646" y="8084" width="705" height="295" fill="#BE185D" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(90 8998 8232)"/><rect x="5551" y="6084" width="705" height="295" fill="#6D28D9" fill-opacity="0.55" stroke="#6D28D9" stroke-width="25" transform="rotate(-90 5904 6232)"/><rect x="8646" y="6084" width="705" height="295" fill="#0369A1" fill-opacity="0.9" stroke="#111" stroke-width="60" transform="rotate(90 8998 6232)"/><rect x="9000" y="1600" width="1200" height="750" fill="#94A3B8" fill-opacity="0.55" stroke="#94A3B8" stroke-width="25" transform="rotate(180 9600 1975)"/><rect x="0" y="10218" width="1502" height="120" fill="#94A3B8" fill-opacity="0.55" stroke="#94A3B8" stroke-width="25"/><rect x="9022" y="10218" width="1490" height="120" fill="#94A3B8" fill-opacity="0.55" stroke="#94A3B8" stroke-width="25"/><rect x="5200" y="1600" width="950" height="750" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="6150" y="1600" width="950" height="750" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="7100" y="1600" width="950" height="750" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="8050" y="1600" width="950" height="750" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="9000" y="1600" width="1200" height="750" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30" transform="rotate(180 9600 1975)"/><rect x="5230" y="80" width="3570" height="400" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="9210" y="750" width="900" height="420" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="5050" y="0" width="90" height="650" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="5050" y="1450" width="90" height="900" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="9000" y="0" width="90" height="1450" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="6100" y="4120" width="2760" height="440" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30"/><rect x="9425" y="3565" width="1850" height="200" fill="#CBD5E1" stroke="#94A3B8" stroke-width="30" transform="rotate(90 10350 3665)"/><rect x="0" y="10218" width="1502" height="120" fill="#0EA5E9"/><rect x="9022" y="10218" width="1490" height="120" fill="#0EA5E9"/><text x="2550" y="265" font-size="200" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">W1–W5 상단 벽면</text><text x="240" y="2745" font-size="200" font-weight="800" fill="#16233A" text-anchor="middle" transform="rotate(-90 240 2745)" style="paint-order:stroke;stroke:#fff;stroke-width:70">L1–L4 좌측 벽면</text><text x="5262" y="10228" font-size="200" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">B1–B8 하단 진입부</text><text x="3061" y="8296" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G1</text><text x="3061" y="6296" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G2</text><text x="3061" y="4296" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G3</text><text x="2598" y="2212" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G4</text><text x="7451" y="8296" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G5</text><text x="7451" y="6296" font-size="330" font-weight="800" fill="#16233A" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">G6</text><text x="7100" y="800" font-size="210" font-weight="800" fill="#475569" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">POS · 상담 카운터</text><text x="9600" y="2050" font-size="180" font-weight="800" fill="#475569" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">RF1 냉장</text><text x="7480" y="4450" font-size="210" font-weight="800" fill="#475569" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">조제 · 투약대</text><text x="751" y="10150" font-size="170" font-weight="800" fill="#0369A1" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">좌 출입 4m</text><text x="9767" y="10150" font-size="170" font-weight="800" fill="#0369A1" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:60">우 출입 4m</text></svg>
+  <div class="lgs"><div class="lg"><i style="background:#C2410C"></i>피부약·상처 보호</div><div class="lg"><i style="background:#BE185D"></i>더마·세정·선케어</div><div class="lg"><i style="background:#0369A1"></i>일반약·여행·생활</div><div class="lg"><i style="background:#B45309"></i>영양·건강 선물</div><div class="lg"><i style="background:#6D28D9"></i>립·눈·다리·구강</div><div class="lg"><i style="background:#A16207"></i>추천·상담 안내</div></div>
+  <div class="bzs"><h4>브랜드 블록 9개 · 엔드캡</h4><div class="bzr"><b>G1-EL</b><span>리쥬비(-넥스·-에스)</span><small>PDRN 의약품·화장품 구분</small></div><div class="bzr"><b>G2-EL</b><span>이지덤</span><small>습윤 드레싱</small></div><div class="bzr"><b>G2-ER</b><span>케어리브</span><small>습윤 밴드·하이드로콜로이드</small></div><div class="bzr"><b>G3-EL</b><span>마데카파마시아</span><small>센텔라·재생</small></div><div class="bzr"><b>G4-EL</b><span>에버콜라겐</span><small>먹는 콜라겐</small></div><div class="bzr"><b>G4-ER</b><span>고려은단</span><small>약국 비타민</small></div><div class="bzr"><b>G5-EL</b><span>프로캄</span><small>EGF·멜라·아크페어</small></div><div class="bzr"><b>G5-ER</b><span>닥터리쥬올</span><small>PDRN 재생 스킨케어</small></div><div class="bzr"><b>G6-ER</b><span>신신</span><small>파스·외용</small></div></div>
+ </div>
+ <div>
+  <div class="sec"><span class="sn">02</span><span class="st">상단 벽면 W1–W5</span>
+    <span class="se">TOP WALL</span><span class="sr">피부·더마 2 + 추천 1 + 영양·선물 2</span></div>
+  <div class="row5"><div class="card" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="hd"><div><div class="cd">W1</div>
+        <div class="nm">Skin Treatments</div>
+        <div class="rl">피부 고관여 상담</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">PDRN 분류·상담 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">PDRN 일반의약품</span><span class="pr">리쥬비넥스크림</span><i>2</i></div><div class="lv "><b>3</b><span class="nd">가려움·피부염 외용약</span><span class="pr">리도프론크림 외 1</span><i>2</i></div><div class="lv new"><b>4</b><span class="nd">피부 상담약 확장 여유</span><span class="pr">쎄레스틴크림 외 1</span><i>2</i></div><div class="lv "><b>5</b><span class="nd">MD 보호재·의료기기 분리</span><span class="pr">리쥬비엠디크림 외 1</span><i>2</i></div></div>
+      <div class="ft"><span class="f">7 SKU · 8F</span></div>
+    </div><div class="card" style="--c:#BE185D;--bg:#FFF1F6;--bd:#FBD9E6">
+      <div class="hd"><div><div class="cd">W2</div>
+        <div class="nm">Dermocosmetics</div>
+        <div class="rl">EGF·프리미엄 비교</div></div>
+        <div class="ic">🧴</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">EGF 화장품 제형 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">EGFx 앰플 비교</span><span class="pr">이지에프엑스 포스트레이저 외 2</span><i>3</i></div><div class="lv "><b>3</b><span class="nd">프로캄·이지듀 EGF 크림</span><span class="pr">프로캄EGF 액티브 바이탈… 외 1</span><i>3</i></div><div class="lv "><b>4</b><span class="nd">EGF·PDRN 마스크</span><span class="pr">프로캄 EGF PDRN 액…</span><i>1</i></div><div class="lv new"><b>5</b><span class="nd">프리미엄 추가 규격 여유</span><span class="pr">더마터치 스페셜 기프트 세트</span><i>1</i></div></div>
+      <div class="ft"><span class="f">7 SKU · 8F</span></div>
+    </div><div class="card" style="--c:#A16207;--bg:#FEFCE8;--bd:#F7EAB8">
+      <div class="hd"><div><div class="cd">W3</div>
+        <div class="nm">Seasonal Picks</div>
+        <div class="rl">월별 선택 테마</div></div>
+        <div class="ic">⭐</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">환절기 보습 테마</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">진정 크림 테마</span><span class="pr">프로캄 후시메디 리페어 크…</span><i>1</i></div><div class="lv "><b>3</b><span class="nd">장벽 세럼 테마</span><span class="pr">톰 PPM 트리플 시너지 …</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">립 보습 연결</span><span class="pr">리쥬올 PDRN 립세럼</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">다음 테마 교체 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">3 SKU · 3F</span></div>
+    </div><div class="card" style="--c:#B45309;--bg:#FFFAEB;--bd:#FCECC5">
+      <div class="hd"><div><div class="cd">W4</div>
+        <div class="nm">Daily Vitamins</div>
+        <div class="rl">경구 영양·약사 상담</div></div>
+        <div class="ic">🎁</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">경구 영양 상담 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">비타민B 의약품</span><span class="pr">비맥스메타비 외 7</span><i>8</i></div><div class="lv "><b>3</b><span class="nd">마그네슘 경구제품</span><span class="pr">마그비스피드더블액션 외 3</span><i>4</i></div><div class="lv "><b>4</b><span class="nd">글루타치온 의약품</span><span class="pr">에바치온캡슐</span><i>1</i></div><div class="lv "><b>5</b><span class="nd">피로·간·한방 상담약</span><span class="pr">글루콤액 외 19</span><i>20</i></div></div>
+      <div class="ft"><div class="pd">추가 배정 3건</div><span class="f">36 SKU · 36F</span></div>
+    </div><div class="card" style="--c:#B45309;--bg:#FFFAEB;--bd:#FCECC5">
+      <div class="hd"><div><div class="cd">W5</div>
+        <div class="nm">Wellness Gifts</div>
+        <div class="rl">건강 선물 본진</div></div>
+        <div class="ic">🎁</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">정규 선물 구성 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">멀티비타민 정규 세트</span><span class="pr">한미 엔플 프리미엄 멀티비… 외 3</span><i>4</i></div><div class="lv "><b>3</b><span class="nd">홍삼 30포 비교</span><span class="pr">정원삼 6년근 고려홍삼정3… 외 3</span><i>4</i></div><div class="lv "><b>4</b><span class="nd">콜라겐·홍삼 젤리</span><span class="pr">에버콜라겐 블랙 외 3</span><i>4</i></div><div class="lv "><b>5</b><span class="nd">다매 홍삼·절편</span><span class="pr">정원삼 6년근 고려홍삼정3… 외 3</span><i>4</i></div></div>
+      <div class="ft"><span class="f">16 SKU · 16F</span></div>
+    </div></div>
+  <div class="sec"><span class="sn">03</span><span class="st">좌측 벽면 L1–L4</span>
+    <span class="se">LEFT WALL</span><span class="sr">여행 중 필요한 일반 약국 구색</span></div>
+  <div class="row4"><div class="card" style="--c:#0369A1;--bg:#EFF8FE;--bd:#CFE7F7">
+      <div class="hd"><div><div class="cd">L1</div>
+        <div class="nm">Cold &amp; Allergy</div>
+        <div class="rl">일반약 실용 구색</div></div>
+        <div class="ic">💊</div></div>
+      <div class="lvs"><div class="lv "><b>1</b><span class="nd">알레르기 정제·낮은 포장</span><span class="pr">지르텍정 외 1</span><i>2</i></div><div class="lv "><b>2</b><span class="nd">감기 주간·야간 구분</span><span class="pr">헤일리온_테라플루 데이타임… 외 5</span><i>6</i></div><div class="lv "><b>3</b><span class="nd">기침·인후 제형</span><span class="pr">용각산쿨과립(복숭아) 외 6</span><i>7</i></div><div class="lv "><b>4</b><span class="nd">코 증상 스프레이</span><span class="pr">코앤나잘스프레이 외 4</span><i>5</i></div><div class="lv "><b>5</b><span class="nd">어린이 여행 상담</span><span class="pr">챔프콜드펜시럽 외 6</span><i>7</i></div></div>
+      <div class="ft"><div class="pd">추가 배정 1건</div><span class="f">28 SKU · 28F</span></div>
+    </div><div class="card" style="--c:#0369A1;--bg:#EFF8FE;--bd:#CFE7F7">
+      <div class="hd"><div><div class="cd">L2</div>
+        <div class="nm">Stomach &amp; Travel</div>
+        <div class="rl">소화·배변·이동 상담</div></div>
+        <div class="ic">💊</div></div>
+      <div class="lvs"><div class="lv "><b>1</b><span class="nd">소화 정제·낮은 포장</span><span class="pr">훼스탈슈퍼자임정 외 2</span><i>3</i></div><div class="lv "><b>2</b><span class="nd">소화·속 불편 액상</span><span class="pr">겔포스엘 현탁액 외 11</span><i>12</i></div><div class="lv "><b>3</b><span class="nd">설사 상담</span><span class="pr">포타겔현탁액 외 3</span><i>4</i></div><div class="lv "><b>4</b><span class="nd">변비 상담</span><span class="pr">굿모닝에스과립 외 3</span><i>4</i></div><div class="lv "><b>5</b><span class="nd">멀미·이동 상담</span><span class="pr">보나링츄어블정 외 3</span><i>4</i></div></div>
+      <div class="ft"><div class="pd">추가 배정 6건</div><span class="f">33 SKU · 33F</span></div>
+    </div><div class="card" style="--c:#0369A1;--bg:#EFF8FE;--bd:#CFE7F7">
+      <div class="hd"><div><div class="cd">L3</div>
+        <div class="nm">Pain Relief</div>
+        <div class="rl">진통·파스 본진</div></div>
+        <div class="ic">💊</div></div>
+      <div class="lvs"><div class="lv "><b>1</b><span class="nd">해열·진통 소포장</span><span class="pr">타이레놀정500mg 외 3</span><i>5</i></div><div class="lv "><b>2</b><span class="nd">파스 기본·롱 규격</span><span class="pr">신신파스아렉스(중) 외 6</span><i>8</i></div><div class="lv "><b>3</b><span class="nd">코인·쿨 타입</span><span class="pr">로이히츠보코 코인플라스타 외 7</span><i>8</i></div><div class="lv "><b>4</b><span class="nd">바르는 진통 제형</span><span class="pr">안티푸라민연고 외 7</span><i>8</i></div><div class="lv "><b>5</b><span class="nd">분사형·큰 포장</span><span class="pr">신신에어파스에프 외 6</span><i>7</i></div></div>
+      <div class="ft"><span class="f">34 SKU · 36F</span></div>
+    </div><div class="card" style="--c:#6D28D9;--bg:#F6F3FF;--bd:#E2DBFB">
+      <div class="hd"><div><div class="cd">L4</div>
+        <div class="nm">Oral Care</div>
+        <div class="rl">구강 위생·상담</div></div>
+        <div class="ic">👁</div></div>
+      <div class="lvs"><div class="lv "><b>1</b><span class="nd">구내염 상담·낮은 포장</span><span class="pr">페리톡겔 10g 외 1</span><i>2</i></div><div class="lv "><b>2</b><span class="nd">잇몸·불소 치약</span><span class="pr">오스템 옥치잇몸치약 외 2</span><i>3</i></div><div class="lv "><b>3</b><span class="nd">휴대 가글·구강 스프레이</span><span class="pr">폼글 거품가글 슈퍼민트(알… 외 2</span><i>3</i></div><div class="lv "><b>4</b><span class="nd">칫솔·치실·혀 세정</span><span class="pr">유이앤루이 핀포인트 칫솔 외 2</span><i>3</i></div><div class="lv "><b>5</b><span class="nd">일상 가글 큰 포장</span><span class="pr">테라브레스 프레시브레스 클… 외 1</span><i>2</i></div></div>
+      <div class="ft"><span class="f">13 SKU · 13F</span></div>
+    </div></div>
+ </div>
+</div>
+
+<div class="sec"><span class="sn">04</span><span class="st">중앙 양면 곤돌라 G1–G6</span>
+  <span class="se">CENTRAL GONDOLAS</span><span class="sr">D = 입구 방향 / U = POS 방향 · 엔드 12면</span></div>
+<div class="row6"><div class="gon" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="g-top"><div><b>G1</b> 여드름·피지·세정<div class="g-en">Acne &amp; Pore Care</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>여드름 외용제</span></div><div class="g-lv"><b>1</b><span>현재 피부 상태 확인</span></div><div class="g-lv"><b>2</b><span>애크린 겔</span></div><div class="g-lv"><b>3</b><span>애크논 크림</span></div><div class="g-lv"><b>4</b><span>파티마겔2.5%</span></div><div class="g-lv"><b>5</b><span>세비타비겔</span></div></div><div class="g-col"><div class="g-hd">2 <span>스팟 보호 패치</span></div><div class="g-lv"><b>1</b><span>패치 용도·피부 상태 안내</span></div><div class="g-lv"><b>2</b><span>이지덤뷰티</span></div><div class="g-lv"><b>3</b><span>이지덤뷰티 퀵카밍 6매</span></div><div class="g-lv"><b>4</b><span>아크로패스 트러블 스팟 …</span></div><div class="g-lv"><b>5</b><span>닥터원더 트러블스팟 원더…</span></div></div><div class="g-col"><div class="g-hd">3 <span>A  피지·모공</span></div><div class="g-lv"><b>1</b><span>피지·모공 고민 안내</span></div><div class="g-lv"><b>2</b><span>엠디스픽 테카테카 징크 …</span></div><div class="g-lv"><b>3</b><span>프랭클리 나이아신아마이드…</span></div><div class="g-lv"><b>4</b><span>프랭클리 패스트 핌플 이…</span></div><div class="g-lv"><b>5</b><span>네오젠 포어레이져클리어B…</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>피부타입별 세안</span></div><div class="g-lv"><b>1</b><span>세정 제형 선택</span></div><div class="g-lv"><b>2</b><span>엠디스픽 테카테카 카밍 …</span></div><div class="g-lv"><b>3</b><span>믹순 콩 클렌징 오일</span></div><div class="g-lv"><b>4</b><span>필플로 롤링 밀크 페이셜…</span></div><div class="g-lv"><b>5</b><span>닥터바이오 에코 올인원 …</span></div></div><div class="g-col"><div class="g-hd">2 <span>세정·각질 제형 비교</span></div><div class="g-lv"><b>1</b><span>각질·필링 사용제품 확인</span></div><div class="g-lv"><b>2</b><span>닥터오라클 21STAY …</span></div><div class="g-lv"><b>3</b><span>닥터 멜락신 티엑스 필링…</span></div><div class="g-lv"><b>4</b><span>닥터딥 미네랄 엑소좀 필…</span></div><div class="g-lv"><b>5</b><span>웰더마 차이슬 티트리 허…</span></div></div><div class="g-col"><div class="g-hd">3 <span>Body Care &amp; Tr…</span></div><div class="g-lv"><b>1</b><span>몸 고민·제품 분류 안내</span></div><div class="g-lv"><b>2</b><span>낫포유 클리어 바디 미스…</span></div><div class="g-lv"><b>3</b><span>라이프프로젝트 리틀포레스…</span></div><div class="g-lv"><b>4</b><span>플루 바디 스크럽 핑크 …</span></div><div class="g-lv"><b>5</b><span>애크린외용액</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#C2410C"><div class="e-hd">EL Acne Finder</div><div class="e-bz" style="background:#C2410C">BRAND · 리쥬비(-넥스·-에스)</div></div><div class="end" style="--c:#C2410C"><div class="e-hd">ER Pore &amp; Body</div><div class="e-no">피지·모공 스킨케어</div></div></div></div><div class="gon" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="g-top"><div><b>G2</b> 흉터·상처·건조<div class="g-en">Scar &amp; Wound Care</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>아문 흉터 비교</span></div><div class="g-lv"><b>1</b><span>아문 흉터와 열린 상처 …</span></div><div class="g-lv"><b>2</b><span>노스카나겔</span></div><div class="g-lv"><b>3</b><span>더마틱스울트라겔</span></div><div class="g-lv"><b>4</b><span>노스카딘겔</span></div><div class="g-lv"><b>5</b><span>추가 소재·규격 여유</span></div></div><div class="g-col"><div class="g-hd">2 <span>일반·방수 밴드</span></div><div class="g-lv"><b>1</b><span>부위·방수 필요 안내</span></div><div class="g-lv"><b>2</b><span>케어리브(소형)</span></div><div class="g-lv"><b>3</b><span>케어리브방수형M</span></div><div class="g-lv"><b>4</b><span>케어리브(손끝)</span></div><div class="g-lv"><b>5</b><span>케어리브(발뒤꿈치)</span></div></div><div class="g-col"><div class="g-hd">3 <span>습윤 드레싱</span></div><div class="g-lv"><b>1</b><span>습윤 드레싱 사용 상태 …</span></div><div class="g-lv"><b>2</b><span>케어리브습윤방수(작은상처)</span></div><div class="g-lv"><b>3</b><span>케어리브 습윤밴드 방수형…</span></div><div class="g-lv"><b>4</b><span>케어리브 습윤밴드 방수형…</span></div><div class="g-lv"><b>5</b><span>추가 포장 규격 여유</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>상처 외용·세정</span></div><div class="g-lv"><b>1</b><span>상처 상태 상담 안내</span></div><div class="g-lv"><b>2</b><span>후시딘연고</span></div><div class="g-lv"><b>3</b><span>미보연고</span></div><div class="g-lv"><b>4</b><span>애니클렌액</span></div><div class="g-lv"><b>5</b><span>그린포비돈스틱스왑</span></div></div><div class="g-col"><div class="g-hd">2 <span>건조·각화 외용약</span></div><div class="g-lv"><b>1</b><span>건조 외용약·보습 화장품…</span></div><div class="g-lv"><b>2</b><span>D-판테놀연고</span></div><div class="g-lv"><b>3</b><span>유리아크림</span></div><div class="g-lv"><b>4</b><span>비판텐연고</span></div><div class="g-lv"><b>5</b><span>외용약 확장 여유</span></div></div><div class="g-col"><div class="g-hd">3 <span>손·전신 보습</span></div><div class="g-lv"><b>1</b><span>손·전신 보습 안내</span></div><div class="g-lv"><b>2</b><span>테카 핸드 우레아 크림</span></div><div class="g-lv"><b>3</b><span>바세린 오리지날 프로텍팅…</span></div><div class="g-lv"><b>4</b><span>프로캄 울트라 모이스처 …</span></div><div class="g-lv"><b>5</b><span>라이프프로젝트 리틀포레스…</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#C2410C"><div class="e-hd">EL Scar Finder</div><div class="e-bz" style="background:#C2410C">BRAND · 이지덤</div></div><div class="end" style="--c:#C2410C"><div class="e-hd">ER Wound Cover</div><div class="e-bz" style="background:#C2410C">BRAND · 케어리브</div></div></div></div><div class="gon" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="g-top"><div><b>G3</b> 색소·선케어 / 두피·휴식<div class="g-en">Tone, Sun &amp; Daily Care</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>기미·색소약 상담</span></div><div class="g-lv"><b>1</b><span>색소·흉터의 차이 상담</span></div><div class="g-lv"><b>2</b><span>멜라토닝크림</span></div><div class="g-lv"><b>3</b><span>도미나라이트크림</span></div><div class="g-lv"><b>4</b><span>트란시노2정</span></div><div class="g-lv"><b>5</b><span>도미나크림</span></div></div><div class="g-col"><div class="g-hd">2 <span>B  잡티·피부 톤</span></div><div class="g-lv"><b>1</b><span>톤 고민·현재 사용성분 …</span></div><div class="g-lv"><b>2</b><span>마미케어 오쏘타민 비타C…</span></div><div class="g-lv"><b>3</b><span>(리쥬올)어드밴스드 레티…</span></div><div class="g-lv"><b>4</b><span>마미케어 오쏘타민 비타민…</span></div><div class="g-lv"><b>5</b><span>마미케어 오쏘타민 비타민…</span></div></div><div class="g-col"><div class="g-hd">3 <span>Sun Care</span></div><div class="g-lv"><b>1</b><span>자외선차단 제형 안내</span></div><div class="g-lv"><b>2</b><span>리쥬올어드밴스드PDRN카…</span></div><div class="g-lv"><b>3</b><span>테카플러스포뮬러 컴포트선…</span></div><div class="g-lv"><b>4</b><span>비플레인 선뮤즈 톤업 앤…</span></div><div class="g-lv"><b>5</b><span>싸이닉 엔조이 워터프루프…</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Scalp &amp; Hair</span></div><div class="g-lv"><b>1</b><span>두피 약·화장품 구분</span></div><div class="g-lv"><b>2</b><span>미녹시딜 바이그루트 5%겔</span></div><div class="g-lv"><b>3</b><span>(신)니조랄2%액</span></div><div class="g-lv"><b>4</b><span>닥터 리쥬올 어드밴스드 …</span></div><div class="g-lv"><b>5</b><span>루트헤어 세라리프 베리어…</span></div></div><div class="g-col"><div class="g-hd">2 <span>Personal Care</span></div><div class="g-lv"><b>1</b><span>머시론정</span></div><div class="g-lv"><b>2</b><span>카네스텐1질정</span></div><div class="g-lv"><b>3</b><span>프로캄 클레어진</span></div><div class="g-lv"><b>4</b><span>템포내추럴</span></div><div class="g-lv"><b>5</b><span>소프트콘돔PLAINP(일…</span></div></div><div class="g-col"><div class="g-hd">3 <span>Rest &amp; Persona…</span></div><div class="g-lv"><b>1</b><span>수면·개인 상담 안내</span></div><div class="g-lv"><b>2</b><span>자멘쏙정</span></div><div class="g-lv"><b>3</b><span>앨리스랩 하이퍼셀 식물성…</span></div><div class="g-lv"><b>4</b><span>COZA 코자아</span></div><div class="g-lv"><b>5</b><span>푸레파인마일드연고</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#C2410C"><div class="e-hd">EL Tone &amp; Sun</div><div class="e-bz" style="background:#C2410C">BRAND · 마데카파마시아</div></div><div class="end" style="--c:#C2410C"><div class="e-hd">ER Scalp &amp; Rest</div><div class="e-no">두피 화장품</div></div></div></div><div class="gon" style="--c:#B45309;--bg:#FFFAEB;--bd:#FCECC5">
+      <div class="g-top"><div><b>G4</b> 비타민·이너뷰티·영양<div class="g-en">Vitamins &amp; Inner Beauty</div></div>
+        <div class="ic">🎁</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Vitamin C &amp; In…</span></div><div class="g-lv"><b>1</b><span>경구제품 분류 안내</span></div><div class="g-lv"><b>2</b><span>비타민씨정1000mg</span></div><div class="g-lv"><b>3</b><span>고려은단 비타민C1000…</span></div><div class="g-lv"><b>4</b><span>하이퍼셀 리포좀 글루타치…</span></div><div class="g-lv"><b>5</b><span>고려은단 비타민C1000…</span></div></div><div class="g-col"><div class="g-hd">2 <span>Gut Care</span></div><div class="g-lv"><b>1</b><span>장 건강·식품유형 안내</span></div><div class="g-lv"><b>2</b><span>생유산균_락토핏_골드_리…</span></div><div class="g-lv"><b>3</b><span>그린스토어 우먼프로바이오…</span></div><div class="g-lv"><b>4</b><span>테일러 딥워터 푸룬</span></div><div class="g-lv"><b>5</b><span>웰니스효소</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Collagen &amp; Pro…</span></div><div class="g-lv"><b>1</b><span>섭취형태·성분 중복 확인</span></div><div class="g-lv"><b>2</b><span>에버콜라겐 타임 레티놀 A</span></div><div class="g-lv"><b>3</b><span>앱솔루트콜라겐9.0</span></div><div class="g-lv"><b>4</b><span>낫띵베럴 단백질 쉐이크 …</span></div><div class="g-lv"><b>5</b><span>아르기닌 화이트 3X</span></div></div><div class="g-col"><div class="g-hd">2 <span>Daily Nutrition</span></div><div class="g-lv"><b>1</b><span>일상 영양 선택 안내</span></div><div class="g-lv"><b>2</b><span>고려은단 멀티비타민 올인…</span></div><div class="g-lv"><b>3</b><span>고려은단 루테인 지아잔틴…</span></div><div class="g-lv"><b>4</b><span>고려은단 식물성 알티지 …</span></div><div class="g-lv"><b>5</b><span>네츄럴메이드 코랄칼슘앤마…</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#B45309"><div class="e-hd">EL Inner Beauty</div><div class="e-bz" style="background:#B45309">BRAND · 에버콜라겐</div></div><div class="end" style="--c:#B45309"><div class="e-hd">ER Daily Nutrit…</div><div class="e-bz" style="background:#B45309">BRAND · 고려은단</div></div></div></div><div class="gon" style="--c:#BE185D;--bg:#FFF1F6;--bd:#FBD9E6">
+      <div class="g-top"><div><b>G5</b> PDRN·장벽·수분<div class="g-en">PDRN &amp; Barrier Care</div></div>
+        <div class="ic">🧴</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Dr.Reju-All</span></div><div class="g-lv"><b>1</b><span>닥터리쥬올 라인 안내</span></div><div class="g-lv"><b>2</b><span>(리쥬올)PDRN리쥬비네…</span></div><div class="g-lv"><b>3</b><span>닥터리쥬올-세라마이드 베…</span></div><div class="g-lv"><b>4</b><span>닥터리쥬올PDRN마스크</span></div><div class="g-lv"><b>5</b><span>닥터리쥬올-어드밴스드 P…</span></div></div><div class="g-col"><div class="g-hd">2 <span>E  주름·탄력</span></div><div class="g-lv"><b>1</b><span>주름·탄력과 사용성분 확인</span></div><div class="g-lv"><b>2</b><span>네오젠 리얼레티놀세럼</span></div><div class="g-lv"><b>3</b><span>톰 펩타이드 부스트 앰플…</span></div><div class="g-lv"><b>4</b><span>더마픽스 리쥬콜 코드알엔…</span></div><div class="g-lv"><b>5</b><span>마미케어 쥬베핏 펩타이드…</span></div></div><div class="g-col"><div class="g-hd">3 <span>PDRN 제형 비교</span></div><div class="g-lv"><b>1</b><span>PDRN 화장품 제형 안내</span></div><div class="g-lv"><b>2</b><span>리쥬비에스</span></div><div class="g-lv"><b>3</b><span>리쥬란 턴오버 인핸스드 …</span></div><div class="g-lv"><b>4</b><span>리쥬란 턴오버 마스크</span></div><div class="g-lv"><b>5</b><span>피더린 리쥬부스터 크림 …</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>C  장벽·건조</span></div><div class="g-lv"><b>1</b><span>장벽·건조 사용감 안내</span></div><div class="g-lv"><b>2</b><span>엠디스픽 테카테카 D판테…</span></div><div class="g-lv"><b>3</b><span>톰 PPM 트리플 시너지…</span></div><div class="g-lv"><b>4</b><span>비플레인 밀크 세라마이드…</span></div><div class="g-lv"><b>5</b><span>닥터리쥬진 하이퍼인퓨전 …</span></div></div><div class="g-col"><div class="g-hd">2 <span>D  민감·진정</span></div><div class="g-lv"><b>1</b><span>민감·진정 필요 안내</span></div><div class="g-lv"><b>2</b><span>테카플러스포뮬러 페이셜 …</span></div><div class="g-lv"><b>3</b><span>테카 플러스 포뮬러 페이…</span></div><div class="g-lv"><b>4</b><span>프로캄 후시메디 리페어 …</span></div><div class="g-lv"><b>5</b><span>비플레인 마데카소사이드 …</span></div></div><div class="g-col"><div class="g-hd">3 <span>C  얼굴 수분</span></div><div class="g-lv"><b>1</b><span>얼굴 수분 제형 안내</span></div><div class="g-lv"><b>2</b><span>비플레인 아쿠아 퓨어 히…</span></div><div class="g-lv"><b>3</b><span>비플레인 아쿠아 퓨어 히…</span></div><div class="g-lv"><b>4</b><span>비플레인 B5 수분 앰플…</span></div><div class="g-lv"><b>5</b><span>추가 수분 제형 여유</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#BE185D"><div class="e-hd">EL Skin Care Fi…</div><div class="e-bz" style="background:#BE185D">BRAND · 프로캄</div></div><div class="end" style="--c:#BE185D"><div class="e-hd">ER PDRN Guide</div><div class="e-bz" style="background:#BE185D">BRAND · 닥터리쥬올</div></div></div></div><div class="gon" style="--c:#6D28D9;--bg:#F6F3FF;--bd:#E2DBFB">
+      <div class="g-top"><div><b>G6</b> 립·눈·다리 / 발·걷기<div class="g-en">Lip, Eye &amp; Travel Comfort</div></div>
+        <div class="ic">👁</div></div>
+      <div class="g-face"><div class="g-lab">D 입구 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Lip Care</span></div><div class="g-lv"><b>1</b><span>큐립연고 마일드허브향</span></div><div class="g-lv"><b>2</b><span>프로캄 판테놀 스틱 립밤</span></div><div class="g-lv"><b>3</b><span>프로캄 판테놀 립 에센스</span></div><div class="g-lv"><b>4</b><span>리쥬올 PDRN 립세럼</span></div><div class="g-lv"><b>5</b><span>믹순 내추럴 콩 립 마스…</span></div></div><div class="g-col"><div class="g-hd">2 <span>Eye Care</span></div><div class="g-lv"><b>1</b><span>프렌즈아이드롭점안액(순)</span></div><div class="g-lv"><b>2</b><span>리안점안액</span></div><div class="g-lv"><b>3</b><span>블레파크린</span></div><div class="g-lv"><b>4</b><span>바슈롬 리뉴 후레쉬용액 …</span></div><div class="g-lv"><b>5</b><span>믹순 피디알엔 콜라겐 아…</span></div></div><div class="g-col"><div class="g-hd">3 <span>Leg Comfort</span></div><div class="g-lv"><b>1</b><span>다리 불편 상담 안내</span></div><div class="g-lv"><b>2</b><span>뉴베인액</span></div><div class="g-lv"><b>3</b><span>센시아정</span></div><div class="g-lv"><b>4</b><span>디오라인티 현탁용분말</span></div><div class="g-lv"><b>5</b><span>엘라스에이액</span></div></div></div></div>
+      <div class="g-face"><div class="g-lab u">U · POS 방향</div><div class="g-cols"><div class="g-col"><div class="g-hd">1 <span>Foot Treatments</span></div><div class="g-lv"><b>1</b><span>신신티눈밴드</span></div><div class="g-lv"><b>2</b><span>바르지오모두크림</span></div><div class="g-lv"><b>3</b><span>바르지오원스외용액</span></div><div class="g-lv"><b>4</b><span>노스엣센스액(염화알루미늄)</span></div><div class="g-lv"><b>5</b><span>신신티눈밴드(발바닥용)</span></div></div><div class="g-col"><div class="g-hd">2 <span>Foot Care</span></div><div class="g-lv"><b>1</b><span>발 화장품·의약품 구분</span></div><div class="g-lv"><b>2</b><span>프로캄 EGF 우레아 케…</span></div><div class="g-lv"><b>3</b><span>닥터원더 각질제거 악어발팩</span></div><div class="g-lv"><b>4</b><span>메디올가 올클리어 풋미스…</span></div><div class="g-lv"><b>5</b><span>아케이 리빙 티파니글라스…</span></div></div><div class="g-col"><div class="g-hd">3 <span>Walking &amp; Outd…</span></div><div class="g-lv"><b>1</b><span>하루온 붙이는 핫팩</span></div><div class="g-lv"><b>2</b><span>큐어온 관절보호대 테이핑…</span></div><div class="g-lv"><b>3</b><span>하루온 이지페인 아랫배온…</span></div><div class="g-lv"><b>4</b><span>마시는 스웨그 수분 부스터</span></div><div class="g-lv"><b>5</b><span>물린디액</span></div></div></div></div>
+      <div class="g-ends"><div class="end" style="--c:#6D28D9"><div class="e-hd">EL Lip &amp; Eye</div><div class="e-no">립 보습 화장품</div></div><div class="end" style="--c:#6D28D9"><div class="e-hd">ER Walk Comfort</div><div class="e-bz" style="background:#6D28D9">BRAND · 신신</div></div></div></div></div>
+
+<div class="sec"><span class="sn">05</span><span class="st">하단 진입부 B1–B8</span>
+  <span class="se">ENTRANCE DISCOVERY</span><span class="sr">좌측 4m · 우측 4m 슬라이딩 도어 · 좌: 증상 탐색 / 우: 더마·신제품</span></div>
+<div class="row8"><div class="card" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="hd"><div><div class="cd">B1</div>
+        <div class="nm">Acne Care</div>
+        <div class="rl">좌측 진입의 여드름 안내</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">면포성 여드름 외용제 …</span><span class="pr">애크린 겔 외 1</span><i>2</i></div><div class="lv "><b>3</b><span class="nd">스팟 보호 패치</span><span class="pr">이지덤뷰티</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">스팟 보호 패치</span><span class="pr">아크로패스 트러블 스팟…</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">추가 도입 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">4 SKU · 4F</span></div>
+    </div><div class="card" style="--c:#C2410C;--bg:#FFF4ED;--bd:#FDE4D3">
+      <div class="hd"><div><div class="cd">B2</div>
+        <div class="nm">Scar &amp; Wound</div>
+        <div class="rl">흉터와 상처의 차이</div></div>
+        <div class="ic">🩹</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">흉터 외용제</span><span class="pr">노스카나겔</span><i>1</i></div><div class="lv "><b>3</b><span class="nd">실리콘 흉터관리 제품</span><span class="pr">더마틱스울트라겔</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">일반·방수 밴드</span><span class="pr">케어리브(혼합형)</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">추가 도입 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">3 SKU · 3F</span></div>
+    </div><div class="card" style="--c:#0369A1;--bg:#EFF8FE;--bd:#CFE7F7">
+      <div class="hd"><div><div class="cd">B3</div>
+        <div class="nm">Travel Essentials</div>
+        <div class="rl">여행 위생용품 본진</div></div>
+        <div class="ic">💊</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">여행 위생 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">마스크·호흡기 위생</span><span class="pr">닥터플러스 KF94 황… 외 2</span><i>3</i></div><div class="lv "><b>3</b><span class="nd">수면 안대</span><span class="pr">살룸 3D 암막 수면 … 외 1</span><i>2</i></div><div class="lv "><b>4</b><span class="nd">접이식 여행컵</span><span class="pr">캐리에어 여행용 접이식… 외 1</span><i>2</i></div><div class="lv "><b>5</b><span class="nd">벌레 기피용품</span><span class="pr">모스세이프가드액 외 2</span><i>3</i></div></div>
+      <div class="ft"><span class="f">10 SKU · 10F</span></div>
+    </div><div class="card" style="--c:#A16207;--bg:#FEFCE8;--bd:#F7EAB8">
+      <div class="hd"><div><div class="cd">B4</div>
+        <div class="nm">Skin Care Finder</div>
+        <div class="rl">입구의 고민 길찾기</div></div>
+        <div class="ic">⭐</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">피부 고민 선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv gd"><b>2</b><span class="nd">A 여드름·피지 / B…</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv gd"><b>3</b><span class="nd">C 보습 / D 진정 …</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv gd"><b>4</b><span class="nd">약사 상담 결과·주 진…</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv gd"><b>5</b><span class="nd">후속 상담 도구 여유</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div></div>
+      <div class="ft"><span class="f">0 SKU · 0F</span></div>
+    </div><div class="card" style="--c:#B45309;--bg:#FFFAEB;--bd:#FCECC5">
+      <div class="hd"><div><div class="cd">B5</div>
+        <div class="nm">Wellness &amp; Gifts</div>
+        <div class="rl">영양·선물 탐색</div></div>
+        <div class="ic">🎁</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">비타민C 경구제품</span><span class="pr">고려은단 비타민C100…</span><i>1</i></div><div class="lv "><b>3</b><span class="nd">콜라겐·이너뷰티</span><span class="pr">에버콜라겐 타임 레티놀…</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">홍삼 제품</span><span class="pr">정원삼 6년근 고려홍삼…</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">추가 도입 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">3 SKU · 3F</span></div>
+    </div><div class="card" style="--c:#BE185D;--bg:#FFF1F6;--bd:#FBD9E6">
+      <div class="hd"><div><div class="cd">B6</div>
+        <div class="nm">PDRN Skincare</div>
+        <div class="rl">우측 진입의 성분 탐색</div></div>
+        <div class="ic">🧴</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">PDRN 스킨케어</span><span class="pr">(리쥬올)PDRN리쥬비…</span><i>1</i></div><div class="lv "><b>3</b><span class="nd">PDRN 스킨케어</span><span class="pr">리쥬비에스</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">PDRN 스킨케어</span><span class="pr">리쥬란 턴오버 마스크</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">추가 도입 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">3 SKU · 3F</span></div>
+    </div><div class="card" style="--c:#BE185D;--bg:#FFF1F6;--bd:#FBD9E6">
+      <div class="hd"><div><div class="cd">B7</div>
+        <div class="nm">Barrier &amp; Calm</div>
+        <div class="rl">건조·민감 첫 선택</div></div>
+        <div class="ic">🧴</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">선택 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">장벽·보습 스킨케어</span><span class="pr">닥터리쥬올-세라마이드 …</span><i>1</i></div><div class="lv "><b>3</b><span class="nd">진정 스킨케어</span><span class="pr">테카플러스포뮬러 페이셜…</span><i>1</i></div><div class="lv "><b>4</b><span class="nd">수분 스킨케어</span><span class="pr">비플레인 아쿠아 퓨어 …</span><i>1</i></div><div class="lv rs"><b>5</b><span class="nd">추가 도입 여유</span><span class="pr"><span class="mut">확장 여유</span></span><i></i></div></div>
+      <div class="ft"><span class="f">3 SKU · 3F</span></div>
+    </div><div class="card" style="--c:#A16207;--bg:#FEFCE8;--bd:#F7EAB8">
+      <div class="hd"><div><div class="cd">B8</div>
+        <div class="nm">New &amp; Trial</div>
+        <div class="rl">신규 브랜드 한 테마</div></div>
+        <div class="ic">⭐</div></div>
+      <div class="lvs"><div class="lv gd"><b>1</b><span class="nd">시험 브랜드·기간 안내</span><span class="pr"><span class="mut">분류·상담 안내</span></span><i></i></div><div class="lv "><b>2</b><span class="nd">톰 CPR 세럼 시험</span><span class="pr">톰 CPR 트리플 시너… 외 2</span><i>3</i></div><div class="lv "><b>3</b><span class="nd">톰 NMN 세럼 시험</span><span class="pr">톰 NMN 10X 포텐… 외 2</span><i>3</i></div><div class="lv "><b>4</b><span class="nd">톰 NMN 크림 시험</span><span class="pr">톰 NMN 10X 포텐… 외 1</span><i>2</i></div><div class="lv new"><b>5</b><span class="nd">다음 브랜드 시험 여유</span><span class="pr">톰 PPM 30,000…</span><i>1</i></div></div>
+      <div class="ft"><span class="f">9 SKU · 9F</span></div>
+    </div></div>
+
+<div class="foot">
+  <span><b>선반 번호</b> S1 = 최상단 → S5 = 최하단</span>
+  <span><b>곤돌라·엔드 S1</b> 개구 80mm — 안내 유지</span>
+  <span><b>추가 배정</b> 347행 (파란색 표기) · 보류 37행</span>
+  <span style="margin-left:auto">대표 상품은 선정 후보이며 최종 취급·페이싱은 실측·거래 확인 후 확정합니다.</span>
+</div>
+</body></html>

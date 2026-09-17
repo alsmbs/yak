@@ -1,0 +1,9614 @@
+{
+ "generatedAt": "2026-09-17",
+ "totals": {
+  "modules": 63,
+  "shelves": 315,
+  "baseSku": 367,
+  "baseF": 391,
+  "addSku": 347,
+  "hold": 37,
+  "totalF": 738,
+  "brandZones": 9
+ },
+ "modules": {
+  "W1": {
+   "id": "W1",
+   "name": "Skin Treatments",
+   "theme": "피부약·상처 보호",
+   "role": "피부 고관여 상담",
+   "color": "#C2410C",
+   "face": "W",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "W1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "PDRN 분류·상담 안내",
+     "group": "PDRN 일반의약품 / 창상피복재·MD 크림",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "W1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "PDRN 일반의약품",
+     "group": "PDRN 일반의약품",
+     "items": [
+      {
+       "code": "2364",
+       "name": "리쥬비넥스크림",
+       "spec": "10g",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "W1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "가려움·피부염 외용약",
+     "group": "피부염·가려움 외용제",
+     "items": [
+      {
+       "code": "0002",
+       "name": "리도프론크림",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1901",
+       "name": "녹십자노바손크림",
+       "spec": "15g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "W1/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "피부 상담약 확장 여유",
+     "group": "피부염·가려움 외용제",
+     "items": [
+      {
+       "code": "0026",
+       "name": "쎄레스틴크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2362",
+       "name": "엘린플러스크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "W1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "MD 보호재·의료기기 분리",
+     "group": "창상피복재·MD 크림",
+     "items": [
+      {
+       "code": "2328",
+       "name": "리쥬비엠디크림",
+       "spec": "60g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0602",
+       "name": "비티테라 테라베리어크림 엠디(MD)",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 7,
+   "facings": 8
+  },
+  "W2": {
+   "id": "W2",
+   "name": "Dermocosmetics",
+   "theme": "더마·세정·선케어",
+   "role": "EGF·프리미엄 비교",
+   "color": "#BE185D",
+   "face": "W",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "W2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "EGF 화장품 제형 안내",
+     "group": "EGF 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "W2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "EGFx 앰플 비교",
+     "group": "EGF 스킨케어",
+     "items": [
+      {
+       "code": "2295",
+       "name": "이지에프엑스 포스트레이저",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2297",
+       "name": "이지에프엑스 포스트엘써마",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2300",
+       "name": "이지에프엑스 포스트스킨부스터",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "W2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "프로캄·이지듀 EGF 크림",
+     "group": "EGF 스킨케어",
+     "items": [
+      {
+       "code": "2442",
+       "name": "프로캄EGF 액티브 바이탈 크림",
+       "spec": "1ea",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2303",
+       "name": "이지듀 3X 이지에프10 리페어크림",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "W2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "EGF·PDRN 마스크",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2372",
+       "name": "프로캄 EGF PDRN 액티브 시너지 마스크",
+       "spec": "3매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "W2/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "프리미엄 추가 규격 여유",
+     "group": "EGF 스킨케어",
+     "items": [
+      {
+       "code": "1839",
+       "name": "더마터치 스페셜 기프트 세트",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "분류·표시 확인 후 진열"
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 7,
+   "facings": 8
+  },
+  "W3": {
+   "id": "W3",
+   "name": "Seasonal Picks",
+   "theme": "추천·상담 안내",
+   "role": "월별 선택 테마",
+   "color": "#A16207",
+   "face": "W",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "W3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "환절기 보습 테마",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "W3/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "진정 크림 테마",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2461",
+       "name": "프로캄 후시메디 리페어 크림S",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "W3/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "장벽 세럼 테마",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2415",
+       "name": "톰 PPM 트리플 시너지 베리어 세럼",
+       "spec": "30mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "W3/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "립 보습 연결",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2336",
+       "name": "리쥬올 PDRN 립세럼",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "W3/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "다음 테마 교체 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 3,
+   "facings": 3
+  },
+  "W4": {
+   "id": "W4",
+   "name": "Daily Vitamins",
+   "theme": "영양·건강 선물",
+   "role": "경구 영양·약사 상담",
+   "color": "#B45309",
+   "face": "W",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "W4/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "경구 영양 상담 안내",
+     "group": "비타민B 경구제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "W4/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "비타민B 의약품",
+     "group": "비타민B 경구제품",
+     "items": [
+      {
+       "code": "1998",
+       "name": "비맥스메타비",
+       "spec": "120정*2",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2406",
+       "name": "임팩타민 시그니처정",
+       "spec": "120정",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2002",
+       "name": "비맥스메타정",
+       "spec": "60T*2EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2199",
+       "name": "고려은단 메가도스B 비타민B군",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1999",
+       "name": "비맥스액티브정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2001",
+       "name": "비맥스에버프리미엄정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2000",
+       "name": "비맥스제트",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2003",
+       "name": "투엑스비트리플정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "W4/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "마그네슘 경구제품",
+     "group": "마그네슘 경구제품",
+     "items": [
+      {
+       "code": "2410",
+       "name": "마그비스피드더블액션",
+       "spec": "6병*5개",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0052",
+       "name": "마그콤",
+       "spec": "30mL*10병*3EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2411",
+       "name": "마그비스피드액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2270",
+       "name": "프레스샷 마그코어",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "W4/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "글루타치온 의약품",
+     "group": "글루타치온 경구 의약품",
+     "items": [
+      {
+       "code": "1907",
+       "name": "에바치온캡슐",
+       "spec": "2c*90EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "W4/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "피로·간·한방 상담약",
+     "group": "자양강장·한방 상담약 / 간 관련 상담약",
+     "items": [
+      {
+       "code": "0013",
+       "name": "글루콤액",
+       "spec": "10mL*15병*3EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2052",
+       "name": "한풍 경옥고",
+       "spec": "20포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2489",
+       "name": "우루사정100mg",
+       "spec": "10T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2488",
+       "name": "헤파토스시럽",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2494",
+       "name": "(논현)광동원탕",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2477",
+       "name": "경옥고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2493",
+       "name": "광동쌍화탕",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2060",
+       "name": "광동우황청심원",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2062",
+       "name": "광동우황청심원",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2064",
+       "name": "광동우황청심원원방",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2066",
+       "name": "광동원방우황청심환",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2459",
+       "name": "동아박카스D",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2386",
+       "name": "라라올라",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2006",
+       "name": "리버골드파워연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2490",
+       "name": "리버쿨환",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0024",
+       "name": "메모큐액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2450",
+       "name": "박카스O",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2473",
+       "name": "박카스디카페",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2522",
+       "name": "자하생력",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0048",
+       "name": "헤파모닝액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 20
+    }
+   ],
+   "pending": [
+    {
+     "code": "2069",
+     "name": "도담도담트리플비타액",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "2004",
+     "name": "액티핏",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "2054",
+     "name": "정원삼 6년근 고려홍정365 젤리스틱",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    }
+   ],
+   "skuRows": 36,
+   "facings": 36
+  },
+  "W5": {
+   "id": "W5",
+   "name": "Wellness Gifts",
+   "theme": "영양·건강 선물",
+   "role": "건강 선물 본진",
+   "color": "#B45309",
+   "face": "W",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "W5/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "정규 선물 구성 안내",
+     "group": "홍삼 제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "W5/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "멀티비타민 정규 세트",
+     "group": "멀티비타민·미네랄",
+     "items": [
+      {
+       "code": "2216",
+       "name": "한미 엔플 프리미엄 멀티비타민 이뮨삿 7병",
+       "spec": "7병",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2398",
+       "name": "비타블로썸 멀티비타민 이뮨 부스터",
+       "spec": "7병",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2068",
+       "name": "정원삼 침향기력단",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2067",
+       "name": "정원삼 침향보력단",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "W5/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "홍삼 30포 비교",
+     "group": "홍삼 제품",
+     "items": [
+      {
+       "code": "2059",
+       "name": "정원삼 6년근 고려홍삼정365스틱",
+       "spec": "10g*30포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2055",
+       "name": "정원삼 6년근 발효홍삼 농축액스틱",
+       "spec": "10g*30포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2015",
+       "name": "사뮤르 이너뷰티 홍삼스틱",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2063",
+       "name": "정원삼 6년근 고려홍삼정 365스틱 키즈",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "W5/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "콜라겐·홍삼 젤리",
+     "group": "콜라겐·이너뷰티 / 홍삼 제품",
+     "items": [
+      {
+       "code": "0061",
+       "name": "에버콜라겐 블랙",
+       "spec": "84T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2053",
+       "name": "정원삼 6년근 고려홍삼정 로얄젤리스틱",
+       "spec": "10g*30포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2056",
+       "name": "정원삼 6년근 고려홍삼정 365스틱 100포",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2065",
+       "name": "정원삼 6년근 발효홍삼정365(4병)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "W5/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다매 홍삼·절편",
+     "group": "홍삼 제품",
+     "items": [
+      {
+       "code": "2057",
+       "name": "정원삼 6년근 고려홍삼정365스틱",
+       "spec": "10g*50포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2085",
+       "name": "정원삼 고려홍삼절편 365",
+       "spec": "20g*10개",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2061",
+       "name": "정원삼 6년근 고려홍삼정 365스틱 키즈",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2058",
+       "name": "정원삼 정성담은 고려홍삼스틱",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    }
+   ],
+   "pending": [],
+   "skuRows": 16,
+   "facings": 16
+  },
+  "L1": {
+   "id": "L1",
+   "name": "Cold & Allergy",
+   "theme": "일반약·여행·생활",
+   "role": "일반약 실용 구색",
+   "color": "#0369A1",
+   "face": "L",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "L1/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "알레르기 정제·낮은 포장",
+     "group": "비염·알레르기 상담약",
+     "items": [
+      {
+       "code": "1957",
+       "name": "지르텍정",
+       "spec": "10T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2434",
+       "name": "알러샷연질캡슐",
+       "spec": "10c",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "L1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "감기 주간·야간 구분",
+     "group": "종합감기 상담약",
+     "items": [
+      {
+       "code": "1958",
+       "name": "헤일리온_테라플루 데이타임 (포) 6P",
+       "spec": "6포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2435",
+       "name": "콜대원 콜드큐시럽",
+       "spec": "20ml*5",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1966",
+       "name": "헤일리온_테라플루 나이트타임",
+       "spec": "6포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2536",
+       "name": "모드콜에스연질캡슐",
+       "spec": "10c",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2039",
+       "name": "챔프콜드펜하이시럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2433",
+       "name": "콜대원 나이트시럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 6
+    },
+    {
+     "id": "L1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "기침·인후 제형",
+     "group": "기침·인후 상담약",
+     "items": [
+      {
+       "code": "2070",
+       "name": "용각산쿨과립(복숭아)",
+       "spec": "18p",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2430",
+       "name": "목앤스프레이",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2432",
+       "name": "콜대원코프큐시럽",
+       "spec": "20mL*5포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2426",
+       "name": "맥그론과립(맥문동탕)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2073",
+       "name": "용각산쿨과립(민트)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2424",
+       "name": "트로겐연조엑스(구풍해독탕)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2419",
+       "name": "한풍은교산엑스과립",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "L1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "코 증상 스프레이",
+     "group": "비염·알레르기 상담약",
+     "items": [
+      {
+       "code": "2420",
+       "name": "코앤나잘스프레이",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2423",
+       "name": "코앤쿨나잘스프레이",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2537",
+       "name": "모드코에스연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2431",
+       "name": "콜대원노즈큐에스시럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2428",
+       "name": "한풍소청룡탕엑스과립",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "L1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "어린이 여행 상담",
+     "group": "종합감기 상담약 / 기침·인후 상담약 / 비염·알레르기 상담약",
+     "items": [
+      {
+       "code": "2042",
+       "name": "챔프콜드펜시럽",
+       "spec": "10포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2043",
+       "name": "챔프코프액(포도향)",
+       "spec": "10포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2047",
+       "name": "챔프노즈시럽(복숭아향)",
+       "spec": "10포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2535",
+       "name": "모드코프에스연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2071",
+       "name": "용각산쿨과립(블루베리)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2422",
+       "name": "한풍드루산(갈근탕)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2427",
+       "name": "한풍청폐탕엑스과립",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    }
+   ],
+   "pending": [
+    {
+     "code": "2072",
+     "name": "스노킬스프레이액(잔탄검)",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 28,
+   "facings": 28
+  },
+  "L2": {
+   "id": "L2",
+   "name": "Stomach & Travel",
+   "theme": "일반약·여행·생활",
+   "role": "소화·배변·이동 상담",
+   "color": "#0369A1",
+   "face": "L",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "L2/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "소화 정제·낮은 포장",
+     "group": "소화·위장 상담약",
+     "items": [
+      {
+       "code": "2023",
+       "name": "훼스탈슈퍼자임정",
+       "spec": "12T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2030",
+       "name": "다제스캡슐",
+       "spec": "10C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2388",
+       "name": "까스앤프리츄정",
+       "spec": "12T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "L2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "소화·속 불편 액상",
+     "group": "소화·위장 상담약",
+     "items": [
+      {
+       "code": "2019",
+       "name": "겔포스엘 현탁액",
+       "spec": "6포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2020",
+       "name": "베나치오이지",
+       "spec": "6포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2400",
+       "name": "트리겔현탁액 10ml*8p",
+       "spec": "10ml*8p",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2018",
+       "name": "겔포스엘현탁액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2253",
+       "name": "까스활명수큐액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1888",
+       "name": "꼬마활명수액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0023",
+       "name": "더블자임정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2387",
+       "name": "반사신과립(반하사심탕엑스과립)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2034",
+       "name": "백초시럽플러스",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0050",
+       "name": "위엔부틴정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2022",
+       "name": "위제로알파정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2021",
+       "name": "활명수유액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 12
+    },
+    {
+     "id": "L2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "설사 상담",
+     "group": "설사 상담약",
+     "items": [
+      {
+       "code": "2393",
+       "name": "포타겔현탁액",
+       "spec": "20mL*6포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2391",
+       "name": "로페시콘츄정",
+       "spec": "12T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2539",
+       "name": "일양정로환에프정",
+       "spec": "36정",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2032",
+       "name": "설멈츄정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "L2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "변비 상담",
+     "group": "변비 상담약",
+     "items": [
+      {
+       "code": "2035",
+       "name": "굿모닝에스과립",
+       "spec": "10P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2031",
+       "name": "한풍올가과립",
+       "spec": "6P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2408",
+       "name": "아시원슬림산",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2407",
+       "name": "아시원정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "L2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "멀미·이동 상담",
+     "group": "멀미 상담약",
+     "items": [
+      {
+       "code": "2050",
+       "name": "보나링츄어블정",
+       "spec": "4T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2051",
+       "name": "멀스토구강용해필름",
+       "spec": "2매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2048",
+       "name": "해피트립액",
+       "spec": "4포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0066",
+       "name": "나들이시럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    }
+   ],
+   "pending": [
+    {
+     "code": "2456",
+     "name": "레스큐라이트액",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1931",
+     "name": "브로립신정",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "0067",
+     "name": "세노비아에프정",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "0069",
+     "name": "알미틴플러스정",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "0062",
+     "name": "인콤정",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2254",
+     "name": "크리맥액",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 33,
+   "facings": 33
+  },
+  "L3": {
+   "id": "L3",
+   "name": "Pain Relief",
+   "theme": "일반약·여행·생활",
+   "role": "진통·파스 본진",
+   "color": "#0369A1",
+   "face": "L",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "L3/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "해열·진통 소포장",
+     "group": "경구 해열·진통제",
+     "items": [
+      {
+       "code": "1934",
+       "name": "타이레놀정500mg",
+       "spec": "10T",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1940",
+       "name": "이지엔6이브",
+       "spec": "10c",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1947",
+       "name": "탁센연질캡슐",
+       "spec": "10c",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1949",
+       "name": "탁센덱시연질캡슐",
+       "spec": "10C",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "L3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "파스 기본·롱 규격",
+     "group": "파스·바르는 진통제",
+     "items": [
+      {
+       "code": "1890",
+       "name": "신신파스아렉스(중)",
+       "spec": "10매",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1875",
+       "name": "신신파스플렉스 아렉스마일드",
+       "spec": "6매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1883",
+       "name": "신신파스 아렉스 롱",
+       "spec": "6매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1884",
+       "name": "신신파스-RX(소형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2409",
+       "name": "안티푸라민연고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1944",
+       "name": "이지엔6프로연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1935",
+       "name": "타이레놀정500mg",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "L3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "코인·쿨 타입",
+     "group": "파스·바르는 진통제",
+     "items": [
+      {
+       "code": "1902",
+       "name": "로이히츠보코 코인플라스타",
+       "spec": "156매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1867",
+       "name": "디펜쿨플라스타",
+       "spec": "10매*4EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1950",
+       "name": "레이디원 연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1893",
+       "name": "신신물파스에스",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1886",
+       "name": "신신파스아렉스(대형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2404",
+       "name": "안티푸라민연고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1942",
+       "name": "이지엔6프로연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1945",
+       "name": "탁센레이디연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "L3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "바르는 진통 제형",
+     "group": "파스·바르는 진통제",
+     "items": [
+      {
+       "code": "2405",
+       "name": "안티푸라민연고",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1897",
+       "name": "안티푸라민로션에스",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1895",
+       "name": "제놀록소파워겔",
+       "spec": "60g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1878",
+       "name": "신신파스 플렉스 캐네펜",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2542",
+       "name": "안티푸라민 더블파워 대형",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1941",
+       "name": "이지엔6애니연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2045",
+       "name": "챔프시럽(체리향)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1933",
+       "name": "탁센아세트아미노펜",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "L3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "분사형·큰 포장",
+     "group": "파스·바르는 진통제",
+     "items": [
+      {
+       "code": "1891",
+       "name": "신신에어파스에프",
+       "spec": "300ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2403",
+       "name": "안티푸라민쿨에어파스",
+       "spec": "220ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1983",
+       "name": "세나트리플연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1880",
+       "name": "신신파스 플렉스 한방",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2541",
+       "name": "안티푸라민 더블파워 중형",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1943",
+       "name": "이지엔6이브연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2040",
+       "name": "챔프이부펜시럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    }
+   ],
+   "pending": [],
+   "skuRows": 34,
+   "facings": 36
+  },
+  "L4": {
+   "id": "L4",
+   "name": "Oral Care",
+   "theme": "립·눈·다리·구강",
+   "role": "구강 위생·상담",
+   "color": "#6D28D9",
+   "face": "L",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "L4/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "구내염 상담·낮은 포장",
+     "group": "구내염·구강 상담약",
+     "items": [
+      {
+       "code": "1927",
+       "name": "페리톡겔 10g",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1937",
+       "name": "페리덱스연고",
+       "spec": "6g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "L4/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "잇몸·불소 치약",
+     "group": "치약",
+     "items": [
+      {
+       "code": "2316",
+       "name": "오스템 옥치잇몸치약",
+       "spec": "150g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2317",
+       "name": "옥치불소1450치약",
+       "spec": "150g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2356",
+       "name": "테라브레스마일드민트치약",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "L4/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "휴대 가글·구강 스프레이",
+     "group": "가글·구강 스프레이",
+     "items": [
+      {
+       "code": "2172",
+       "name": "폼글 거품가글 슈퍼민트(알란토인) 50ml",
+       "spec": "50ML",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2105",
+       "name": "블루브레스구강스프레이",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2512",
+       "name": "테라브레스 프레시브레스 오랄린스 레인포레스트민트향",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "L4/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "칫솔·치실·혀 세정",
+     "group": "칫솔·치실·구강용품",
+     "items": [
+      {
+       "code": "2140",
+       "name": "유이앤루이 핀포인트 칫솔",
+       "spec": "1개",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2131",
+       "name": "아케이바이 오토 디스펜서 치실",
+       "spec": "1개입",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2173",
+       "name": "폼글 양면 혀클리너 (블루) 1P",
+       "spec": "13",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "L4/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "일상 가글 큰 포장",
+     "group": "가글·구강 스프레이",
+     "items": [
+      {
+       "code": "2074",
+       "name": "테라브레스 프레시브레스 클린민트",
+       "spec": "473mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2511",
+       "name": "테라브레스 헬시스마일 오랄린스 스파클민트향",
+       "spec": "473ML",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 13,
+   "facings": 13
+  },
+  "B1": {
+   "id": "B1",
+   "name": "Acne Care",
+   "theme": "피부약·상처 보호",
+   "role": "좌측 진입의 여드름 안내",
+   "color": "#C2410C",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "면포성 여드름 외용제 / 붉은 여드름 외용제 / 기타 여드름 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B1/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "면포성 여드름 외용제 / 붉은 여드름 외용제",
+     "group": "면포성 여드름 외용제 / 붉은 여드름 외용제",
+     "items": [
+      {
+       "code": "1835",
+       "name": "애크린 겔",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1856",
+       "name": "애크논 크림",
+       "spec": "13g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "B1/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "스팟 보호 패치",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "2320",
+       "name": "이지덤뷰티",
+       "spec": "57매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B1/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "스팟 보호 패치",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "0903",
+       "name": "아크로패스 트러블 스팟 카밍 패치 (60패치)",
+       "spec": "60매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B1/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 4,
+   "facings": 4
+  },
+  "B2": {
+   "id": "B2",
+   "name": "Scar & Wound",
+   "theme": "피부약·상처 보호",
+   "role": "흉터와 상처의 차이",
+   "color": "#C2410C",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "흉터 외용제 / 상처 항균 외용제 / 일반·방수 밴드",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B2/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "흉터 외용제",
+     "group": "흉터 외용제",
+     "items": [
+      {
+       "code": "1833",
+       "name": "노스카나겔",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B2/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "실리콘 흉터관리 제품",
+     "group": "실리콘 흉터관리 제품",
+     "items": [
+      {
+       "code": "1841",
+       "name": "더마틱스울트라겔",
+       "spec": "15g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B2/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "일반·방수 밴드",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "2474",
+       "name": "케어리브(혼합형)",
+       "spec": "20매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B2/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 3,
+   "facings": 3
+  },
+  "B3": {
+   "id": "B3",
+   "name": "Travel Essentials",
+   "theme": "일반약·여행·생활",
+   "role": "여행 위생용품 본진",
+   "color": "#0369A1",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "여행 위생 안내",
+     "group": "마스크·위생 소모품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "마스크·호흡기 위생",
+     "group": "마스크·위생 소모품",
+     "items": [
+      {
+       "code": "0106",
+       "name": "닥터플러스 KF94 황사마스크 (대형/검정색/새부리형)",
+       "spec": "1매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0089",
+       "name": "이케어 데일리마스크",
+       "spec": "5매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0091",
+       "name": "세븐플러스 일회용 부직포 마스크",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "B3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "수면 안대",
+     "group": "여행·생활용품",
+     "items": [
+      {
+       "code": "2110",
+       "name": "살룸 3D 암막 수면 안대",
+       "spec": "1개입",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2112",
+       "name": "살룸 초경량 수면 안대 세트",
+       "spec": "1개입",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "B3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "접이식 여행컵",
+     "group": "여행·생활용품",
+     "items": [
+      {
+       "code": "2144",
+       "name": "캐리에어 여행용 접이식 실리콘컵",
+       "spec": "2개입",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2111",
+       "name": "살룸 속옷 보관 파우치",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "B3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "벌레 기피용품",
+     "group": "마스크·위생 소모품",
+     "items": [
+      {
+       "code": "1868",
+       "name": "모스세이프가드액",
+       "spec": "60ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0107",
+       "name": "닥터플러스 KF94 황사마스크 (대형/백색/새부리형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0090",
+       "name": "이케어 데일리마스크(검정색) 5매입",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 10
+  },
+  "B4": {
+   "id": "B4",
+   "name": "Skin Care Finder",
+   "theme": "추천·상담 안내",
+   "role": "입구의 고민 길찾기",
+   "color": "#A16207",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B4/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "피부 고민 선택 안내",
+     "group": "피지·모공 스킨케어 / 톤·브라이트닝 스킨케어 / 장벽·보습 스킨케어 / 진정 스킨케어 / 탄력·주름 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B4/S2",
+     "level": 2,
+     "status": "안내",
+     "short": "안내",
+     "need": "A 여드름·피지 / B 톤",
+     "group": "면포성 여드름 외용제 / 피지·모공 스킨케어 / 기미·색소 외용제 / 톤·브라이트닝 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B4/S3",
+     "level": 3,
+     "status": "안내",
+     "short": "안내",
+     "need": "C 보습 / D 진정 / E 탄력",
+     "group": "장벽·보습 스킨케어 / 진정 스킨케어 / 탄력·주름 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B4/S4",
+     "level": 4,
+     "status": "안내",
+     "short": "안내",
+     "need": "약사 상담 결과·주 진열 지도",
+     "group": "면포성 여드름 외용제 / 흉터 외용제 / 기미·색소 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B4/S5",
+     "level": 5,
+     "status": "안내",
+     "short": "안내",
+     "need": "후속 상담 도구 여유",
+     "group": "면포성 여드름 외용제 / 흉터 외용제 / 기미·색소 외용제",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 0,
+   "facings": 0
+  },
+  "B5": {
+   "id": "B5",
+   "name": "Wellness & Gifts",
+   "theme": "영양·건강 선물",
+   "role": "영양·선물 탐색",
+   "color": "#B45309",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B5/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "비타민C 경구제품 / 멀티비타민·미네랄 / 홍삼 제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B5/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "비타민C 경구제품",
+     "group": "비타민C 경구제품",
+     "items": [
+      {
+       "code": "2204",
+       "name": "고려은단 비타민C1000(120T)",
+       "spec": "120T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B5/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "콜라겐·이너뷰티",
+     "group": "콜라겐·이너뷰티",
+     "items": [
+      {
+       "code": "0001",
+       "name": "에버콜라겐 타임 레티놀 A",
+       "spec": "30포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B5/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "홍삼 제품",
+     "group": "홍삼 제품",
+     "items": [
+      {
+       "code": "2059",
+       "name": "정원삼 6년근 고려홍삼정365스틱",
+       "spec": "10g*30포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B5/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 3,
+   "facings": 3
+  },
+  "B6": {
+   "id": "B6",
+   "name": "PDRN Skincare",
+   "theme": "더마·세정·선케어",
+   "role": "우측 진입의 성분 탐색",
+   "color": "#BE185D",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B6/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "PDRN 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B6/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "PDRN 스킨케어",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2347",
+       "name": "(리쥬올)PDRN리쥬비네이팅크림",
+       "spec": "30mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B6/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "PDRN 스킨케어",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "1847",
+       "name": "리쥬비에스",
+       "spec": "",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B6/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "PDRN 스킨케어",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2332",
+       "name": "리쥬란 턴오버 마스크",
+       "spec": "40ml*5ea",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B6/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 3,
+   "facings": 3
+  },
+  "B7": {
+   "id": "B7",
+   "name": "Barrier & Calm",
+   "theme": "더마·세정·선케어",
+   "role": "건조·민감 첫 선택",
+   "color": "#BE185D",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B7/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "장벽·보습 스킨케어 / 진정 스킨케어 / 수분 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B7/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "장벽·보습 스킨케어",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2339",
+       "name": "닥터리쥬올-세라마이드 베리어 크림",
+       "spec": "90mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B7/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "진정 스킨케어",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2547",
+       "name": "테카플러스포뮬러 페이셜 리페어 크림",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B7/S4",
+     "level": 4,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "수분 스킨케어",
+     "group": "수분 스킨케어",
+     "items": [
+      {
+       "code": "2276",
+       "name": "비플레인 아쿠아 퓨어 히알루로닉 크림",
+       "spec": "70ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "B7/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 3,
+   "facings": 3
+  },
+  "B8": {
+   "id": "B8",
+   "name": "New & Trial",
+   "theme": "추천·상담 안내",
+   "role": "신규 브랜드 한 테마",
+   "color": "#A16207",
+   "face": "B",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "B8/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "시험 브랜드·기간 안내",
+     "group": "신성분 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "B8/S2",
+     "level": 2,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "톰 CPR 세럼 시험",
+     "group": "신성분 스킨케어",
+     "items": [
+      {
+       "code": "1730",
+       "name": "톰 CPR 트리플 시너지 링클케어 세럼 (30ml)",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0911",
+       "name": "엑소바이오 시카 엑소좀 프리미엄 앰플",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1672",
+       "name": "오닝바이브 파인샷 엑소좀 하이드레이팅 토너",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "B8/S3",
+     "level": 3,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "톰 NMN 세럼 시험",
+     "group": "신성분 스킨케어",
+     "items": [
+      {
+       "code": "1733",
+       "name": "톰 NMN 10X 포텐좀 모공 리프팅 세럼 (30ml)",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1673",
+       "name": "오닝바이브 파인샷 엑소좀 하이드레이팅 앰플",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0619",
+       "name": "원진이펙트 닥터원진 PDLLA 부스팅 풀 샷 앰플",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "B8/S4",
+     "level": 4,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "톰 NMN 크림 시험",
+     "group": "신성분 스킨케어",
+     "items": [
+      {
+       "code": "1734",
+       "name": "톰 NMN 10X 포텐좀 모공 리프팅 크림 (60ml)",
+       "spec": "60ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1674",
+       "name": "오닝바이브 파인샷 엑소좀 하이드레이팅 크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "B8/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "다음 브랜드 시험 여유",
+     "group": "안내·교체 여유",
+     "items": [
+      {
+       "code": "1731",
+       "name": "톰 PPM 30,000 트리플 시너지 릴리프 크림 (50ml)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "분류·표시 확인 후 진열"
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 9,
+   "facings": 9
+  },
+  "G1-D-1": {
+   "id": "G1-D-1",
+   "name": "여드름 외용제",
+   "theme": "피부약·상처 보호",
+   "role": "상태별 선택",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-D-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "현재 피부 상태 확인",
+     "group": "면포성 여드름 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "면포성 여드름 외용약",
+     "group": "면포성 여드름 외용제",
+     "items": [
+      {
+       "code": "1835",
+       "name": "애크린 겔",
+       "spec": "20g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1853",
+       "name": "클리어틴외용액2%",
+       "spec": "30mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "붉은 여드름 외용약",
+     "group": "붉은 여드름 외용제",
+     "items": [
+      {
+       "code": "1856",
+       "name": "애크논 크림",
+       "spec": "13g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1821",
+       "name": "큐아크네플러스크림",
+       "spec": "15g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0012",
+       "name": "케어아크네크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G1-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 성분 여드름약",
+     "group": "기타 여드름 외용제",
+     "items": [
+      {
+       "code": "1854",
+       "name": "파티마겔2.5%",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2361",
+       "name": "아젤리아크림",
+       "spec": "30G",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1855",
+       "name": "아크덤겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-D-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "기타 여드름약 비교",
+     "group": "기타 여드름 외용제",
+     "items": [
+      {
+       "code": "1857",
+       "name": "세비타비겔",
+       "spec": "18g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2554",
+       "name": "센스힐겔",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 12
+  },
+  "G1-D-2": {
+   "id": "G1-D-2",
+   "name": "스팟 보호 패치",
+   "theme": "피부약·상처 보호",
+   "role": "형태별 선택",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-D-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "패치 용도·피부 상태 안내",
+     "group": "스팟 보호 패치",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "일상 스팟 보호 패치",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "2320",
+       "name": "이지덤뷰티",
+       "spec": "57매",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2311",
+       "name": "이지덤밴드뷰티릴리프",
+       "spec": "57매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2091",
+       "name": "닥터원더 트러블스팟 원더패치 60매",
+       "spec": "60ea",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G1-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "국소 패치·다른 소재",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "2319",
+       "name": "이지덤뷰티 퀵카밍 6매",
+       "spec": "6매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0905",
+       "name": "아크로패스 트러블큐어 마이크로콘 패치(스몰, 9패치)",
+       "spec": "9패치",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2315",
+       "name": "이지덤리얼카밍",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-D-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "카밍·스팟 패치 비교",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "0903",
+       "name": "아크로패스 트러블 스팟 카밍 패치 (60패치)",
+       "spec": "60매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0904",
+       "name": "아크로패스 트러블 스팟 케어 패치 (72패치)",
+       "spec": "72매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다매 포장·대체 비교",
+     "group": "스팟 보호 패치",
+     "items": [
+      {
+       "code": "2090",
+       "name": "닥터원더 트러블스팟 원더패치 135매",
+       "spec": "135ea",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2555",
+       "name": "마데카밴드트러블케어매직패치",
+       "spec": "60매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 11
+  },
+  "G1-D-3": {
+   "id": "G1-D-3",
+   "name": "A  피지·모공",
+   "theme": "더마·세정·선케어",
+   "role": "Pores & Spot Care",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-D-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "피지·모공 고민 안내",
+     "group": "피지·모공 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-D-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "지성 피부 크림·겔",
+     "group": "피지·모공 스킨케어",
+     "items": [
+      {
+       "code": "1055",
+       "name": "엠디스픽 테카테카 징크 PCA 클리어 크림 Rx",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2467",
+       "name": "아크페어 클리어 겔",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1157",
+       "name": "메디큐브 제로 모공 블랙헤드 머드팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-D-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "피지 고민 세럼",
+     "group": "피지·모공 스킨케어",
+     "items": [
+      {
+       "code": "2238",
+       "name": "프랭클리 나이아신아마이드15% 징크 비즈 트러블케어세럼 30ml",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2416",
+       "name": "톰 ABC 트리플 시너지 트러블 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1185",
+       "name": "메디큐브 제로 모공 쿨링 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-D-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "국소 스팟 화장품",
+     "group": "피지·모공 스킨케어",
+     "items": [
+      {
+       "code": "2247",
+       "name": "프랭클리 패스트 핌플 이레이저 15ml",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2370",
+       "name": "비플레인 시카테롤 스팟 트리트먼트",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-D-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "피지 케어 보완 제형",
+     "group": "피지·모공 스킨케어",
+     "items": [
+      {
+       "code": "0551",
+       "name": "네오젠 포어레이져클리어BHA패드",
+       "spec": "90매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1158",
+       "name": "메디큐브 2024 제로 모공 패드 2.0",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 10
+  },
+  "G1-U-1": {
+   "id": "G1-U-1",
+   "name": "피부타입별 세안",
+   "theme": "더마·세정·선케어",
+   "role": "클렌징 본진",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-U-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "세정 제형 선택",
+     "group": "세안제·클렌징",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "젤리폼·폼 클렌저",
+     "group": "세안제·클렌징",
+     "items": [
+      {
+       "code": "1043",
+       "name": "엠디스픽 테카테카 카밍 젤리폼 클렌저",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0547",
+       "name": "네오젠 에이클리어아크네폼클렌져",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "클렌징 오일 비교",
+     "group": "세안제·클렌징",
+     "items": [
+      {
+       "code": "2293",
+       "name": "믹순 콩 클렌징 오일",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2240",
+       "name": "프랭클리 딥 클렌징 오일 200ml",
+       "spec": "200ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1044",
+       "name": "엠디스픽 테카테카 카밍 포어 클렌징 오일",
+       "spec": "200ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G1-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 세정 제형",
+     "group": "세안제·클렌징",
+     "items": [
+      {
+       "code": "0596",
+       "name": "필플로 롤링 밀크 페이셜 클렌져",
+       "spec": "240ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1676",
+       "name": "오닝바이브 파인샷 엑소좀 멜팅 그라인딩 클렌징 밤",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-U-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "큰 포장 세정 제품",
+     "group": "세안제·클렌징",
+     "items": [
+      {
+       "code": "0539",
+       "name": "닥터바이오 에코 올인원 클렌저 500g",
+       "spec": "500g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1675",
+       "name": "오닝바이브 파인샷 엑소좀 모이스처 팩 클렌저",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 9,
+   "facings": 9
+  },
+  "G1-U-2": {
+   "id": "G1-U-2",
+   "name": "세정·각질 제형 비교",
+   "theme": "더마·세정·선케어",
+   "role": "과도한 각질 관리 방지",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-U-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "각질·필링 사용제품 확인",
+     "group": "각질·필링 케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "국소 필링 스틱",
+     "group": "각질·필링 케어",
+     "items": [
+      {
+       "code": "0588",
+       "name": "닥터오라클 21STAY 에이테라 필링스틱",
+       "spec": "10EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-U-2/S3",
+     "level": 3,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "필링 토너·시험",
+     "group": "각질·필링 케어",
+     "items": [
+      {
+       "code": "1119",
+       "name": "닥터 멜락신 티엑스 필링 토너 150ml",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-U-2/S4",
+     "level": 4,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "필링 세럼·시험",
+     "group": "각질·필링 케어",
+     "items": [
+      {
+       "code": "1212",
+       "name": "닥터딥 미네랄 엑소좀 필링 글로우 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-U-2/S5",
+     "level": 5,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "필링 팩·시험",
+     "group": "각질·필링 케어",
+     "items": [
+      {
+       "code": "1534",
+       "name": "웰더마 차이슬 티트리 허브 톡스 필링 팩 150ml",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 4,
+   "facings": 4
+  },
+  "G1-U-3": {
+   "id": "G1-U-3",
+   "name": "Body Care & Treatments",
+   "theme": "더마·세정·선케어",
+   "role": "바디 전용 선택",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-U-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "몸 고민·제품 분류 안내",
+     "group": "바디 보습·미스트",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-U-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "바디 미스트 화장품",
+     "group": "바디 보습·미스트",
+     "items": [
+      {
+       "code": "0531",
+       "name": "낫포유 클리어 바디 미스트 120ml",
+       "spec": "120ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1053",
+       "name": "엠디스픽 테카테카 카밍 순 바디미스트",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-U-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "바디 세정 기본",
+     "group": "바디 세정",
+     "items": [
+      {
+       "code": "0500",
+       "name": "라이프프로젝트 리틀포레스트 바디워시 500ml",
+       "spec": "500ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1321",
+       "name": "마리나비 씨위드 PDRN 바디스크럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G1-U-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "바디 세정 비교",
+     "group": "바디 세정",
+     "items": [
+      {
+       "code": "0544",
+       "name": "플루 바디 스크럽 핑크 플로럴 250g",
+       "spec": "250g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-U-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "몸 여드름 외용약·별도표지",
+     "group": "몸 여드름 외용제",
+     "items": [
+      {
+       "code": "1860",
+       "name": "애크린외용액",
+       "spec": "100mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 6,
+   "facings": 6
+  },
+  "G2-D-1": {
+   "id": "G2-D-1",
+   "name": "아문 흉터 비교",
+   "theme": "피부약·상처 보호",
+   "role": "Scar Care",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-D-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "아문 흉터와 열린 상처 구분",
+     "group": "흉터 외용제 / 실리콘 흉터관리 제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "흉터 외용 의약품",
+     "group": "흉터 외용제",
+     "items": [
+      {
+       "code": "1833",
+       "name": "노스카나겔",
+       "spec": "20g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1834",
+       "name": "스카덤겔",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1820",
+       "name": "스카덤클리어겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0004",
+       "name": "케어스카겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "G2-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "실리콘 흉터관리 제품",
+     "group": "실리콘 흉터관리 제품",
+     "items": [
+      {
+       "code": "1841",
+       "name": "더마틱스울트라겔",
+       "spec": "15g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1832",
+       "name": "스카덤울트라",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 흉터 외용약",
+     "group": "흉터 외용제",
+     "items": [
+      {
+       "code": "1858",
+       "name": "노스카딘겔",
+       "spec": "18g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2553",
+       "name": "센스카나겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1844",
+       "name": "스카논겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1837",
+       "name": "스카힐골드겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G2-D-1/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 소재·규격 여유",
+     "group": "실리콘 흉터관리 제품",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 11
+  },
+  "G2-D-2": {
+   "id": "G2-D-2",
+   "name": "일반·방수 밴드",
+   "theme": "피부약·상처 보호",
+   "role": "Everyday Dressings",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-D-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "부위·방수 필요 안내",
+     "group": "일반·방수 밴드",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "일반 소형·중형·혼합",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "2024",
+       "name": "케어리브(소형)",
+       "spec": "30매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2025",
+       "name": "케어리브(중형)",
+       "spec": "20매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2474",
+       "name": "케어리브(혼합형)",
+       "spec": "20매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G2-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "방수 소형·중형·대형",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "1861",
+       "name": "케어리브방수형M",
+       "spec": "20개입",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1864",
+       "name": "케어리브방수(소형)",
+       "spec": "24매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1863",
+       "name": "케어리브 방수 대형",
+       "spec": "14매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G2-D-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "손끝 전용",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "2027",
+       "name": "케어리브(손끝)",
+       "spec": "10매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1862",
+       "name": "케어리브 방수 손끝형",
+       "spec": "1",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2026",
+       "name": "케어리브(중형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G2-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발뒤꿈치·도트형",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "2028",
+       "name": "케어리브(발뒤꿈치)",
+       "spec": "12매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2029",
+       "name": "케어리브(도트)",
+       "spec": "16매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 11,
+   "facings": 11
+  },
+  "G2-D-3": {
+   "id": "G2-D-3",
+   "name": "습윤 드레싱",
+   "theme": "피부약·상처 보호",
+   "role": "Moist Dressings",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-D-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "습윤 드레싱 사용 상태 안내",
+     "group": "습윤 드레싱",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-D-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "작은 상처·중형",
+     "group": "습윤 드레싱",
+     "items": [
+      {
+       "code": "2041",
+       "name": "케어리브습윤방수(작은상처)",
+       "spec": "16매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2046",
+       "name": "케어리브습윤방수(중형)",
+       "spec": "12매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-D-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "대형·빅사이즈",
+     "group": "습윤 드레싱",
+     "items": [
+      {
+       "code": "2017",
+       "name": "케어리브 습윤밴드 방수형 L 9매",
+       "spec": "9매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2044",
+       "name": "케어리브 습윤밴드 방수형 빅사이즈 5매",
+       "spec": "5매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-D-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발뒤꿈치 습윤형",
+     "group": "습윤 드레싱",
+     "items": [
+      {
+       "code": "2049",
+       "name": "케어리브 습윤밴드 방수형 뒤꿈치용 8매",
+       "spec": "8매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-D-3/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 포장 규격 여유",
+     "group": "습윤 드레싱",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 5,
+   "facings": 5
+  },
+  "G2-U-1": {
+   "id": "G2-U-1",
+   "name": "상처 외용·세정",
+   "theme": "피부약·상처 보호",
+   "role": "Wound Care",
+   "color": "#C2410C",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-U-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "상처 상태 상담 안내",
+     "group": "상처 항균 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "상처 항균 외용약",
+     "group": "상처 항균 외용제",
+     "items": [
+      {
+       "code": "1822",
+       "name": "후시딘연고",
+       "spec": "5g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1894",
+       "name": "에스로반연고",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1903",
+       "name": "바스포연고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1900",
+       "name": "상아후시메드연고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1908",
+       "name": "에스로반연고(티트리오일)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0025",
+       "name": "케어믹신플러스연고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1859",
+       "name": "후시딘겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G2-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "상처·피부손상 외용약",
+     "group": "상처·피부손상 외용제",
+     "items": [
+      {
+       "code": "1889",
+       "name": "미보연고",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2390",
+       "name": "스티모린에스크림",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1898",
+       "name": "아즈렌에스연고",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2376",
+       "name": "벤트플라겔",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2385",
+       "name": "아즈렌S크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "G2-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "액상 소독·세정",
+     "group": "소독·상처 세정 제품",
+     "items": [
+      {
+       "code": "2392",
+       "name": "애니클렌액",
+       "spec": "50mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2394",
+       "name": "세네풀에스액",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-U-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "휴대 소독 스왑",
+     "group": "소독·상처 세정 제품",
+     "items": [
+      {
+       "code": "2397",
+       "name": "그린포비돈스틱스왑",
+       "spec": "1.5ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 15,
+   "facings": 15
+  },
+  "G2-U-2": {
+   "id": "G2-U-2",
+   "name": "건조·각화 외용약",
+   "theme": "피부약·상처 보호",
+   "role": "Dry Skin Treatments",
+   "color": "#C2410C",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-U-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "건조 외용약·보습 화장품 구분",
+     "group": "건조·각화 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "건조 피부 외용 연고",
+     "group": "건조·각화 외용제",
+     "items": [
+      {
+       "code": "1921",
+       "name": "D-판테놀연고",
+       "spec": "50g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1842",
+       "name": "비판텐연고",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G2-U-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "각화·거친 피부 외용약",
+     "group": "건조·각화 외용제",
+     "items": [
+      {
+       "code": "1892",
+       "name": "유리아크림",
+       "spec": "50g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1896",
+       "name": "케라논연고",
+       "spec": "60g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-U-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "외용 연고 큰 규격",
+     "group": "건조·각화 외용제",
+     "items": [
+      {
+       "code": "1840",
+       "name": "비판텐연고",
+       "spec": "100g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-U-2/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "외용약 확장 여유",
+     "group": "건조·각화 외용제",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 5,
+   "facings": 6
+  },
+  "G2-U-3": {
+   "id": "G2-U-3",
+   "name": "손·전신 보습",
+   "theme": "더마·세정·선케어",
+   "role": "Hand & Body Moisture",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G2-U-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "손·전신 보습 안내",
+     "group": "핸드 케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-U-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "핸드크림 비교",
+     "group": "핸드 케어",
+     "items": [
+      {
+       "code": "2549",
+       "name": "테카 핸드 우레아 크림",
+       "spec": "",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2443",
+       "name": "3WB 고운손 핸드크림",
+       "spec": "25g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-U-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "국소 보습·멀티밤",
+     "group": "바디 보습·미스트",
+     "items": [
+      {
+       "code": "2367",
+       "name": "바세린 오리지날 프로텍팅 젤리(이너캡형)",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2325",
+       "name": "낫포유 아토리스 이치 멀티밤 기획세트",
+       "spec": "1EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-U-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "전신 보습 로션",
+     "group": "바디 보습·미스트",
+     "items": [
+      {
+       "code": "2466",
+       "name": "프로캄 울트라 모이스처 업 바디로션",
+       "spec": "500ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0111",
+       "name": "웰빙헬스 관절애(HOT/마사지크림) 120g",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G2-U-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "손 세정",
+     "group": "핸드 케어",
+     "items": [
+      {
+       "code": "0501",
+       "name": "라이프프로젝트 리틀포레스트 핸드워시 300ml",
+       "spec": "300ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 7,
+   "facings": 7
+  },
+  "G3-D-1": {
+   "id": "G3-D-1",
+   "name": "기미·색소약 상담",
+   "theme": "피부약·상처 보호",
+   "role": "외용·경구약 별도 단",
+   "color": "#C2410C",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-D-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "색소·흉터의 차이 상담",
+     "group": "기미·색소 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "기미·색소 외용약 기본",
+     "group": "기미·색소 외용제",
+     "items": [
+      {
+       "code": "2265",
+       "name": "멜라토닝크림",
+       "spec": "30g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1848",
+       "name": "도미나크림(튜브타입)4%",
+       "spec": "50g",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 규격·성분 외용약",
+     "group": "기미·색소 외용제",
+     "items": [
+      {
+       "code": "1843",
+       "name": "도미나라이트크림",
+       "spec": "40g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1849",
+       "name": "멜라블리크림 (4%)",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2551",
+       "name": "멜라텐션크림4%",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G3-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "색소 경구 상담약",
+     "group": "색소 경구 상담약",
+     "items": [
+      {
+       "code": "1852",
+       "name": "트란시노2정",
+       "spec": "120T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G3-D-1/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "외용약 추가 규격 여유",
+     "group": "기미·색소 외용제",
+     "items": [
+      {
+       "code": "1851",
+       "name": "도미나크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2552",
+       "name": "멜라텐션크림2%",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1846",
+       "name": "멜라토닝크림 50g",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    }
+   ],
+   "pending": [],
+   "skuRows": 9,
+   "facings": 11
+  },
+  "G3-D-2": {
+   "id": "G3-D-2",
+   "name": "B  잡티·피부 톤",
+   "theme": "더마·세정·선케어",
+   "role": "Spots & Tone",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-D-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "톤 고민·현재 사용성분 안내",
+     "group": "톤·브라이트닝 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "프로캄·마미케어 톤 세럼",
+     "group": "톤·브라이트닝 스킨케어",
+     "items": [
+      {
+       "code": "1188",
+       "name": "마미케어 오쏘타민 비타C 앰플 15ml",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2463",
+       "name": "프로캄 멜라 화이트닝 모이스쳐 세럼",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2460",
+       "name": "프로캄 멜라 화이트닝 리프팅 세럼",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1178",
+       "name": "메디큐브 나이아신아마이드 트라넥사믹 캡슐크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2439",
+       "name": "예쁜얼굴 비타민C크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "G3-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "닥터리쥬올 톤 세럼·크림",
+     "group": "톤·브라이트닝 스킨케어",
+     "items": [
+      {
+       "code": "2346",
+       "name": "(리쥬올)어드밴스드 레티노멜라세럼",
+       "spec": "50mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2342",
+       "name": "닥터 리쥬올 어드밴스드 레티노 멜라 톤 크림",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1318",
+       "name": "마리나비 비타민C 25 펄 브라이트닝 세럼",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1183",
+       "name": "메디큐브 딥 비타C 글루타치온 브라이트닝마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-D-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 보습감의 톤 제형",
+     "group": "톤·브라이트닝 스킨케어",
+     "items": [
+      {
+       "code": "1190",
+       "name": "마미케어 오쏘타민 비타민C 크림 50ml",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2501",
+       "name": "마리나비 비타민씨25 펄 브라이트닝 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1323",
+       "name": "마리나비 씨위드 펄 브라이트닝 마스크",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1182",
+       "name": "메디큐브 코직애씨드 터메릭 브라이트닝 겔 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "톤 고민 마스크",
+     "group": "톤·브라이트닝 스킨케어",
+     "items": [
+      {
+       "code": "1191",
+       "name": "마미케어 오쏘타민 비타민C 앰플 마스크팩",
+       "spec": "7매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1438",
+       "name": "닥터리쥬진 하이퍼인퓨전 멜라포엑스",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1177",
+       "name": "메디큐브 나이아신아마이드 트라넥사믹 애씨드 세럼 30ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2527",
+       "name": "스킨토닝 바이 르디퍼 알엑스",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    }
+   ],
+   "pending": [],
+   "skuRows": 17,
+   "facings": 17
+  },
+  "G3-D-3": {
+   "id": "G3-D-3",
+   "name": "Sun Care",
+   "theme": "더마·세정·선케어",
+   "role": "선케어 본진",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-D-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "자외선차단 제형 안내",
+     "group": "자외선차단",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-D-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "세럼·에센스형",
+     "group": "자외선차단",
+     "items": [
+      {
+       "code": "2343",
+       "name": "리쥬올어드밴스드PDRN카밍선세럼",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2468",
+       "name": "프로캄 멜라이트 선 에센스",
+       "spec": "40ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2437",
+       "name": "예쁜얼굴 썬크림 포르테",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G3-D-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "크림형 비교",
+     "group": "자외선차단",
+     "items": [
+      {
+       "code": "2548",
+       "name": "테카플러스포뮬러 컴포트선크림",
+       "spec": "50mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2503",
+       "name": "마리나비 트루 마일드 선스크린",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1677",
+       "name": "오닝바이브 파인샷 엑소좀 모이스처 수딩 선 크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G3-D-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "톤업·보습형",
+     "group": "자외선차단",
+     "items": [
+      {
+       "code": "2278",
+       "name": "비플레인 선뮤즈 톤업 앤 코렉팅 선크림 (NEW)",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2280",
+       "name": "비플레인 선뮤즈 모이스처 선크림 (NEW)",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G3-D-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "휴대 선스틱",
+     "group": "자외선차단",
+     "items": [
+      {
+       "code": "1513",
+       "name": "싸이닉 엔조이 워터프루프 에어핏 선스틱 20g",
+       "spec": "20g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1320",
+       "name": "마리나비 트루마일드 선스크린",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 10
+  },
+  "G3-U-1": {
+   "id": "G3-U-1",
+   "name": "Scalp & Hair",
+   "theme": "일반약·여행·생활",
+   "role": "두피·모발 상담과 화장품",
+   "color": "#0369A1",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-U-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "두피 약·화장품 구분",
+     "group": "탈모·두피 상담약",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "탈모 외용 의약품",
+     "group": "탈모·두피 상담약",
+     "items": [
+      {
+       "code": "2255",
+       "name": "미녹시딜 바이그루트 5%겔",
+       "spec": "15g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2257",
+       "name": "미녹시딜액5%",
+       "spec": "200ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2258",
+       "name": "두피나액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2010",
+       "name": "모바렌캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "비듬·두피 상담약",
+     "group": "탈모·두피 상담약",
+     "items": [
+      {
+       "code": "2513",
+       "name": "(신)니조랄2%액",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2200",
+       "name": "고려은단 메가도스B7 활성비오틴",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2259",
+       "name": "두피앤액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2256",
+       "name": "미녹시딜액3%",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "두피 세럼·토닉 화장품",
+     "group": "두피 화장품",
+     "items": [
+      {
+       "code": "2335",
+       "name": "닥터 리쥬올 어드밴스드 피디알엔 헤어 덴시티 스칼프 세럼",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2506",
+       "name": "루브큐텐플러스 헤어토닉 100ML",
+       "spec": "100ML",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2260",
+       "name": "판토모나 비오틴 플러스맥스(남성용)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2261",
+       "name": "판토모나 비오틴 하이퍼포머(온가족용)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G3-U-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "두피 세정 샴푸",
+     "group": "샴푸·두피 세정",
+     "items": [
+      {
+       "code": "2094",
+       "name": "루트헤어 세라리프 베리어 클리닉 샴푸 295ml",
+       "spec": "295ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2509",
+       "name": "메이레브 너리싱 앤 두피 케어 샴푸 400ML",
+       "spec": "400ML",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2262",
+       "name": "판토모나 비오틴 플러스맥스(여성용)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    }
+   ],
+   "pending": [],
+   "skuRows": 15,
+   "facings": 15
+  },
+  "G3-U-2": {
+   "id": "G3-U-2",
+   "name": "Personal Care",
+   "theme": "일반약·여행·생활",
+   "role": "개인 위생·민감한 상담",
+   "color": "#0369A1",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-U-2/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "여성 경구 상담약·낮은 포장",
+     "group": "여성 상담약",
+     "items": [
+      {
+       "code": "1987",
+       "name": "머시론정",
+       "spec": "21T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1988",
+       "name": "멜리안정",
+       "spec": "21T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G3-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "여성 국소 상담약",
+     "group": "여성 상담약",
+     "items": [
+      {
+       "code": "2418",
+       "name": "카네스텐1질정",
+       "spec": "1T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1978",
+       "name": "디어미순정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1981",
+       "name": "디어미정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1990",
+       "name": "마이보라정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1985",
+       "name": "센스리베정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1975",
+       "name": "지노베타딘질좌제",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2421",
+       "name": "카네스텐6질정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G3-U-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "여성 청결 화장품",
+     "group": "여성 위생·청결",
+     "items": [
+      {
+       "code": "2417",
+       "name": "프로캄 클레어진",
+       "spec": "200mL+50mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0108",
+       "name": "닥터헬퍼 여성세정엔 락센(여성청결제)",
+       "spec": "200g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0084",
+       "name": "유기농본 롱팬티라이너",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0081",
+       "name": "유기농본생리대(소형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0082",
+       "name": "유기농본오버나이트생리대",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2038",
+       "name": "치지래과립",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1924",
+       "name": "푸레파인마일드좌제",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G3-U-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "생리 위생용품",
+     "group": "여성 위생·청결",
+     "items": [
+      {
+       "code": "1830",
+       "name": "템포내추럴",
+       "spec": "10P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2321",
+       "name": "리올가닉 롱팬티라이너 26P",
+       "spec": "26P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0079",
+       "name": "유기농본생리대(대형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0080",
+       "name": "유기농본생리대(중형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0083",
+       "name": "유기농본팬티라이너",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1831",
+       "name": "템포내추럴슈퍼",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 6
+    },
+    {
+     "id": "G3-U-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "콘돔·자가 검사",
+     "group": "콘돔·셀프검사",
+     "items": [
+      {
+       "code": "0014",
+       "name": "소프트콘돔PLAINP(일반형)",
+       "spec": "10P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2510",
+       "name": "센스데이 얼리체크",
+       "spec": "1test",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0017",
+       "name": "소프트콘돔DOTSD(돗트형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0019",
+       "name": "소프트콘돔GREENC(프리미엄)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0018",
+       "name": "소프트콘돔PTYPE(슬림형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0016",
+       "name": "소프트콘돔SPIRALSS(나선형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0015",
+       "name": "소프트콘돔포티나인(밀착형)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    }
+   ],
+   "pending": [],
+   "skuRows": 29,
+   "facings": 29
+  },
+  "G3-U-3": {
+   "id": "G3-U-3",
+   "name": "Rest & Personal Care",
+   "theme": "일반약·여행·생활",
+   "role": "숙면 관련 제품 구분",
+   "color": "#0369A1",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-U-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "수면·개인 상담 안내",
+     "group": "수면 상담약",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-U-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "수면 상담 의약품",
+     "group": "수면 상담약",
+     "items": [
+      {
+       "code": "2219",
+       "name": "자멘쏙정",
+       "spec": "20T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2350",
+       "name": "한미슬리펠정",
+       "spec": "20T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2217",
+       "name": "드림굿연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2268",
+       "name": "자멘쏙정",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2345",
+       "name": "쿨드림롱",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2340",
+       "name": "쿨드림연질캡슐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 6
+    },
+    {
+     "id": "G3-U-3/S3",
+     "level": 3,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "수면 관련 식품·시험",
+     "group": "수면 관련 식품",
+     "items": [
+      {
+       "code": "2492",
+       "name": "앨리스랩 하이퍼셀 식물성 멜라토닌 구미",
+       "spec": "30구미",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2556",
+       "name": "수면엔릴잠",
+       "spec": "14정",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G3-U-3/S4",
+     "level": 4,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "다른 섭취형태·시험",
+     "group": "수면 관련 식품",
+     "items": [
+      {
+       "code": "0128",
+       "name": "COZA 코자아",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2218",
+       "name": "매일매일 식물성 멜라토닌 밤",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G3-U-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "치질·항문 불편 상담",
+     "group": "치질 상담약",
+     "items": [
+      {
+       "code": "1926",
+       "name": "푸레파인마일드연고",
+       "spec": "28g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2037",
+       "name": "치지래연고",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 12,
+   "facings": 12
+  },
+  "G4-D-1": {
+   "id": "G4-D-1",
+   "name": "Vitamin C & Inner Beauty",
+   "theme": "영양·건강 선물",
+   "role": "C·이너뷰티 선택",
+   "color": "#B45309",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G4-D-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "경구제품 분류 안내",
+     "group": "비타민C 경구제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "비타민C 의약품 후보",
+     "group": "비타민C 경구제품",
+     "items": [
+      {
+       "code": "1996",
+       "name": "비타민씨정1000mg",
+       "spec": "300T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2412",
+       "name": "메가비타민C3000 비타블로썸",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2504",
+       "name": "하이퍼셀 리포좀 비타민C",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G4-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "비타민C 식품·건기식 후보",
+     "group": "비타민C 경구제품",
+     "items": [
+      {
+       "code": "2204",
+       "name": "고려은단 비타민C1000(120T)",
+       "spec": "120T",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2201",
+       "name": "고려은단 메가도스C 비타민C 3000mg",
+       "spec": "30P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2413",
+       "name": "하이퍼셀리포좀비타민C",
+       "spec": "30포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G4-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "글루타치온 함유 식품",
+     "group": "글루타치온 함유 식품",
+     "items": [
+      {
+       "code": "2414",
+       "name": "하이퍼셀 리포좀 글루타치온C",
+       "spec": "4.5g*30포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0267",
+       "name": "라티브 글루타치온 화이트토마토샷",
+       "spec": "14EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G4-D-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "비타민C 다매 포장",
+     "group": "비타민C 경구제품",
+     "items": [
+      {
+       "code": "2087",
+       "name": "고려은단 비타민C1000(300T)",
+       "spec": "300T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1993",
+       "name": "비타민씨정1000mg",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 11
+  },
+  "G4-D-2": {
+   "id": "G4-D-2",
+   "name": "Gut Care",
+   "theme": "영양·건강 선물",
+   "role": "유산균·식이섬유 식품",
+   "color": "#B45309",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G4-D-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "장 건강·식품유형 안내",
+     "group": "유산균",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "일상 유산균",
+     "group": "유산균",
+     "items": [
+      {
+       "code": "2377",
+       "name": "생유산균_락토핏_골드_리뉴얼",
+       "spec": "50포",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2214",
+       "name": "한미 엔플 덴마크 유산균 30C",
+       "spec": "30C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2375",
+       "name": "프로캄진프로바이오틱플러스30",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G4-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "여성 대상 유산균",
+     "group": "유산균",
+     "items": [
+      {
+       "code": "2533",
+       "name": "그린스토어 우먼프로바이오틱스",
+       "spec": "30C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0259",
+       "name": "뉴트리원 비피더스 100억 밸런스 유산균",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2378",
+       "name": "락토핏 슬림(분홍색)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G4-D-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "푸룬·식이섬유 식품",
+     "group": "푸룬·식이섬유 식품",
+     "items": [
+      {
+       "code": "2148",
+       "name": "테일러 딥워터 푸룬",
+       "spec": "180ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0157",
+       "name": "STOM 식이섬유정 1000",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G4-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "효소 식품",
+     "group": "효소 식품",
+     "items": [
+      {
+       "code": "2016",
+       "name": "웰니스효소",
+       "spec": "60p",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2187",
+       "name": "달심 효소 후르츠믹스",
+       "spec": "3g*30",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0243",
+       "name": "뉴트리원 비비랩 카무트 브랜드 밀 효소 골드",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0248",
+       "name": "뉴트리원 비비랩 효소 말차라떼맛",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0247",
+       "name": "뉴트리원 비비랩 효소 밀크티맛",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0184",
+       "name": "스프렉사 위스틱 효소",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0212",
+       "name": "퍼니트 리얼 파인애플 효소 30포",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    }
+   ],
+   "pending": [],
+   "skuRows": 15,
+   "facings": 16
+  },
+  "G4-U-1": {
+   "id": "G4-U-1",
+   "name": "Collagen & Protein",
+   "theme": "영양·건강 선물",
+   "role": "먹는 뷰티·영양 보완",
+   "color": "#B45309",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G4-U-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "섭취형태·성분 중복 확인",
+     "group": "콜라겐·이너뷰티",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "콜라겐 스틱·분말",
+     "group": "콜라겐·이너뷰티",
+     "items": [
+      {
+       "code": "0001",
+       "name": "에버콜라겐 타임 레티놀 A",
+       "spec": "30포",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "0054",
+       "name": "에버콜라겐 타임 비오틴 셀",
+       "spec": "30p",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2331",
+       "name": "리쥬비엔 디엔에이 핏 젤리",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G4-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "콜라겐 다른 제형",
+     "group": "콜라겐·이너뷰티",
+     "items": [
+      {
+       "code": "2014",
+       "name": "앱솔루트콜라겐9.0",
+       "spec": "30p",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0246",
+       "name": "뉴트리원 비비랩 콜라겐 탱글 업",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0237",
+       "name": "뉴트리원 비비랩 화이트 콜라겐",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G4-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "단백질 소포장",
+     "group": "단백질·아미노산",
+     "items": [
+      {
+       "code": "0344",
+       "name": "낫띵베럴 단백질 쉐이크 초코크런치",
+       "spec": "40g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0345",
+       "name": "낫띵베럴 단백질 쉐이크 딸기라떼",
+       "spec": "40g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G4-U-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "아미노산·아르기닌",
+     "group": "단백질·아미노산",
+     "items": [
+      {
+       "code": "2500",
+       "name": "아르기닌 화이트 3X",
+       "spec": "1P",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0464",
+       "name": "익스트림 듀얼아르기닌 플러스 120정 (2개월분)",
+       "spec": "120T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 11
+  },
+  "G4-U-2": {
+   "id": "G4-U-2",
+   "name": "Daily Nutrition",
+   "theme": "영양·건강 선물",
+   "role": "일상 영양 목적별",
+   "color": "#B45309",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G4-U-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "일상 영양 선택 안내",
+     "group": "멀티비타민·미네랄",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "멀티비타민 남녀 비교",
+     "group": "멀티비타민·미네랄",
+     "items": [
+      {
+       "code": "2194",
+       "name": "고려은단 멀티비타민 올인원 맨",
+       "spec": "30T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2196",
+       "name": "고려은단 멀티비타민 올인원 우먼",
+       "spec": "30T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2195",
+       "name": "고려은단 멀티비타민 올인원 맨60+",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2197",
+       "name": "고려은단 멀티비타민 올인원 우먼60+",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2198",
+       "name": "고려은단 메가도스 이뮨샷",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2389",
+       "name": "아임비타",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 6
+    },
+    {
+     "id": "G4-U-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "루테인·눈 건강 영양",
+     "group": "루테인·눈 영양",
+     "items": [
+      {
+       "code": "2193",
+       "name": "고려은단 루테인 지아잔틴 아스타잔틴",
+       "spec": "30C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1991",
+       "name": "올인원 루테인지아잔틴아스타잔틴",
+       "spec": "60C",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G4-U-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "오메가3 영양",
+     "group": "오메가3·혈행 영양",
+     "items": [
+      {
+       "code": "2205",
+       "name": "고려은단 식물성 알티지 오메가3",
+       "spec": "30C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2215",
+       "name": "한미 엔플 알티지 오메가3 츄어블1000 30C",
+       "spec": "30C",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G4-U-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "칼슘·비타민D·간 영양",
+     "group": "칼슘·비타민D / 밀크씨슬·간 영양",
+     "items": [
+      {
+       "code": "0186",
+       "name": "네츄럴메이드 코랄칼슘앤마그네슘플러스(3개월분)",
+       "spec": "1730mg*90T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0190",
+       "name": "네츄럴메이드 비타민D 2000IU (3개월분)",
+       "spec": "150mg*90C",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2206",
+       "name": "고려은단 퓨어 밀크씨슬",
+       "spec": "60T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2202",
+       "name": "고려은단 메가도스D 비타민D 4000IU",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2203",
+       "name": "고려은단 비타민C1000 이지+비타민D",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0249",
+       "name": "뉴트리원 비타민D3 3000IU",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 6
+    }
+   ],
+   "pending": [
+    {
+     "code": "0094",
+     "name": "NEW 컨디션 스틱 젤리 제로(망고맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0093",
+     "name": "NEW 컨디션 스틱 젤리 제로(컨디션맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0226",
+     "name": "니아르 가르시니아 샤인머스켓",
+     "f": 1,
+     "cond": "초도 비권장 판정 재확인"
+    },
+    {
+     "code": "0224",
+     "name": "니아르 브이케어 리치피치맛",
+     "f": 1,
+     "cond": "초도 비권장 판정 재확인"
+    },
+    {
+     "code": "0223",
+     "name": "니아르 브이케어 파인애플맛",
+     "f": 1,
+     "cond": "초도 비권장 판정 재확인"
+    },
+    {
+     "code": "0225",
+     "name": "니아르 오일케어",
+     "f": 1,
+     "cond": "초도 비권장 판정 재확인"
+    },
+    {
+     "code": "0220",
+     "name": "알디콤A 숙취해소제 12포",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0222",
+     "name": "알디콤Plus 숙취해소제 12포",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0221",
+     "name": "알디콤V 숙취해소제 12포",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0095",
+     "name": "알유21(RU21) 숙취해소엔 웨이크업 스틱 (젤리타입/꿀배맛)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0086",
+     "name": "알유21(RU21) 숙취해소엔 웨이크업 스틱 (젤리타입/사과맛)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0118",
+     "name": "컨디션 스틱 젤리(그린애플맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0088",
+     "name": "컨디션 스틱 젤리(민트초코맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0119",
+     "name": "컨디션 스틱 젤리(자두맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0087",
+     "name": "컨디션 스틱 젤리(초코맛/행오버/숙취개선효과)",
+     "f": 1,
+     "cond": "대체 후보 채택 · 1F 시작"
+    },
+    {
+     "code": "0217",
+     "name": "퍼니트 새빨간 콜레우스 포스콜리 다이어트 56정",
+     "f": 1,
+     "cond": "초도 비권장 판정 재확인"
+    }
+   ],
+   "skuRows": 32,
+   "facings": 32
+  },
+  "G5-D-1": {
+   "id": "G5-D-1",
+   "name": "Dr.Reju-All",
+   "theme": "더마·세정·선케어",
+   "role": "브랜드 지정 구매",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-D-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "닥터리쥬올 라인 안내",
+     "group": "PDRN 스킨케어 / 장벽·보습 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "PDRN 기본 크림",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2347",
+       "name": "(리쥬올)PDRN리쥬비네이팅크림",
+       "spec": "30mL",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G5-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "세라마이드 장벽 크림",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2339",
+       "name": "닥터리쥬올-세라마이드 베리어 크림",
+       "spec": "90mL",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G5-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "PDRN 마스크",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2337",
+       "name": "닥터리쥬올PDRN마스크",
+       "spec": "6EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-D-1/S5",
+     "level": 5,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "PDLLA 크림·소량 시험",
+     "group": "신성분 스킨케어",
+     "items": [
+      {
+       "code": "2348",
+       "name": "닥터리쥬올-어드밴스드 PDLLA 퍼밍 크림",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [],
+   "skuRows": 4,
+   "facings": 6
+  },
+  "G5-D-2": {
+   "id": "G5-D-2",
+   "name": "E  주름·탄력",
+   "theme": "더마·세정·선케어",
+   "role": "Lines & Firmness",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-D-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "주름·탄력과 사용성분 확인",
+     "group": "탄력·주름 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "레티놀·바쿠치올 세럼",
+     "group": "탄력·주름 스킨케어",
+     "items": [
+      {
+       "code": "0554",
+       "name": "네오젠 리얼레티놀세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0555",
+       "name": "네오젠 리얼 바쿠치올 퍼밍 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1184",
+       "name": "메디큐브 딥 펩타이드 래디언스 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1167",
+       "name": "메디큐브 트리플 콜라겐 세럼 4.0 55ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2441",
+       "name": "웰빙헬스 예쁜얼굴 콜라겐크림 휴대용",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "G5-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "펩타이드 앰플",
+     "group": "탄력·주름 스킨케어",
+     "items": [
+      {
+       "code": "1735",
+       "name": "톰 펩타이드 부스트 앰플 (50g)",
+       "spec": "50g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1192",
+       "name": "마미케어 쥬베핏 펩타이드 앰플 35ml",
+       "spec": "35ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1169",
+       "name": "메디큐브 콜라겐 나이트 랩핑마스크 75ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1168",
+       "name": "메디큐브 트리플 콜라겐 크림 4.0 50ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G5-D-2/S4",
+     "level": 4,
+     "status": "시험 진열",
+     "short": "시험",
+     "need": "탄력 고민 마스크",
+     "group": "마스크팩·패드",
+     "items": [
+      {
+       "code": "1448",
+       "name": "더마픽스 리쥬콜 코드알엔 리셋 마스크팩",
+       "spec": "4매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "탄력 고민 크림",
+     "group": "탄력·주름 스킨케어",
+     "items": [
+      {
+       "code": "1193",
+       "name": "마미케어 쥬베핏 펩타이드 캡슐크림 50ml",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1162",
+       "name": "메디큐브 딥 비타 에이 레티놀 세럼 30ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1186",
+       "name": "메디큐브 콜라겐 리프팅 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1166",
+       "name": "메디큐브 트리플 콜라겐 토너 4.0 140ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    }
+   ],
+   "pending": [
+    {
+     "code": "0964",
+     "name": "로리코 레티 0.5 딥 인 세럼 10ml",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "0963",
+     "name": "로리코 레티 0.5 딥 인 세럼 30ml",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2359",
+     "name": "메디인랩 A3앰플",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2360",
+     "name": "메디인랩A5메디크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1161",
+     "name": "메디큐브 딥 비타 씨 캡슐 크림 55g",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2304",
+     "name": "믹순 두유 세럼",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2301",
+     "name": "믹순 콩 밸런싱 앰플 미스트",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2294",
+     "name": "믹순 콩 크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2314",
+     "name": "믹순 콩 크림 스틱파우치",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1708",
+     "name": "토니모리 블랙티인텐스리페어세럼",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1909",
+     "name": "프로캄 레드엑스크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 25,
+   "facings": 25
+  },
+  "G5-D-3": {
+   "id": "G5-D-3",
+   "name": "PDRN 제형 비교",
+   "theme": "더마·세정·선케어",
+   "role": "화장품 성분 탐색",
+   "color": "#BE185D",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-D-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "PDRN 화장품 제형 안내",
+     "group": "PDRN 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-D-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "앰플형 비교",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "1847",
+       "name": "리쥬비에스",
+       "spec": "",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2333",
+       "name": "리쥬란 턴오버 앰플",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2334",
+       "name": "리쥬란 리밸런싱 토너",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2355",
+       "name": "메디인랩 듀얼PDRN카밍크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1171",
+       "name": "메디큐브 PDRN 핑크 시카 수딩 토너 250ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1172",
+       "name": "메디큐브 PDRN 핑크 콜라겐 토닝 겔 토너패드",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1176",
+       "name": "메디큐브 메디큐브_PDRN_피디알엔핑크콜라겐글로우젤리미스트세럼_60 ml_00",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "G5-D-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "크림형 비교",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2341",
+       "name": "리쥬란 턴오버 인핸스드 크림",
+       "spec": "50ml",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1946",
+       "name": "레비온 RX PDRN EGF크림",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2344",
+       "name": "리쥬란 리프레싱 에멀전",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1173",
+       "name": "메디큐브 PDRN 콜라겐 캡슐 크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1175",
+       "name": "메디큐브 PDRN 핑크 카페인 나이트 랩핑 마스크 75ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1170",
+       "name": "메디큐브 PDRN 핑크 펩타이드 세럼 30ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1930",
+       "name": "후시다인 리쥬 피디알엔크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 8
+    },
+    {
+     "id": "G5-D-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "팩 정규 포장·후크 대조",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2332",
+       "name": "리쥬란 턴오버 마스크",
+       "spec": "40ml*5ea",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1948",
+       "name": "레비온알엑스마스크(PDRN,EGF)",
+       "spec": "25ml/4ea",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1939",
+       "name": "리쥬닉크림(PDRN)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1322",
+       "name": "마리나비 씨위드 PDRN 페이스 스크럽",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1180",
+       "name": "메디큐브 PDRN 핑크 비타 코팅 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1179",
+       "name": "메디큐브 PDRN 핑크 콜라겐 겔 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2354",
+       "name": "메디큐브 메디큐브_PDRN_피디알엔핑크콜라겐글로우젤리미스트세럼",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G5-D-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "마스크 정규 포장·후크 대조",
+     "group": "마스크팩·패드",
+     "items": [
+      {
+       "code": "2517",
+       "name": "피더린 리쥬부스터 크림 마스크",
+       "spec": "22g*5ea",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [
+    {
+     "code": "1441",
+     "name": "닥터리쥬진 하이퍼인퓨전 마그네틱 인퓨저",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1435",
+     "name": "닥터리쥬진 하이퍼인퓨전 쓰리에스 세럼",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1437",
+     "name": "닥터리쥬진 하이퍼인퓨전 이십점이케이 리페어 크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1436",
+     "name": "닥터리쥬진 하이퍼인퓨전 포디 앰플",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2528",
+     "name": "르디퍼 알엑스 부스터 시너지 크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2379",
+     "name": "스킨부스터 바이 르디퍼 RX",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2383",
+     "name": "스킨톡스 바이 르디퍼 알엑스",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1100",
+     "name": "시오레 마시는 PDRN200 어드밴스드",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1732",
+     "name": "톰 PPM 50,000 트리플 시너지 리쥬비네이팅 크림 (50ml)",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 31,
+   "facings": 33
+  },
+  "G5-U-1": {
+   "id": "G5-U-1",
+   "name": "C  장벽·건조",
+   "theme": "더마·세정·선케어",
+   "role": "Barrier & Dryness",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-U-1/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "장벽·건조 사용감 안내",
+     "group": "장벽·보습 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "장벽 보습 크림 비교",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "1054",
+       "name": "엠디스픽 테카테카 D판테놀 리페어 크림 Rx",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2464",
+       "name": "닥터알파 피부장벽 크림 80ML",
+       "spec": "80ML",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0583",
+       "name": "닥터오라클 세라마베리어 페이셜 세라마이드 크림",
+       "spec": "80g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G5-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "장벽 세럼",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2415",
+       "name": "톰 PPM 트리플 시너지 베리어 세럼",
+       "spec": "30mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "장벽 보습 토너",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2283",
+       "name": "비플레인 밀크 세라마이드 보습 토너 (NEW)",
+       "spec": "150ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-U-1/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "다른 제형 확장 여유",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "1440",
+       "name": "닥터리쥬진 하이퍼인퓨전 브이원 리페어 마스크",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [
+    {
+     "code": "1219",
+     "name": "닥터딥 멀티아토크림",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1218",
+     "name": "닥터딥 멀티에멀젼",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1588",
+     "name": "에스네이처 블랑쉬 로션 200ml",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1707",
+     "name": "토니모리 블랙티인텐스리페어로션",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 10,
+   "facings": 10
+  },
+  "G5-U-2": {
+   "id": "G5-U-2",
+   "name": "D  민감·진정",
+   "theme": "더마·세정·선케어",
+   "role": "Calm & Comfort",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-U-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "민감·진정 필요 안내",
+     "group": "진정 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "테카·후시메디 크림",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2547",
+       "name": "테카플러스포뮬러 페이셜 리페어 크림",
+       "spec": "50ml",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2461",
+       "name": "프로캄 후시메디 리페어 크림S",
+       "spec": "50ml",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G5-U-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "가벼운 크림·진정 세럼",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2550",
+       "name": "테카 플러스 포뮬러 페이셜 리페어 크림 라이트",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1047",
+       "name": "엠디스픽 테카테카 카밍 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1049",
+       "name": "엠디스픽 테카테카 카밍 캡슐 크림",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1317",
+       "name": "마리나비 켈프시카카밍 세럼",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G5-U-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "진정 마스크",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2465",
+       "name": "프로캄 후시메디 리페어 젤 마스크",
+       "spec": "27ml*5매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1052",
+       "name": "엠디스픽 테카테카 카밍 세럼 인 마스크",
+       "spec": "6ea",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1316",
+       "name": "마리나비 켈프시카카밍 마스크팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1315",
+       "name": "마리나비 켈프시카카밍 크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 4
+    },
+    {
+     "id": "G5-U-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "진정 패드",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2286",
+       "name": "비플레인 마데카소사이드 진정 앰플 패드(NEW)",
+       "spec": "70매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1045",
+       "name": "엠디스픽 테카테카 카밍 토너 패드",
+       "spec": "70ea",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1324",
+       "name": "마리나비 켈프시카카밍 마스크팩(5매)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    }
+   ],
+   "pending": [],
+   "skuRows": 13,
+   "facings": 15
+  },
+  "G5-U-3": {
+   "id": "G5-U-3",
+   "name": "C  얼굴 수분",
+   "theme": "더마·세정·선케어",
+   "role": "Facial Hydration",
+   "color": "#BE185D",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G5-U-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "얼굴 수분 제형 안내",
+     "group": "수분 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-U-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "히알루론산 세럼·앰플",
+     "group": "수분 스킨케어",
+     "items": [
+      {
+       "code": "2275",
+       "name": "비플레인 아쿠아 퓨어 히알루로닉 세럼",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1736",
+       "name": "톰 히알루론산 부스트 앰플 (30g)",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G5-U-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "수분 크림",
+     "group": "수분 스킨케어",
+     "items": [
+      {
+       "code": "2276",
+       "name": "비플레인 아쿠아 퓨어 히알루로닉 크림",
+       "spec": "70ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-U-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "수분 마스크·패드",
+     "group": "수분 스킨케어",
+     "items": [
+      {
+       "code": "2277",
+       "name": "비플레인 B5 수분 앰플 마스크팩",
+       "spec": "10매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2285",
+       "name": "비플레인 B5 수분 앰플 패드(NEW)",
+       "spec": "70매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G5-U-3/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 수분 제형 여유",
+     "group": "수분 스킨케어",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [
+    {
+     "code": "1217",
+     "name": "닥터딥 스킨토너",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "2299",
+     "name": "믹순 콩 토너",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1709",
+     "name": "토니모리 블랙티인텐스리페어토너",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    },
+    {
+     "code": "1729",
+     "name": "토니모리 원더속쌀매끈토너",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 9,
+   "facings": 9
+  },
+  "G6-D-1": {
+   "id": "G6-D-1",
+   "name": "Lip Care",
+   "theme": "립·눈·다리·구강",
+   "role": "입술 필요별 구분",
+   "color": "#6D28D9",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-D-1/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "입술 증상 외용약·낮은 포장",
+     "group": "립 외용 의약품",
+     "items": [
+      {
+       "code": "1818",
+       "name": "큐립연고 마일드허브향",
+       "spec": "8g",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1819",
+       "name": "큐립연고 프레시로즈향",
+       "spec": "8g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-D-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "립 스틱·밤 화장품",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2380",
+       "name": "프로캄 판테놀 스틱 립밤",
+       "spec": "3.7g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2384",
+       "name": "바세린립테라피오리지날립밤",
+       "spec": "7g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "립 에센스 비교",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2381",
+       "name": "프로캄 판테놀 립 에센스",
+       "spec": "1EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2281",
+       "name": "비플레인 밀크 세라마이드 립 에센스 (NEW)",
+       "spec": "10G",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "PDRN 립 세럼",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2336",
+       "name": "리쥬올 PDRN 립세럼",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1938",
+       "name": "녹십자아시클로버크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "야간 립 마스크",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2298",
+       "name": "믹순 내추럴 콩 립 마스크 밤",
+       "spec": "11g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1174",
+       "name": "메디큐브 PDRN 립 슬리핑 마스크 10g",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 10,
+   "facings": 11
+  },
+  "G6-D-2": {
+   "id": "G6-D-2",
+   "name": "Eye Care",
+   "theme": "립·눈·다리·구강",
+   "role": "점안·렌즈·눈가 구분",
+   "color": "#6D28D9",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-D-2/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다회용 점안제·낮은 포장",
+     "group": "점안·세안 의약품",
+     "items": [
+      {
+       "code": "1971",
+       "name": "프렌즈아이드롭점안액(순)",
+       "spec": "14ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1976",
+       "name": "아이미루콘택트퓨어점안액(12ml)",
+       "spec": "12ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "일회용 점안제",
+     "group": "점안·세안 의약품",
+     "items": [
+      {
+       "code": "1959",
+       "name": "리안점안액",
+       "spec": "0.5ml*30관",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "2540",
+       "name": "아이오쿨 프로점안액",
+       "spec": "0.5mL*60개",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1962",
+       "name": "나조린점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1979",
+       "name": "뉴브이로토이엑스점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1968",
+       "name": "로토지파이뉴점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1961",
+       "name": "시크린원점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1969",
+       "name": "아이미루40EX마일드",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1974",
+       "name": "아이미루40EX점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1984",
+       "name": "아이미루40골드점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1982",
+       "name": "아이미루40이엑스골드콘택트점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2538",
+       "name": "아이봉C",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2534",
+       "name": "아이봉W",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0063",
+       "name": "아이퓨어점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "2012",
+       "name": "오큐시스점안액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1986",
+       "name": "프렌즈아이드롭점안액(아이스)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1972",
+       "name": "프렌즈아이드롭점안액(쿨)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1980",
+       "name": "프렌즈아이드롭점안액(쿨하이)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 18
+    },
+    {
+     "id": "G6-D-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "눈꺼풀 위생",
+     "group": "렌즈·눈꺼풀 위생",
+     "items": [
+      {
+       "code": "1965",
+       "name": "블레파크린",
+       "spec": "20매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0109",
+       "name": "바슈롬 리뉴 후레쉬용액 355ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "렌즈 세정·보존",
+     "group": "렌즈·눈꺼풀 위생",
+     "items": [
+      {
+       "code": "0085",
+       "name": "바슈롬 리뉴 후레쉬용액 120ml",
+       "spec": "120ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1995",
+       "name": "보스톤 세척액(어드밴스클리너액)",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2401",
+       "name": "보스톤 보존액(어드밴스클리너)",
+       "spec": "120ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-D-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "눈가 보습 화장품",
+     "group": "눈가 화장품",
+     "items": [
+      {
+       "code": "2288",
+       "name": "믹순 피디알엔 콜라겐 아이 세럼",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2296",
+       "name": "믹순 콩 아이크림",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1439",
+       "name": "닥터리쥬진 하이퍼인퓨전 앤에이디 엔엠엔 아이크림 맥스",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1319",
+       "name": "마리나비 리페어 아이크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1189",
+       "name": "마미케어 오쏘타민 비타민C 아이크림 15ml",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    }
+   ],
+   "pending": [],
+   "skuRows": 29,
+   "facings": 30
+  },
+  "G6-D-3": {
+   "id": "G6-D-3",
+   "name": "Leg Comfort",
+   "theme": "립·눈·다리·구강",
+   "role": "다리 무거움 상담",
+   "color": "#6D28D9",
+   "face": "D",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-D-3/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "다리 불편 상담 안내",
+     "group": "다리 순환 상담약",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-D-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "액상 다리 순환 상담약",
+     "group": "다리 순환 상담약",
+     "items": [
+      {
+       "code": "1914",
+       "name": "뉴베인액",
+       "spec": "7ml*28포",
+       "f": 2,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "정제 다리 순환 상담약",
+     "group": "다리 순환 상담약",
+     "items": [
+      {
+       "code": "1918",
+       "name": "센시아정",
+       "spec": "180T",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1920",
+       "name": "디오맥스(디오스민)정",
+       "spec": "30T*2",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-D-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "분말 제형 비교",
+     "group": "다리 순환 상담약",
+     "items": [
+      {
+       "code": "1916",
+       "name": "디오라인티 현탁용분말",
+       "spec": "30포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-D-3/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 규격 여유",
+     "group": "다리 순환 상담약",
+     "items": [
+      {
+       "code": "1836",
+       "name": "엘라스에이액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 1
+    }
+   ],
+   "pending": [
+    {
+     "code": "0460",
+     "name": "링탭 PMS 패치",
+     "f": 1,
+     "cond": "분류·표시 확인 후 진열"
+    }
+   ],
+   "skuRows": 6,
+   "facings": 7
+  },
+  "G6-U-1": {
+   "id": "G6-U-1",
+   "name": "Foot Treatments",
+   "theme": "피부약·상처 보호",
+   "role": "발 피부 의약품",
+   "color": "#C2410C",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-U-1/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "티눈 상담약·낮은 포장",
+     "group": "티눈·굳은살 외용제",
+     "items": [
+      {
+       "code": "1887",
+       "name": "신신티눈밴드",
+       "spec": "8매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1881",
+       "name": "신신티눈액",
+       "spec": "10ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    },
+    {
+     "id": "G6-U-1/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "무좀 크림·겔",
+     "group": "무좀·진균 외용제",
+     "items": [
+      {
+       "code": "1876",
+       "name": "바르지오모두크림",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1879",
+       "name": "터비뉴더블액션겔",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2425",
+       "name": "카네스텐크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-1/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "다른 부위·제형 진균 외용약",
+     "group": "무좀·진균 외용제",
+     "items": [
+      {
+       "code": "1873",
+       "name": "바르지오원스외용액",
+       "spec": "6g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1874",
+       "name": "바르지오네일라카(5ml*2)",
+       "spec": "5ml*2",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0055",
+       "name": "테리나플러스크림",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-1/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "땀 상담 외용약",
+     "group": "다한증 외용제",
+     "items": [
+      {
+       "code": "1869",
+       "name": "노스엣센스액(염화알루미늄)",
+       "spec": "30mL",
+       "f": 2,
+       "new": false
+      },
+      {
+       "code": "1871",
+       "name": "드리클로액",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1866",
+       "name": "노스엣액(30ml)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "1865",
+       "name": "드라이언액",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 5
+    },
+    {
+     "id": "G6-U-1/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발바닥 티눈용",
+     "group": "티눈·굳은살 외용제",
+     "items": [
+      {
+       "code": "1885",
+       "name": "신신티눈밴드(발바닥용)",
+       "spec": "6매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "1882",
+       "name": "신신티눈고",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 14,
+   "facings": 15
+  },
+  "G6-U-2": {
+   "id": "G6-U-2",
+   "name": "Foot Care",
+   "theme": "립·눈·다리·구강",
+   "role": "발 보습·마찰 관리",
+   "color": "#6D28D9",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-U-2/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "발 화장품·의약품 구분",
+     "group": "발 건조·보습 화장품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-U-2/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발 보습 크림",
+     "group": "EGF 스킨케어 / 풋 케어 화장품",
+     "items": [
+      {
+       "code": "2462",
+       "name": "프로캄 EGF 우레아 케라톤크림",
+       "spec": "50mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0543",
+       "name": "플루 인텐시브 리페어 풋크림 100g",
+       "spec": "100g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2089",
+       "name": "닥터원더 악어꿈치팩",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-2/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발 각질 케어 팩",
+     "group": "풋 케어 화장품",
+     "items": [
+      {
+       "code": "2088",
+       "name": "닥터원더 각질제거 악어발팩",
+       "spec": "24g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2349",
+       "name": "풋 필링 페로린 민트",
+       "spec": "1EA",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0110",
+       "name": "웰빙헬스 고운발(빨강)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-2/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발 미스트·스프레이",
+     "group": "풋 케어 화장품",
+     "items": [
+      {
+       "code": "0483",
+       "name": "메디올가 올클리어 풋미스트 100ml",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0508",
+       "name": "새니닥 토앤솔 풋케어 스프레이 100ml",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0112",
+       "name": "웰빙헬스 명품 고운발",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-2/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "풋파일·보습양말",
+     "group": "미용 도구 / 여행·생활용품",
+     "items": [
+      {
+       "code": "2124",
+       "name": "아케이 리빙 티파니글라스 풋파일",
+       "spec": "1개입",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2118",
+       "name": "심플리프 발뒤꿈치 보습양말(검정)",
+       "spec": "1개입",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 11,
+   "facings": 11
+  },
+  "G6-U-3": {
+   "id": "G6-U-3",
+   "name": "Walking & Outdoor",
+   "theme": "일반약·여행·생활",
+   "role": "걷기·야외 보조",
+   "color": "#0369A1",
+   "face": "U",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-U-3/S1",
+     "level": 1,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "휴대 핫팩·낮은 포장",
+     "group": "보호대·테이핑·온열용품",
+     "items": [
+      {
+       "code": "0046",
+       "name": "하루온 붙이는 핫팩",
+       "spec": "10매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-U-3/S2",
+     "level": 2,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "발목·무릎 지지",
+     "group": "보호대·테이핑·온열용품",
+     "items": [
+      {
+       "code": "0036",
+       "name": "큐어온 관절보호대 테이핑서포터(발목)",
+       "spec": "S",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0039",
+       "name": "큐어온 관절보호대 테이핑서포터(무릎)",
+       "spec": "S",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0040",
+       "name": "큐어온 관절보호대 테이핑서포터(무릎)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0037",
+       "name": "큐어온 관절보호대 테이핑서포터(발목)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0033",
+       "name": "큐어온 관절보호대 테이핑서포터(손목)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0035",
+       "name": "큐어온 관절보호대 테이핑서포터(손목)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0043",
+       "name": "큐어온 관절보호대 테이핑서포터(팔꿈치)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G6-U-3/S3",
+     "level": 3,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "온열 보조용품",
+     "group": "보호대·테이핑·온열용품",
+     "items": [
+      {
+       "code": "0074",
+       "name": "하루온 이지페인 아랫배온팩(숲속향)",
+       "spec": "5매",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0045",
+       "name": "큐어온 관절보호대 서포트(허리)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0041",
+       "name": "큐어온 관절보호대 테이핑서포터(무릎)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0038",
+       "name": "큐어온 관절보호대 테이핑서포터(발목)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0034",
+       "name": "큐어온 관절보호대 테이핑서포터(손목)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0042",
+       "name": "큐어온 관절보호대 테이핑서포터(팔꿈치)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      },
+      {
+       "code": "0044",
+       "name": "큐어온 관절보호대 테이핑서포터(팔꿈치)",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 7
+    },
+    {
+     "id": "G6-U-3/S4",
+     "level": 4,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "휴대 수분·에너지 식품",
+     "group": "수분·에너지 식품",
+     "items": [
+      {
+       "code": "2396",
+       "name": "마시는 스웨그 수분 부스터",
+       "spec": "150mL",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2446",
+       "name": "알디콤BOOST 에너지젤 그린제스트 1포",
+       "spec": "1포",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "0216",
+       "name": "퍼니트 링포유 레몬맛 10포",
+       "spec": "",
+       "f": 1,
+       "new": true,
+       "cond": "대체 후보 채택 · 1F 시작"
+      }
+     ],
+     "f": 3
+    },
+    {
+     "id": "G6-U-3/S5",
+     "level": 5,
+     "status": "오픈 진열",
+     "short": "진열",
+     "need": "벌레물림 외용약",
+     "group": "벌레물림 외용제",
+     "items": [
+      {
+       "code": "1877",
+       "name": "물린디액",
+       "spec": "60g",
+       "f": 1,
+       "new": false
+      },
+      {
+       "code": "2363",
+       "name": "물린디쿨액(50ml)",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 2
+    }
+   ],
+   "pending": [],
+   "skuRows": 20,
+   "facings": 20
+  },
+  "G1-EL": {
+   "id": "G1-EL",
+   "name": "Acne Finder",
+   "theme": "피부약·상처 보호",
+   "role": "여드름 상태 선택",
+   "color": "#C2410C",
+   "face": "EL",
+   "brandZone": {
+    "brand": "리쥬비(-넥스·-에스)",
+    "maker": "파마리서치",
+    "claim": "PDRN 의약품·화장품 구분",
+    "why": "여드름 상태 선택 엔드에서 '여드름 후 흉터·재생' 상담으로 연결. 의약품 리쥬비넥스(W1)와 화장품 리쥬비-에스를 같은 브랜드로 대조 설명 가능."
+   },
+   "shelves": [
+    {
+     "id": "G1-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "현재 피부 상태 안내",
+     "group": "면포성 여드름 외용제 / 붉은 여드름 외용제 / 흉터 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-EL/S2",
+     "level": 2,
+     "status": "안내",
+     "short": "안내",
+     "need": "면포·피지 → G1-D-1/S2",
+     "group": "면포성 여드름 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-EL/S3",
+     "level": 3,
+     "status": "안내",
+     "short": "안내",
+     "need": "붉은 여드름 → G1-D-1/S3",
+     "group": "붉은 여드름 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "후속 상담 안내 확장 여유",
+     "group": "면포성 여드름 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "교체 안내물 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 0,
+   "facings": 0
+  },
+  "G1-ER": {
+   "id": "G1-ER",
+   "name": "Pore & Body",
+   "theme": "더마·세정·선케어",
+   "role": "피지와 몸 피부 구분",
+   "color": "#BE185D",
+   "face": "ER",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G1-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "피지·모공 스킨케어 / 바디 보습·미스트",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "피지·모공 스킨케어",
+     "group": "피지·모공 스킨케어",
+     "items": [
+      {
+       "code": "2238",
+       "name": "프랭클리 나이아신아마이드15% 징크 비즈 트러블케어세럼 30ml",
+       "spec": "30ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "바디 보습·미스트",
+     "group": "바디 보습·미스트",
+     "items": [
+      {
+       "code": "0531",
+       "name": "낫포유 클리어 바디 미스트 120ml",
+       "spec": "120ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G1-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "피지·모공 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G1-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G2-EL": {
+   "id": "G2-EL",
+   "name": "Scar Finder",
+   "theme": "피부약·상처 보호",
+   "role": "아문 흉터 타입 비교",
+   "color": "#C2410C",
+   "face": "EL",
+   "brandZone": {
+    "brand": "이지덤",
+    "maker": "대웅제약",
+    "claim": "습윤 드레싱",
+    "why": "케어리브와 소재·부위 비교 구도."
+   },
+   "shelves": [
+    {
+     "id": "G2-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "흉터 외용제 / 실리콘 흉터관리 제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-EL/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "흉터 외용제",
+     "group": "흉터 외용제",
+     "items": [
+      {
+       "code": "1858",
+       "name": "노스카딘겔",
+       "spec": "18g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-EL/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "실리콘 흉터관리 제품",
+     "group": "실리콘 흉터관리 제품",
+     "items": [
+      {
+       "code": "1832",
+       "name": "스카덤울트라",
+       "spec": "10g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "흉터 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G2-ER": {
+   "id": "G2-ER",
+   "name": "Wound Cover",
+   "theme": "피부약·상처 보호",
+   "role": "상처 보호재 선택",
+   "color": "#C2410C",
+   "face": "ER",
+   "brandZone": {
+    "brand": "케어리브",
+    "maker": "일동제약(니치반 브랜드)",
+    "claim": "습윤 밴드·하이드로콜로이드",
+    "why": "선정 SKU 18건으로 최다. G2-ER에 이미 본진."
+   },
+   "shelves": [
+    {
+     "id": "G2-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "일반·방수 밴드 / 습윤 드레싱",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "일반·방수 밴드",
+     "group": "일반·방수 밴드",
+     "items": [
+      {
+       "code": "1861",
+       "name": "케어리브방수형M",
+       "spec": "20개입",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "습윤 드레싱",
+     "group": "습윤 드레싱",
+     "items": [
+      {
+       "code": "2046",
+       "name": "케어리브습윤방수(중형)",
+       "spec": "12매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G2-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "일반·방수 밴드",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G2-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G3-EL": {
+   "id": "G3-EL",
+   "name": "Tone & Sun",
+   "theme": "더마·세정·선케어",
+   "role": "색소와 화장품 구분",
+   "color": "#BE185D",
+   "face": "EL",
+   "brandZone": {
+    "brand": "마데카파마시아",
+    "maker": "동국제약",
+    "claim": "센텔라·재생",
+    "why": "G3-D-3 선케어와 연결."
+   },
+   "shelves": [
+    {
+     "id": "G3-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "기미·색소 외용제 / 톤·브라이트닝 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-EL/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "기미·색소 외용제",
+     "group": "기미·색소 외용제",
+     "items": [
+      {
+       "code": "2265",
+       "name": "멜라토닝크림",
+       "spec": "30g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G3-EL/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "자외선차단",
+     "group": "자외선차단",
+     "items": [
+      {
+       "code": "2343",
+       "name": "리쥬올어드밴스드PDRN카밍선세럼",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G3-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "기미·색소 외용제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G3-ER": {
+   "id": "G3-ER",
+   "name": "Scalp & Rest",
+   "theme": "일반약·여행·생활",
+   "role": "두피·휴식 필요별 안내",
+   "color": "#0369A1",
+   "face": "ER",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G3-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "탈모·두피 상담약 / 두피 화장품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "두피 화장품",
+     "group": "두피 화장품",
+     "items": [
+      {
+       "code": "2335",
+       "name": "닥터 리쥬올 어드밴스드 피디알엔 헤어 덴시티 스칼프 세럼",
+       "spec": "15ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G3-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "탈모·두피 상담약",
+     "group": "탈모·두피 상담약",
+     "items": [
+      {
+       "code": "2513",
+       "name": "(신)니조랄2%액",
+       "spec": "100ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G3-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "두피 화장품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G3-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G4-EL": {
+   "id": "G4-EL",
+   "name": "Inner Beauty",
+   "theme": "영양·건강 선물",
+   "role": "먹는 뷰티 제형",
+   "color": "#B45309",
+   "face": "EL",
+   "brandZone": {
+    "brand": "에버콜라겐",
+    "maker": "뉴트리",
+    "claim": "먹는 콜라겐",
+    "why": "이너뷰티 단일 축."
+   },
+   "shelves": [
+    {
+     "id": "G4-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "비타민C 경구제품 / 콜라겐·이너뷰티",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-EL/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "비타민C 경구제품",
+     "group": "비타민C 경구제품",
+     "items": [
+      {
+       "code": "2413",
+       "name": "하이퍼셀리포좀비타민C",
+       "spec": "30포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G4-EL/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "콜라겐·이너뷰티",
+     "group": "콜라겐·이너뷰티",
+     "items": [
+      {
+       "code": "2014",
+       "name": "앱솔루트콜라겐9.0",
+       "spec": "30p",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G4-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "비타민C 경구제품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G4-ER": {
+   "id": "G4-ER",
+   "name": "Daily Nutrition",
+   "theme": "영양·건강 선물",
+   "role": "일상 영양 선택",
+   "color": "#B45309",
+   "face": "ER",
+   "brandZone": {
+    "brand": "고려은단",
+    "maker": "고려은단",
+    "claim": "약국 비타민",
+    "why": "G4-ER에 이미 본진. 약국 채널 비타민 대표."
+   },
+   "shelves": [
+    {
+     "id": "G4-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "루테인·눈 영양 / 유산균 / 오메가3·혈행 영양",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "유산균",
+     "group": "유산균",
+     "items": [
+      {
+       "code": "2377",
+       "name": "생유산균_락토핏_골드_리뉴얼",
+       "spec": "50포",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G4-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "멀티비타민·미네랄",
+     "group": "멀티비타민·미네랄",
+     "items": [
+      {
+       "code": "2194",
+       "name": "고려은단 멀티비타민 올인원 맨",
+       "spec": "30T",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G4-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "유산균",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G4-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G5-EL": {
+   "id": "G5-EL",
+   "name": "Skin Care Finder",
+   "theme": "더마·세정·선케어",
+   "role": "5개 고민 상담 연결",
+   "color": "#BE185D",
+   "face": "EL",
+   "brandZone": {
+    "brand": "프로캄",
+    "maker": "한미사이언스",
+    "claim": "EGF·멜라·아크페어",
+    "why": "11개 모듈에 걸친 다축 배치. 고민 길찾기 엔드와 정합."
+   },
+   "shelves": [
+    {
+     "id": "G5-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "장벽·보습 스킨케어 / 진정 스킨케어 / 탄력·주름 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-EL/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "장벽·보습 스킨케어",
+     "group": "장벽·보습 스킨케어",
+     "items": [
+      {
+       "code": "2464",
+       "name": "닥터알파 피부장벽 크림 80ML",
+       "spec": "80ML",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-EL/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "진정 스킨케어",
+     "group": "진정 스킨케어",
+     "items": [
+      {
+       "code": "2465",
+       "name": "프로캄 후시메디 리페어 젤 마스크",
+       "spec": "27ml*5매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "장벽·보습 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G5-ER": {
+   "id": "G5-ER",
+   "name": "PDRN Guide",
+   "theme": "더마·세정·선케어",
+   "role": "PDRN 제품 구분",
+   "color": "#BE185D",
+   "face": "ER",
+   "brandZone": {
+    "brand": "닥터리쥬올",
+    "maker": "Dr.Reju-All",
+    "claim": "PDRN 재생 스킨케어",
+    "why": "이 엔드의 역할이 'PDRN 제품 구분'. 자사 전용 모듈 G5-D-1과 인접해 G5에 브랜드 코너를 형성한다. 국내 약 5,000개 약국 유통·약국 채널 대표 PDRN 브랜드."
+   },
+   "shelves": [
+    {
+     "id": "G5-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "PDRN 스킨케어 / PDRN 일반의약품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "PDRN 스킨케어",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "2341",
+       "name": "리쥬란 턴오버 인핸스드 크림",
+       "spec": "50ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "PDRN 스킨케어",
+     "group": "PDRN 스킨케어",
+     "items": [
+      {
+       "code": "1946",
+       "name": "레비온 RX PDRN EGF크림",
+       "spec": "20ml",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G5-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "PDRN 스킨케어",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G5-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G6-EL": {
+   "id": "G6-EL",
+   "name": "Lip & Eye",
+   "theme": "립·눈·다리·구강",
+   "role": "작은 부위별 선택",
+   "color": "#6D28D9",
+   "face": "EL",
+   "brandZone": null,
+   "shelves": [
+    {
+     "id": "G6-EL/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "립 보습 화장품 / 점안·세안 의약품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-EL/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "립 보습 화장품",
+     "group": "립 보습 화장품",
+     "items": [
+      {
+       "code": "2381",
+       "name": "프로캄 판테놀 립 에센스",
+       "spec": "1EA",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-EL/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "렌즈·눈꺼풀 위생",
+     "group": "렌즈·눈꺼풀 위생",
+     "items": [
+      {
+       "code": "1965",
+       "name": "블레파크린",
+       "spec": "20매",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-EL/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "립 보습 화장품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-EL/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  },
+  "G6-ER": {
+   "id": "G6-ER",
+   "name": "Walk Comfort",
+   "theme": "일반약·여행·생활",
+   "role": "많이 걷는 여행",
+   "color": "#0369A1",
+   "face": "ER",
+   "brandZone": {
+    "brand": "신신",
+    "maker": "신신제약",
+    "claim": "파스·외용",
+    "why": "L3·G6-U-1 본진과 연결."
+   },
+   "shelves": [
+    {
+     "id": "G6-ER/S1",
+     "level": 1,
+     "status": "안내",
+     "short": "안내",
+     "need": "선택 안내",
+     "group": "무좀·진균 외용제 / 일반·방수 밴드 / 파스·바르는 진통제",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-ER/S2",
+     "level": 2,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "풋 케어 화장품",
+     "group": "풋 케어 화장품",
+     "items": [
+      {
+       "code": "0543",
+       "name": "플루 인텐시브 리페어 풋크림 100g",
+       "spec": "100g",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-ER/S3",
+     "level": 3,
+     "status": "테마 진열",
+     "short": "테마",
+     "need": "수분·에너지 식품",
+     "group": "수분·에너지 식품",
+     "items": [
+      {
+       "code": "2396",
+       "name": "마시는 스웨그 수분 부스터",
+       "spec": "150mL",
+       "f": 1,
+       "new": false
+      }
+     ],
+     "f": 1
+    },
+    {
+     "id": "G6-ER/S4",
+     "level": 4,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "풋 케어 화장품",
+     "items": [],
+     "f": 0
+    },
+    {
+     "id": "G6-ER/S5",
+     "level": 5,
+     "status": "확장 여유",
+     "short": "여유",
+     "need": "추가 도입 여유",
+     "group": "안내·교체 여유",
+     "items": [],
+     "f": 0
+    }
+   ],
+   "pending": [],
+   "skuRows": 2,
+   "facings": 2
+  }
+ },
+ "packagingGuide": {
+  "basis": "포장 실측이 어려운 상황에서 페이싱 수를 정하기 위한 폭 구간 가이드. SKU별 입력 대신 이 4개 구간 중 하나를 고르면 된다.",
+  "shelfEffectiveWidthMm": {
+   "일반 모듈": 865,
+   "엔드캡": 645
+  },
+  "classes": [
+   {
+    "id": "S",
+    "label": "소형",
+    "examples": "스틱·앰플·립·소형 튜브",
+    "widthMm": "20~35",
+    "perShelf865": "24~43F",
+    "perShelf645": "18~32F"
+   },
+   {
+    "id": "M",
+    "label": "중형",
+    "examples": "크림 30~50ml·연고·정제 박스",
+    "widthMm": "40~60",
+    "perShelf865": "14~21F",
+    "perShelf645": "10~16F"
+   },
+   {
+    "id": "L",
+    "label": "대형",
+    "examples": "로션 100~200ml·세럼 박스·밴드 대용량",
+    "widthMm": "70~100",
+    "perShelf865": "8~12F",
+    "perShelf645": "6~9F"
+   },
+   {
+    "id": "XL",
+    "label": "특대",
+    "examples": "선물세트·대용량 홍삼·기기",
+    "widthMm": "120~180",
+    "perShelf865": "4~7F",
+    "perShelf645": "3~5F"
+   }
+  ],
+  "targetFillRate": 0.7,
+  "targetRule": "선반 목표 충전율 70% 기준 → 일반 모듈 605mm, 엔드캡 450mm를 채우는 F를 배정한다.",
+  "heightLimits": {
+   "W-S1": 440,
+   "W-S2~S4": 270,
+   "W-S5": 310,
+   "G·E-S1": 80,
+   "G·E-S2~S5": 200,
+   "note": "06_집기치수20의 개구 높이에서 여유 20mm를 뺀 값. S1(곤돌라·엔드)은 80mm라 대부분의 상품이 들어가지 않는다."
+  },
+  "practicalNote": "모든 칸을 실제 진열처럼 채우는 것은 초도에 현실적이지 않다. S2·S3를 70%로 먼저 채우고, S4·S5는 40~50%에서 시작해 2주 후 조정하는 것을 권한다."
+ },
+ "excluded": {
+  "아크로패스": "사용자 지정 제외. 선정 SKU 4건은 G1-D-2·B1 본진 배치를 유지한다."
+ },
+ "hold": [
+  {
+   "code": "pd0001955",
+   "name": "CJ 맛군밤",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000373",
+   "name": "CJ제일제당 다시다/나쵸 65G",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000371",
+   "name": "CJ제일제당 다시다/팝콘 다시다맛80G",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000374",
+   "name": "CJ제일제당 비비고/김 나쵸 65G",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000372",
+   "name": "CJ제일제당 비비고/김 팝콘 80G",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0002519",
+   "name": "레모나구미(레몬맛)",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0002520",
+   "name": "레모나구미(복숭아맛)",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0002292",
+   "name": "믹순 콩 에센스",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0002312",
+   "name": "믹순 콩 에센스 스틱파우치",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0002436",
+   "name": "박카스맛젤리",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0000333",
+   "name": "잇츠베러 제로슈가 쿠키 더블초코",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000335",
+   "name": "잇츠베러 제로슈가 쿠키 말차초코칩",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000334",
+   "name": "잇츠베러 제로슈가 쿠키토피넛",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000337",
+   "name": "잇츠베러 코코넛칩 망고",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000336",
+   "name": "잇츠베러 코코넛칩 브라우니",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000332",
+   "name": "잇츠베러 크래커 베리즈",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000331",
+   "name": "잇츠베러 크래커 어니언",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000330",
+   "name": "잇츠베러 크래커 초코시나몬",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000351",
+   "name": "자연공유 곤약쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000362",
+   "name": "자연공유 단백질이 닭이다 김치맛",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000361",
+   "name": "자연공유 단백질이 닭이다 랜치맛",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000360",
+   "name": "자연공유 단백질이 답이다 마늘빵",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000359",
+   "name": "자연공유 단백질이 답이다 스위트",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000358",
+   "name": "자연공유 단백질이 답이다 오리지널",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000357",
+   "name": "자연공유 단백한공유 오리지널",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000352",
+   "name": "자연공유 말차쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000354",
+   "name": "자연공유 매울신쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000353",
+   "name": "자연공유 보이차쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000365",
+   "name": "자연공유 인생어포 까삭이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000355",
+   "name": "자연공유 츄러스쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000366",
+   "name": "자연공유 칠리하새우",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000356",
+   "name": "자연공유 커피쫀득이",
+   "group": "캔디·간식",
+   "primary": "상설 미배정",
+   "importance": "N",
+   "why": "약국 포지셔닝 판단 필요 — 자동 배정하지 않음"
+  },
+  {
+   "code": "pd0000116",
+   "name": "큐원 상쾌환 스틱형 제로(납작복숭아맛)",
+   "group": "숙취 관련 식품",
+   "primary": "상설 미배정",
+   "importance": "C",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0000120",
+   "name": "큐원상쾌환(음주 전/후)신포장",
+   "group": "숙취 관련 식품",
+   "primary": "상설 미배정",
+   "importance": "C",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0001706",
+   "name": "토니모리 블랙티인텐스리바이브오일",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0002078",
+   "name": "프레스샷",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  },
+  {
+   "code": "pd0002079",
+   "name": "프레스샷F",
+   "group": "기초 스킨케어·세부목적 확인",
+   "primary": "상설 미배정",
+   "importance": "H",
+   "why": "상품명으로 용도를 판별할 수 없음"
+  }
+ ]
+}
