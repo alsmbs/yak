@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>K-Pharmacy Layout Studio 3D v7.0 · 약국 레이아웃·진열 시뮬레이터</title>
+    <title>K-Pharmacy Layout Studio 3D v7.1 · 약국 레이아웃·조닝·진열 시뮬레이터</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css"
@@ -1800,6 +1800,26 @@
         color: #667085;
         text-align: center;
       }
+      .pg-pick {
+        width: 100%;
+        border: 1px solid var(--line2);
+        border-radius: 6px;
+        padding: 4px 6px;
+        font-size: 9px;
+        background: #fff;
+        text-align: left;
+        color: #182230;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .pg-pick:hover {
+        border-color: #8dc2dd;
+        background: #f8fcff;
+      }
+      .pg-pick.empty {
+        color: #98a2b3;
+      }
       .pg-level select {
         width: 100%;
         border: 1px solid var(--line2);
@@ -1876,11 +1896,17 @@
       }
       .level-grid {
         display: grid;
-        grid-template-columns: 62px minmax(0, 1.25fr) minmax(0, 1fr) auto;
-        gap: 6px;
+        grid-template-columns: 66px minmax(0, 1fr) 84px auto;
+        gap: 5px;
         align-items: center;
         padding: 6px 8px;
         border-top: 1px solid #edf1f5;
+      }
+      .level-grid .lv-note {
+        grid-column: 2 / -1;
+      }
+      .level-grid b {
+        line-height: 1.25;
       }
       .level-grid.gold {
         background: #fffaeb;
@@ -1999,7 +2025,7 @@
         <div class="brand">
           <div class="brand-mark">K</div>
           <div class="brand-copy">
-            <strong>K-Pharmacy Layout Studio 3D v7.0</strong
+            <strong>K-Pharmacy Layout Studio 3D v7.1</strong
             ><span>Layout · Zoning · Planogram</span>
           </div>
         </div>
@@ -2023,6 +2049,7 @@
         <div class="toolbar-group hide-small">
           <button class="btn" id="importJsonBtn">JSON 열기</button
           ><button class="btn" id="exportJsonBtn">JSON 저장</button
+          ><button class="btn" id="exportZoningBtn" title="kpharmacy.zoning/1.0 조닝 문서로 저장">조닝 문서</button
           ><button class="btn" id="exportPngBtn">PNG</button
           ><button class="btn" id="exportSvgBtn">SVG</button>
         </div>
@@ -2150,6 +2177,12 @@
                   >면적<input id="storePyeong" type="text" readonly
                 /></label>
               </div>
+              <label class="field" style="margin-top: 8px"
+                >단 번호 표기<select id="levelOrderSel">
+                  <option value="topDown">S1 = 최상단 (운영 문서 기준)</option>
+                  <option value="bottomUp">S1 = 최하단 (매대 시공 기준)</option>
+                </select></label
+              >
               <label class="checkline"
                 ><input id="snapToggle" type="checkbox" checked /> 격자
                 맞춤</label
@@ -2332,6 +2365,7 @@
               라벨</button
             ><button class="btn" id="fitCanvasBtn">전체보기</button
             ><button class="btn" id="codeBtn" title="진열대 코드 자동 부여">코드</button
+            ><button class="btn" id="stripModeBtn" title="단 스트립 색상 기준 전환">분류색</button
             ><button class="btn" id="open3DCanvasBtn">3D</button>
           </div>
           <div class="mode-chip">
@@ -2596,6 +2630,7 @@
             </div>
             <div class="three-modebar">
               <button class="chip3d" data-mode3d="solid">기본</button
+              ><button class="chip3d" data-mode3d="status">운영 상태</button
               ><button class="chip3d" data-mode3d="height">높이 히트맵</button
               ><button class="chip3d" data-mode3d="wire">골격</button>
             </div>
@@ -3342,6 +3377,7 @@
             showGrid: true,
             showZones: true,
             showLabels: true,
+            stripMode: "category",
             bg: null,
             bgOpacity: 0.34,
             bgNatural: { w: 0, h: 0 },
@@ -3432,6 +3468,7 @@
               typeof v === "string"
                 ? { zone: e.zone, category: "", note: v }
                 : {
+                    ...v,
                     zone: ZONES[v?.zone]
                       ? v.zone
                       : findCategoryZone(v?.category, e.zone) || e.zone,
@@ -3461,8 +3498,18 @@
             .slice(0, 12)
             .toUpperCase();
           if (!SHELF_TYPES.has(e.type)) e.code = "";
+          e.theme = String(e.theme || "").slice(0, 40);
+          e.moduleFace = String(e.moduleFace || "").slice(0, 40);
+          e.role = String(e.role || "").slice(0, 200);
+          e.skuCandidates = Math.max(0, Math.round(Number(e.skuCandidates) || 0));
           e.levelDetails.forEach((d) => {
             d.facings = clamp(Math.round(Number(d.facings) || 0), 0, 99);
+            d.status = STATUS_KEYS.includes(d.status) ? d.status : "permanent";
+            d.shelfId = String(d.shelfId || "").slice(0, 48);
+            d.examples = Array.isArray(d.examples)
+              ? d.examples.slice(0, 8).map((v) => String(v).slice(0, 120))
+              : [];
+            d.criteria = String(d.criteria || "").slice(0, 600);
           });
           e.calibRealW = Number(e.calibRealW) || 900;
           e.calibRealH = Number(e.calibRealH) || 450;
@@ -3480,6 +3527,9 @@
           state.project.name = String(
             state.project.name || "신규 약국 레이아웃",
           ).slice(0, 80);
+          /* 운영 문서(2026.09.12)와 선반 ID(W1/S1…)가 S1=최상단이므로 기본값을 topDown 으로 둔다. */
+          state.project.levelOrder =
+            state.project.levelOrder === "bottomUp" ? "bottomUp" : "topDown";
           state.store = {
             w: 18000,
             h: 11000,
@@ -3491,6 +3541,7 @@
             showGrid: true,
             showZones: true,
             showLabels: true,
+            stripMode: "category",
             bg: null,
             bgOpacity: 0.34,
             bgNatural: { w: 0, h: 0 },
@@ -3522,6 +3573,8 @@
           state.store.showGrid = state.store.showGrid !== false;
           state.store.showZones = state.store.showZones !== false;
           state.store.showLabels = state.store.showLabels !== false;
+          state.store.stripMode =
+            state.store.stripMode === "status" ? "status" : "category";
           state.store.bgOpacity = clamp(
             Number(state.store.bgOpacity) || 0,
             0,
@@ -3717,13 +3770,18 @@
           );
           select.value = selected ? categoryRef(selectedZone, selected) : "";
         }
-        /** 단 번호는 매대 실무 표기에 맞춰 최하단=1단으로 표기한다(데이터 인덱스 0=최상단). */
+        /** 단 번호 표기. 데이터 인덱스 0은 항상 물리적 최상단이며,
+         *  표기 방향만 project.levelOrder 로 바꾼다(기본 topDown = S1이 최상단). */
+        function levelNoFromIndex(i, total) {
+          return (state.project?.levelOrder || "topDown") === "topDown"
+            ? i + 1
+            : Math.max(1, total - i);
+        }
         function levelLabel(i, total) {
-          const no = Math.max(1, total - i);
-          if (total === 1) return "1단";
-          if (i === 0) return `${no}단(최상단)`;
-          if (i === total - 1) return "1단(최하단)";
-          return `${no}단`;
+          const no = levelNoFromIndex(i, total);
+          if (total === 1) return "S1";
+          const tag = i === 0 ? " · 최상단" : i === total - 1 ? " · 최하단" : "";
+          return `S${no}${tag}`;
         }
         function syncInputs() {
           $("#projectName").value = state.project.name;
@@ -3732,6 +3790,7 @@
           $("#ceilingH").value = Math.round(state.store.ceiling);
           $("#gridSize").value = state.store.grid;
           $("#minAisle").value = state.store.minAisle;
+          $("#levelOrderSel").value = state.project.levelOrder || "topDown";
           $("#snapToggle").checked = state.store.snap;
           $("#guideToggle").checked = state.store.smartGuides;
           $("#gridToggleBtn").setAttribute(
@@ -3998,10 +4057,14 @@
             if (L > 1) {
               const t = clamp(Math.min(e.w, e.h) * 0.22, 52, 120);
               for (let k = 0; k < L; k++) {
-                const d = e.levelDetails[L - 1 - k] || {},
-                  col = d.category
-                    ? ZONES[d.zone]?.color || "#98A2B3"
-                    : "#E7ECF2";
+                /* 스트립은 항상 물리적 위→아래 순서(인덱스 0 = 최상단)로 그린다 */
+                const d = e.levelDetails[k] || {},
+                  col =
+                    state.store.stripMode === "status"
+                      ? SHELF_STATUS[d.status || "permanent"].color
+                      : d.category
+                        ? ZONES[d.zone]?.color || "#98A2B3"
+                        : "#E7ECF2";
                 inner += alongX
                   ? `<rect class="level-chip" x="${(e.w * k) / L}" y="0" width="${e.w / L}" height="${t}" fill="${col}"/>`
                   : `<rect class="level-chip" x="0" y="${(e.h * k) / L}" width="${t}" height="${e.h / L}" fill="${col}"/>`;
@@ -4113,6 +4176,9 @@
             "aria-pressed",
             String(state.store.showLabels),
           );
+          if ($("#stripModeBtn"))
+            $("#stripModeBtn").textContent =
+              state.store.stripMode === "status" ? "상태색" : "분류색";
           svg.setAttribute(
             "viewBox",
             `${state.view.x} ${state.view.y} ${state.view.w} ${state.view.h}`,
@@ -4346,11 +4412,18 @@
                     col = v.category
                       ? ZONES[v.zone]?.color || "#98A2B3"
                       : "#E7ECF2";
-                  return `<div class="level-grid${gold ? " gold" : ""}"><b><i class="lv-color" style="background:${col}"></i>${levelLabel(i, e.levels)}<br><small style="color:#98a2b3;font-size:7px;font-weight:500">${fmt(band.z0)}~${fmt(band.z1)}mm</small></b><select data-level-category="${i}">${categoryOptions(e.zone, v.category, "분류 미지정", v.zone || e.zone)}</select><input data-level-note="${i}" value="${esc(v.note)}" placeholder="비고 · 페이싱"><span class="lv-move"><button type="button" data-level-move="${i}" data-dir="-1" title="위 단과 교체">▲</button><button type="button" data-level-move="${i}" data-dir="1" title="아래 단과 교체">▼</button></span></div>`;
+                  return `<div class="level-grid${gold ? " gold" : ""}"><b><i class="lv-color" style="background:${col}"></i>${levelLabel(i, e.levels)}<br><small style="color:#98a2b3;font-size:7px;font-weight:500">${fmt(band.z0)}~${fmt(band.z1)}mm${v.shelfId ? `<br>${esc(v.shelfId)}` : ""}</small></b><select data-level-category="${i}">${categoryOptions(e.zone, v.category, "분류 미지정", v.zone || e.zone)}</select><select data-level-status="${i}">${STATUS_KEYS.map((k) => `<option value="${k}" ${(k === (v.status || "permanent")) ? "selected" : ""}>${esc(SHELF_STATUS[k].ko)}</option>`).join("")}</select><span class="lv-move"><button type="button" data-level-move="${i}" data-dir="-1" title="위 단과 교체">▲</button><button type="button" data-level-move="${i}" data-dir="1" title="아래 단과 교체">▼</button></span><input class="lv-note" data-level-note="${i}" value="${esc(v.note)}" placeholder="고민·증상 / 비고"></div>`;
                 })
                 .join("")}<div class="level-actions"><button class="small-btn" id="fillLevelsCategoryBtn">현재 분류 전 단 적용</button><button class="small-btn" id="copyLevelsBtn">단 복사</button><button class="small-btn" id="pasteLevelsBtn">붙여넣기</button><button class="small-btn" id="clearLevelsBtn">비우기</button></div></div><div class="golden-note">${LEVEL_PRINCIPLE.map((t) => `· ${esc(t)}`).join("<br>")}</div>`
             : "";
-          box.innerHTML = `<label class="field">${isText ? "내부 표시 문구" : "항목명 · 중카테고리 선택 시 자동 입력"}<textarea id="iName" rows="2">${esc(e.name)}</textarea></label><div class="inspector-size"><label>가로<input id="iW" type="number" min="20" value="${Math.round(e.w)}" step="10"><small>mm</small></label><label>폭<input id="iH" type="number" min="20" value="${Math.round(e.h)}" step="10"><small>mm</small></label><label>높이<input id="iZ" type="number" min="0" value="${Math.round(e.zHeight || 0)}" step="10"><small>mm</small></label></div>${canRotate ? `<div class="rotation-control"><label class="field">회전각<input id="iRotation" type="number" min="-180" max="180" step="1" value="${Math.round(e.rotation || 0)}"></label><div class="rotation-actions"><button class="small-btn" data-rotate-delta="-15">−15°</button><button class="small-btn" data-rotate-reset="1">0°</button><button class="small-btn" data-rotate-delta="15">+15°</button></div></div><div class="category-note">회전된 항목은 우측 가로·폭 입력으로 크기를 조절할 수 있습니다.</div>` : ""}${isShelf ? `<div class="grid3" style="margin-top:8px"><label class="field">진열대 코드<input id="iCode" value="${esc(e.code)}" placeholder="W1 · G3" maxlength="12"></label><label class="field">칸 수<input id="iBays" type="number" min="1" max="30" value="${e.bays}"></label><label class="field">단 수<input id="iLevels" type="number" min="1" max="20" value="${e.levels}"></label></div>` : ""}${categoryBlock}${levelBlock}${isText ? `<label class="field" style="margin-top:8px">글자 크기<input id="iFont" type="range" min=".5" max="2.4" step=".05" value="${e.fontScale || 1}"></label>` : ""}${e.type === "arrow" ? `<label class="field" style="margin-top:8px">화살표 방향<select id="iDirection"><option value="right" ${e.direction === "right" ? "selected" : ""}>오른쪽</option><option value="down" ${e.direction === "down" ? "selected" : ""}>아래</option><option value="left" ${e.direction === "left" ? "selected" : ""}>왼쪽</option><option value="up" ${e.direction === "up" ? "selected" : ""}>위</option></select></label>` : ""}<div style="font-size:9px;color:#667085;font-weight:750;margin-top:9px">매대·시설 색상</div>${colorSwatches(color, "i")}<label class="field" style="margin-top:8px">투명도<input id="iOpacity" type="range" min=".15" max="1" step=".05" value="${e.opacity}"></label><label class="field" style="margin-top:8px">메모<textarea id="iNote">${esc(e.note)}</textarea></label><label class="checkline"><input id="iLock" type="checkbox" ${e.locked ? "checked" : ""}> 위치·크기 잠금</label><label class="checkline"><input id="iHidden" type="checkbox" ${e.hidden ? "checked" : ""}> 도면에서 숨기기</label><div class="audit-box" style="margin-top:9px">${esc(TYPE_LABELS[e.type] || e.type)} · 바닥 ${((e.w * e.h) / 1e6).toFixed(2)}㎡${e.category ? ` · ${esc(e.categoryZone !== e.zone ? `${e.categoryZone} › ` : "")}${esc(e.category)}` : ""}${isShelf ? ` · ${e.bays}칸×${e.levels}단` : ""}</div>`;
+          box.innerHTML = `<label class="field">${isText ? "내부 표시 문구" : "항목명 · 중카테고리 선택 시 자동 입력"}<textarea id="iName" rows="2">${esc(e.name)}</textarea></label><div class="inspector-size"><label>가로<input id="iW" type="number" min="20" value="${Math.round(e.w)}" step="10"><small>mm</small></label><label>폭<input id="iH" type="number" min="20" value="${Math.round(e.h)}" step="10"><small>mm</small></label><label>높이<input id="iZ" type="number" min="0" value="${Math.round(e.zHeight || 0)}" step="10"><small>mm</small></label></div>${canRotate ? `<div class="rotation-control"><label class="field">회전각<input id="iRotation" type="number" min="-180" max="180" step="1" value="${Math.round(e.rotation || 0)}"></label><div class="rotation-actions"><button class="small-btn" data-rotate-delta="-15">−15°</button><button class="small-btn" data-rotate-reset="1">0°</button><button class="small-btn" data-rotate-delta="15">+15°</button></div></div><div class="category-note">회전된 항목은 우측 가로·폭 입력으로 크기를 조절할 수 있습니다.</div>` : ""}${isShelf ? `<div class="grid3" style="margin-top:8px"><label class="field">진열대 코드<input id="iCode" value="${esc(e.code)}" placeholder="W1 · G3" maxlength="12"></label><label class="field">칸 수<input id="iBays" type="number" min="1" max="30" value="${e.bays}"></label><label class="field">단 수<input id="iLevels" type="number" min="1" max="20" value="${e.levels}"></label></div>` : ""}${categoryBlock}${levelBlock}${isText ? `<label class="field" style="margin-top:8px">글자 크기<input id="iFont" type="range" min=".5" max="2.4" step=".05" value="${e.fontScale || 1}"></label>` : ""}${e.type === "arrow" ? `<label class="field" style="margin-top:8px">화살표 방향<select id="iDirection"><option value="right" ${e.direction === "right" ? "selected" : ""}>오른쪽</option><option value="down" ${e.direction === "down" ? "selected" : ""}>아래</option><option value="left" ${e.direction === "left" ? "selected" : ""}>왼쪽</option><option value="up" ${e.direction === "up" ? "selected" : ""}>위</option></select></label>` : ""}<div style="font-size:9px;color:#667085;font-weight:750;margin-top:9px">매대·시설 색상</div>${colorSwatches(color, "i")}<label class="field" style="margin-top:8px">투명도<input id="iOpacity" type="range" min=".15" max="1" step=".05" value="${e.opacity}"></label><label class="field" style="margin-top:8px">메모<textarea id="iNote">${esc(e.note)}</textarea></label><label class="checkline"><input id="iLock" type="checkbox" ${e.locked ? "checked" : ""}> 위치·크기 잠금</label><label class="checkline"><input id="iHidden" type="checkbox" ${e.hidden ? "checked" : ""}> 도면에서 숨기기</label><div class="audit-box" style="margin-top:9px">${e.code ? `<b>${esc(e.code)}</b>${e.role ? ` · ${esc(e.role)}` : ""}<br>` : ""}${
+            e.skuCandidates
+              ? (() => {
+                  const l = moduleLoad(e);
+                  return `SKU 후보 ${e.skuCandidates}건 / 상설 ${l.perm}단 · 추정 수용 ${l.cap}건${l.ratio > 1.5 ? ` · <b style="color:#B42318">과적 ${l.ratio.toFixed(1)}배</b>` : ""}<br>`;
+                })()
+              : ""
+          }${esc(TYPE_LABELS[e.type] || e.type)} · 바닥 ${((e.w * e.h) / 1e6).toFixed(2)}㎡${e.category ? ` · ${esc(e.categoryZone !== e.zone ? `${e.categoryZone} › ` : "")}${esc(e.category)}` : ""}${isShelf ? ` · ${e.bays}칸×${e.levels}단` : ""}</div>`;
           const bind = (id, key, parser = (v) => v, min = null) => {
             const n = $(id);
             if (!n) return;
@@ -4451,6 +4524,14 @@
               });
               render();
             };
+          $$("[data-level-status]").forEach((sel) => {
+            sel.addEventListener("change", () => {
+              checkpoint();
+              e.levelDetails[+sel.dataset.levelStatus].status = sel.value;
+              clearAudit(true);
+              render();
+            });
+          });
           $$("[data-level-move]").forEach((btn) => {
             btn.onclick = () => {
               const i = +btn.dataset.levelMove,
@@ -5461,6 +5542,33 @@
                 "상단 도구의 ‘코드’ 버튼으로 W·L·R·B·G 코드를 자동 부여할 수 있습니다.",
               ids: shelfList().filter((e) => !e.code).map((e) => e.id).slice(0, 40),
             });
+          const zs = zoningStats();
+          if (zs.over.length)
+            addIssue({
+              severity: "warning",
+              title: "모듈 적재 과부하",
+              detail: `상설 선반 수용 추정(1선반 ${SHELF_SKU_CAPACITY}품목) 대비 1.5배를 넘는 모듈 ${zs.over.length}개. 최다 ${zs.over[0].e.code || zs.over[0].e.name} ${zs.over[0].sku}품목 / 상설 ${zs.over[0].perm}단 = ${zs.over[0].ratio.toFixed(1)}배.`,
+              suggestion:
+                "상설 단을 늘리거나, 후보 품목을 조건부 확장으로 내리거나, 인접 모듈로 분산하세요.",
+              ids: zs.over.slice(0, 40).map((o) => o.e.id),
+            });
+          if (zs.noPerm.length)
+            addIssue({
+              severity: "info",
+              title: "상설 선반 없는 배정 모듈",
+              detail: `상설 선반이 0단인데 SKU 후보가 배정된 모듈 ${zs.noPerm.length}개(${zs.noPerm.slice(0, 4).map((o) => `${o.e.code || o.e.name} ${o.sku}건`).join(" · ")}).`,
+              suggestion:
+                "교체 전시 전용 모듈이면 정상입니다. 상시 취급이 필요하면 본진 모듈을 별도로 지정하세요.",
+              ids: zs.noPerm.slice(0, 40).map((o) => o.e.id),
+            });
+          if (zs.shelves && zs.tot.info / zs.shelves > 0.3)
+            addIssue({
+              severity: "info",
+              title: "안내 선반 비중 높음",
+              detail: `전체 ${zs.shelves}단 중 안내 ${zs.tot.info}단(${((zs.tot.info / zs.shelves) * 100).toFixed(0)}%)입니다.`,
+              suggestion:
+                "안내 선반은 재고 공간이 아니므로, 상담 동선에 꼭 필요한 위치만 남기고 상설·조건부로 전환할 수 있는지 검토하세요.",
+            });
           if (md.tallBlockers)
             addIssue({
               severity: "info",
@@ -5740,7 +5848,25 @@
               warning: "보완",
               info: "참고",
             };
-          return `<article class="report-page"><div class="report-cover"><div><h2>${esc(state.project.name)}</h2><p>약국 레이아웃 분석 리포트 · ${esc(date)} · ${fmt(state.store.w)} × ${fmt(state.store.h)} mm</p></div><div class="report-score"><b style="color:${meta.color}">${analysis.score}</b><span>${meta.label} / 100</span></div></div><div class="report-kpis"><div class="report-kpi"><span>전체 면적</span><b>${analysis.metrics.totalArea.toFixed(1)}㎡</b></div><div class="report-kpi"><span>집기 점유율</span><b>${(analysis.metrics.occupancy * 100).toFixed(1)}%</b></div><div class="report-kpi"><span>조닝 적용률</span><b>${(analysis.metrics.zoneCoverage * 100).toFixed(1)}%</b></div><div class="report-kpi"><span>추정 진열칸</span><b>${analysis.metrics.slots}칸</b></div><div class="report-kpi"><span>추정 진열면</span><b>${analysis.metrics.front.toFixed(1)}m</b></div><div class="report-kpi"><span>단 분류 완성도</span><b>${(analysis.metrics.merch.fillRatio * 100).toFixed(0)}%</b></div><div class="report-kpi"><span>골든존 활용</span><b>${(analysis.metrics.merch.goldenRatio * 100).toFixed(0)}%</b></div></div><section class="report-section"><h3>평면 배치도 <span>${analysis.metrics.fixtures}개 집기</span></h3><div class="report-plan">${exportSvgString()}</div></section><section class="report-section"><h3>우선 검토 항목 <span>${analysis.issues.length}건</span></h3><div class="report-issues">${analysis.issues.length ? analysis.issues.map((issue) => `<div class="report-issue ${issue.severity}"><strong>${severityLabel[issue.severity]}</strong><div><b>${esc(issue.title)}</b><br>${esc(issue.detail)}${issue.suggestion ? `<br><span style="color:#667085">권장: ${esc(issue.suggestion)}</span>` : ""}</div></div>`).join("") : '<div class="audit-box">중요한 설계 문제가 발견되지 않았습니다.</div>'}</div></section><section class="report-section"><h3>조닝 배분</h3><table class="report-table"><thead><tr><th>대카테고리</th><th class="num">면적</th><th class="num">전체 대비</th><th class="num">배정 집기</th><th class="num">중카테고리</th></tr></thead><tbody>${zones.length ? zones.map((row) => `<tr><td><i class="zone-dot" style="display:inline-block;margin-right:6px;background:${ZONES[row.name]?.color || "#98a2b3"}"></i>${esc(row.name)}</td><td class="num">${row.area.toFixed(1)}㎡</td><td class="num">${analysis.metrics.totalArea ? ((row.area / analysis.metrics.totalArea) * 100).toFixed(1) : 0}%</td><td class="num">${row.fixtures}개</td><td class="num">${row.categories}개</td></tr>`).join("") : '<tr><td colspan="5">조닝 영역이 없습니다.</td></tr>'}</tbody></table></section><section class="report-section"><h3>진열대별 단 배정 <span>${analysis.metrics.merch.shelves}대 · ${analysis.metrics.merch.filled}/${analysis.metrics.merch.levels}단 분류</span></h3><table class="report-table"><thead><tr><th>코드</th><th>진열대</th><th>대카테고리</th><th class="num">규격 W×D×H</th><th>단별 배정 (최하단 1단 →)</th><th class="num">골든존</th></tr></thead><tbody>${
+          return `<article class="report-page"><div class="report-cover"><div><h2>${esc(state.project.name)}</h2><p>약국 레이아웃 분석 리포트 · ${esc(date)} · ${fmt(state.store.w)} × ${fmt(state.store.h)} mm</p></div><div class="report-score"><b style="color:${meta.color}">${analysis.score}</b><span>${meta.label} / 100</span></div></div><div class="report-kpis"><div class="report-kpi"><span>전체 면적</span><b>${analysis.metrics.totalArea.toFixed(1)}㎡</b></div><div class="report-kpi"><span>집기 점유율</span><b>${(analysis.metrics.occupancy * 100).toFixed(1)}%</b></div><div class="report-kpi"><span>조닝 적용률</span><b>${(analysis.metrics.zoneCoverage * 100).toFixed(1)}%</b></div><div class="report-kpi"><span>추정 진열칸</span><b>${analysis.metrics.slots}칸</b></div><div class="report-kpi"><span>추정 진열면</span><b>${analysis.metrics.front.toFixed(1)}m</b></div><div class="report-kpi"><span>단 분류 완성도</span><b>${(analysis.metrics.merch.fillRatio * 100).toFixed(0)}%</b></div><div class="report-kpi"><span>골든존 활용</span><b>${(analysis.metrics.merch.goldenRatio * 100).toFixed(0)}%</b></div></div>${(() => {
+            const z = zoningStats();
+            if (!z.shelves) return "";
+            return `<section class="report-section"><h3>선반 운영 상태 <span>${z.shelves}단</span></h3><table class="report-table"><thead><tr><th>상태</th><th class="num">선반</th><th class="num">비중</th><th>의미</th></tr></thead><tbody>${STATUS_KEYS.map(
+              (k) =>
+                `<tr><td><i class="zone-dot" style="display:inline-block;margin-right:6px;background:${SHELF_STATUS[k].color}"></i>${esc(SHELF_STATUS[k].ko)}</td><td class="num">${z.tot[k]}</td><td class="num">${((z.tot[k] / z.shelves) * 100).toFixed(1)}%</td><td>${
+                  {
+                    permanent: "기본 상품군. 표시한 후보를 모두 입고한다는 뜻은 아님",
+                    rotating: "선택한 한 테마만 운영. 동일 SKU 보조 노출은 한 곳 우선",
+                    conditional: "SKU·수요·규격 확인 후 추가하거나 대체",
+                    info: "분류·상담·주 진열 위치 안내. 재고 공간으로 사용하지 않음",
+                  }[k]
+                }</td></tr>`,
+            ).join("")}</tbody></table>${
+              z.over.length
+                ? `<div class="report-note" style="margin-top:8px">상설 선반 수용 추정(1선반 ${SHELF_SKU_CAPACITY}품목) 대비 과적 모듈 ${z.over.length}개: ${z.over.slice(0, 8).map((o) => `${esc(o.e.code || o.e.name)} ${o.ratio.toFixed(1)}배`).join(" · ")}. 수용 추정치는 실측 전 가정값입니다.</div>`
+                : ""
+            }</section>`;
+          })()}<section class="report-section"><h3>평면 배치도 <span>${analysis.metrics.fixtures}개 집기</span></h3><div class="report-plan">${exportSvgString()}</div></section><section class="report-section"><h3>우선 검토 항목 <span>${analysis.issues.length}건</span></h3><div class="report-issues">${analysis.issues.length ? analysis.issues.map((issue) => `<div class="report-issue ${issue.severity}"><strong>${severityLabel[issue.severity]}</strong><div><b>${esc(issue.title)}</b><br>${esc(issue.detail)}${issue.suggestion ? `<br><span style="color:#667085">권장: ${esc(issue.suggestion)}</span>` : ""}</div></div>`).join("") : '<div class="audit-box">중요한 설계 문제가 발견되지 않았습니다.</div>'}</div></section><section class="report-section"><h3>조닝 배분</h3><table class="report-table"><thead><tr><th>대카테고리</th><th class="num">면적</th><th class="num">전체 대비</th><th class="num">배정 집기</th><th class="num">중카테고리</th></tr></thead><tbody>${zones.length ? zones.map((row) => `<tr><td><i class="zone-dot" style="display:inline-block;margin-right:6px;background:${ZONES[row.name]?.color || "#98a2b3"}"></i>${esc(row.name)}</td><td class="num">${row.area.toFixed(1)}㎡</td><td class="num">${analysis.metrics.totalArea ? ((row.area / analysis.metrics.totalArea) * 100).toFixed(1) : 0}%</td><td class="num">${row.fixtures}개</td><td class="num">${row.categories}개</td></tr>`).join("") : '<tr><td colspan="5">조닝 영역이 없습니다.</td></tr>'}</tbody></table></section><section class="report-section"><h3>진열대별 단 배정 <span>${analysis.metrics.merch.shelves}대 · ${analysis.metrics.merch.filled}/${analysis.metrics.merch.levels}단 분류</span></h3><table class="report-table"><thead><tr><th>코드</th><th>진열대</th><th>대카테고리</th><th class="num">규격 W×D×H</th><th>단별 배정 (최하단 1단 →)</th><th class="num">골든존</th></tr></thead><tbody>${
             shelfList().length
               ? shelfList()
                   .slice()
@@ -6552,18 +6678,26 @@
           r.onload = () => {
             try {
               const parsed = JSON.parse(r.result);
+              if (!parsed || typeof parsed !== "object")
+                throw new Error("invalid json");
               if (
-                !parsed ||
-                typeof parsed !== "object" ||
-                !parsed.store ||
-                !Array.isArray(parsed.elements)
-              )
+                String(parsed.schema || "").startsWith("kpharmacy.zoning/") &&
+                Array.isArray(parsed.modules)
+              ) {
+                checkpoint();
+                importZoningDoc(parsed);
+                render();
+                return;
+              }
+              if (!parsed.store || !Array.isArray(parsed.elements))
                 throw new Error("invalid layout schema");
               checkpoint();
               restore(JSON.stringify(parsed));
               showHint("JSON 도면을 불러왔습니다");
             } catch {
-              alert("올바른 레이아웃 JSON 파일이 아닙니다.");
+              alert(
+                "올바른 파일이 아닙니다.\n레이아웃 JSON 또는 kpharmacy.zoning/1.0 조닝 문서를 선택하세요.",
+              );
             }
           };
           r.readAsText(file);
@@ -6903,9 +7037,10 @@
             span = (H - base) / n;
           return { z0: base + j * span, z1: base + (j + 1) * span, base, H };
         }
-        /** levelDetails 인덱스(0=최상단) → 아래에서 센 단 번호(1=최하단) */
-        const levelNoFromIndex = (i, total) => Math.max(1, total - i);
-        const levelIndexFromNo = (no, total) => clamp(total - no, 0, total - 1);
+        const levelIndexFromNo = (no, total) =>
+          (state.project?.levelOrder || "topDown") === "topDown"
+            ? clamp(no - 1, 0, total - 1)
+            : clamp(total - no, 0, total - 1);
         function levelColor(e, i) {
           const d = e.levelDetails?.[i];
           if (d?.category) return ZONES[d.zone]?.color || elementColor(e);
@@ -7041,7 +7176,10 @@
             const band = levelBand(e, j),
               i = n - 1 - j,
               det = e.levelDetails?.[i] || {},
-              lc = levelColor(e, i),
+              lc =
+                view3D.mode === "status"
+                  ? SHELF_STATUS[det.status || "permanent"]?.color || "#98A2B3"
+                  : levelColor(e, i),
               shelfCol = lc ? rgbToHex(mixHex(lc, "#FFFFFF", 0.58)) : "#EDF2F7";
             /* 선반판 */
             const boardZ = band.z0;
@@ -7439,7 +7577,7 @@
             for (let j = 0; j < n; j++) {
               const i = n - 1 - j,
                 det = e.levelDetails?.[i];
-              if (!det || !det.category) continue;
+              if (!det || (!det.category && view3D.mode !== "status")) continue;
               const band = levelBand(e, j),
                 zc = (band.z0 + band.z1) / 2,
                 p = F.at(0, yOff),
@@ -7454,9 +7592,15 @@
                 x: (sa.x + sb.x) / 2,
                 y: (sa.y + sb.y) / 2,
                 z: (a.z + b.z) / 2,
-                text: `${levelNoFromIndex(i, n)}단 · ${det.category}`,
+                text:
+                  view3D.mode === "status"
+                    ? `S${levelNoFromIndex(i, n)} · ${SHELF_STATUS[det.status || "permanent"].ko}`
+                    : `S${levelNoFromIndex(i, n)} · ${det.category || "분류 미지정"}`,
                 sub: det.note || "",
-                color: ZONES[det.zone]?.color || elementColor(e),
+                color:
+                  view3D.mode === "status"
+                    ? SHELF_STATUS[det.status || "permanent"].color
+                    : ZONES[det.zone]?.color || elementColor(e),
                 kind: "level",
                 golden: zc >= GOLDEN_ZONE.min && zc <= GOLDEN_ZONE.max,
                 sel: state.selected.includes(e.id),
@@ -7600,7 +7744,8 @@
                 zc = (band.z0 + band.z1) / 2,
                 gold = zc >= GOLDEN_ZONE.min && zc <= GOLDEN_ZONE.max,
                 col = v.category ? ZONES[v.zone]?.color || "#98A2B3" : "#E4E9EF";
-              return `<div class="three-level${gold ? " gold" : ""}"><i style="background:${col}"></i><b>${levelNoFromIndex(i, n)}단</b><span>${v.category ? esc(v.category) : "분류 미지정"}${v.note ? ` · ${esc(v.note)}` : ""}</span><small>${fmt(band.z0)}~${fmt(band.z1)}</small></div>`;
+              const st = SHELF_STATUS[v.status || "permanent"];
+              return `<div class="three-level${gold ? " gold" : ""}"><i style="background:${col}"></i><b>S${levelNoFromIndex(i, n)}</b><span>${v.category ? esc(v.category) : "분류 미지정"}${v.note ? ` · ${esc(v.note)}` : ""}</span><small style="color:${st.color}">${esc(st.short)}</small></div>`;
             })
             .join("")}<div class="three-hint">골든존(${GOLDEN_ZONE.min}~${GOLDEN_ZONE.max}mm) 단은 금색으로 표시됩니다.</div>`;
         }
@@ -7610,6 +7755,13 @@
           if (!box) return;
           if (view3D.mode === "height") {
             box.innerHTML = `<span><i style="background:#12B76A"></i>≤600mm</span><span><i style="background:#F4CC32"></i>1,400mm</span><span><i style="background:#D92D20"></i>≥2,200mm 시야 차단</span>`;
+            return;
+          }
+          if (view3D.mode === "status") {
+            box.innerHTML = STATUS_KEYS.map(
+              (k) =>
+                `<span><i style="background:${SHELF_STATUS[k].color}"></i>${esc(SHELF_STATUS[k].ko)}</span>`,
+            ).join("");
             return;
           }
           const used = new Set();
@@ -7988,24 +8140,47 @@
                       col = v.category
                         ? ZONES[v.zone]?.color || "#98A2B3"
                         : "#E4E9EF";
-                    return `<div class="pg-level${gold ? " gold" : ""}"><b>${levelNoFromIndex(i, n)}</b><span><select data-pg="${e.id}" data-pg-level="${i}">${categoryOptions(e.zone, v.category, "분류 미지정", v.zone || e.zone)}</select><i class="bar" style="background:${col}"></i></span></div>`;
+                    const st = SHELF_STATUS[v.status || "permanent"];
+                    return `<div class="pg-level${gold ? " gold" : ""}"><b>S${levelNoFromIndex(i, n)}<br><em style="font-style:normal;font-size:7px;color:${st.color}">${esc(st.short)}</em></b><span><button type="button" class="pg-pick${v.category ? "" : " empty"}" data-pg="${e.id}" data-pg-level="${i}" title="${esc(v.note || "")}">${esc(v.category || "분류 미지정")}</button><i class="bar" style="background:${col}"></i></span></div>`;
                   })
                   .join("");
-              return `<div class="pg-card${state.selected.includes(e.id) ? " selected" : ""}"><div class="pg-head"><span class="pg-code" style="background:${ZONES[e.zone]?.color || "#98A2B3"}">${esc(e.code || "–")}</span><b title="${esc(e.name)}">${esc(e.name)}</b><small>${e.bays}칸·${n}단</small></div><div class="pg-levels">${rows || '<div class="three-empty">해당 단 없음</div>'}</div><div class="pg-foot"><button class="small-btn" data-pg-focus="${e.id}">위치</button><button class="small-btn" data-pg-copy="${e.id}">단 복사</button><button class="small-btn" data-pg-paste="${e.id}">붙여넣기</button><span class="pg-fill">${fill.filled}/${fill.total}단</span></div></div>`;
+              return `<div class="pg-card${state.selected.includes(e.id) ? " selected" : ""}"><div class="pg-head"><span class="pg-code" style="background:${ZONES[e.zone]?.color || "#98A2B3"}">${esc(e.code || "–")}</span><b title="${esc(e.name)}">${esc(e.name)}</b><small>${e.bays}칸·${n}단</small></div><div class="pg-levels">${rows || '<div class="three-empty">해당 단 없음</div>'}</div><div class="pg-foot"><button class="small-btn" data-pg-focus="${e.id}">위치</button><button class="small-btn" data-pg-copy="${e.id}">단 복사</button><button class="small-btn" data-pg-paste="${e.id}">붙여넣기</button><span class="pg-fill">${fill.filled}/${fill.total}단${
+                e.skuCandidates
+                  ? ` · SKU ${e.skuCandidates}${(() => {
+                      const l = moduleLoad(e);
+                      return l.ratio > 1.5 ? ` <b style="color:#B42318">과적 ${l.ratio.toFixed(1)}배</b>` : "";
+                    })()}`
+                  : ""
+              }</span></div></div>`;
             })
             .join("");
-          box.querySelectorAll("[data-pg-level]").forEach((sel) => {
-            sel.onchange = () => {
-              const e = getEl(sel.dataset.pg),
-                i = +sel.dataset.pgLevel;
+          const applyPick = (e, i, value) => {
+            checkpoint();
+            const ref = parseCategoryRef(value, e.zone);
+            e.levelDetails[i].category = ref.category;
+            e.levelDetails[i].zone = ref.category ? ref.zone : e.zone;
+            clearAudit(true);
+            render();
+            renderPlanogram();
+          };
+          box.querySelectorAll(".pg-pick").forEach((btn) => {
+            btn.onclick = () => {
+              const e = getEl(btn.dataset.pg),
+                i = +btn.dataset.pgLevel;
               if (!e) return;
-              checkpoint();
-              const ref = parseCategoryRef(sel.value, e.zone);
-              e.levelDetails[i].category = ref.category;
-              e.levelDetails[i].zone = ref.category ? ref.zone : e.zone;
-              clearAudit(true);
-              render();
-              renderPlanogram();
+              const v = e.levelDetails[i],
+                sel = document.createElement("select");
+              sel.innerHTML = categoryOptions(
+                e.zone,
+                v.category,
+                "분류 미지정",
+                v.zone || e.zone,
+              );
+              sel.value = v.category ? categoryRef(v.zone || e.zone, v.category) : "";
+              btn.replaceWith(sel);
+              sel.focus();
+              sel.onchange = () => applyPick(e, i, sel.value);
+              sel.onblur = () => renderPlanogram();
             };
           });
           box.querySelectorAll("[data-pg-focus]").forEach((b) => {
@@ -8115,7 +8290,15 @@
             tallBlockers = 0;
           shelves.forEach((e) => {
             if (e.code) coded++;
-            if ((e.zHeight || 0) > 1800 && e.type !== "wallShelf") tallBlockers++;
+            /* 벽면 집기는 시야를 막지 않으므로 벽에서 떨어진 것만 센다 */
+            const b = elementBounds(e),
+              near = Math.max(900, state.store.minAisle * 0.75),
+              onWall =
+                b.minX <= near ||
+                b.minY <= near ||
+                state.store.w - b.maxX <= near ||
+                state.store.h - b.maxY <= near;
+            if ((e.zHeight || 0) > 1800 && !onWall) tallBlockers++;
             e.levelDetails.forEach((v, i) => {
               levels++;
               const g = isGoldenLevel(e, i);
@@ -8138,6 +8321,298 @@
             goldenRatio: golden ? goldenFilled / golden : 0,
             codeRatio: shelves.length ? coded / shelves.length : 0,
           };
+        }
+
+
+        /* ===================================================================
+         *  v7.1: kpharmacy.zoning/1.0 조닝 문서 연동
+         *  - 63모듈 / 315선반 / 운영상태 4종 / 주테마 6종
+         *  - 원본 문서는 S1 = 최상단 표기이므로 levelOrder 기본값을 topDown 으로 둔다.
+         * =================================================================== */
+        const SHELF_STATUS = {
+          permanent: { ko: "상설 선택", short: "상설", color: "#039855" },
+          rotating: { ko: "교체 전시", short: "교체", color: "#F79009" },
+          conditional: { ko: "조건부 확장", short: "조건", color: "#2E90FA" },
+          info: { ko: "안내", short: "안내", color: "#98A2B3" },
+        };
+        const STATUS_KEYS = Object.keys(SHELF_STATUS);
+        const ZONING_SCHEMA = "kpharmacy.zoning/1.0";
+        /** 1선반이 현실적으로 감당하는 SKU 수(가정치). 실측 전 과부하 판정 기준. */
+        const SHELF_SKU_CAPACITY = 14;
+
+        /** 조닝 문서의 주테마·대표 상품군을 현재 분류 체계에 등록한다. */
+        function registerZoningTaxonomy(doc) {
+          const themeKo = {};
+          (doc.taxonomy?.themes || []).forEach((t) => {
+            themeKo[t.id] = t.ko;
+            if (!ZONES[t.ko])
+              ZONES[t.ko] = { color: t.color || "#98A2B3", text: "#344054" };
+            if (!CATEGORY_TREE[t.ko]) CATEGORY_TREE[t.ko] = [];
+          });
+          const seen = new Set();
+          (doc.modules || []).forEach((m) => {
+            const ko = themeKo[m.theme] || "추천·상담 안내";
+            (m.shelves || []).forEach((s) => {
+              /* 한 선반에 '/' 로 여러 상품군이 적힌 경우 각각을 항목으로 등록 */
+              String(s.group || "")
+                .split("/")
+                .map((v) => v.trim())
+                .filter(Boolean)
+                .forEach((g) => {
+                  const key = ko + "|" + g;
+                  if (seen.has(key)) return;
+                  seen.add(key);
+                  if (!CATEGORY_TREE[ko].some(([k]) => k === g))
+                    CATEGORY_TREE[ko].push([g, ""]);
+                });
+            });
+          });
+          return themeKo;
+        }
+        const firstGroup = (g) =>
+          String(g || "")
+            .split("/")[0]
+            .trim();
+
+        /** kpharmacy.zoning/1.0 문서를 편집 가능한 도면으로 전개 */
+        function importZoningDoc(doc) {
+          const themeKo = registerZoningTaxonomy(doc),
+            P = doc.params || {},
+            els = [];
+          state.store = {
+            ...state.store,
+            w: clamp(Number(doc.store?.w) || 15000, 1000, 500000),
+            h: clamp(Number(doc.store?.h) || 11200, 1000, 500000),
+            ceiling: clamp(Number(doc.store?.ceiling) || 2700, 1800, 20000),
+            minAisle: clamp(Number(doc.store?.minAisle) || 1300, 500, 10000),
+            bg: null,
+            bgNatural: { w: 0, h: 0 },
+            bgBox: { x: 0, y: 0, w: doc.store?.w || 15000, h: doc.store?.h || 11200 },
+          };
+          const push = (o) => {
+            const e = normalizeElement({
+              id: uid(),
+              opacity: 1,
+              locked: false,
+              hidden: false,
+              bays: 1,
+              levels: 1,
+              ...o,
+            });
+            els.push(e);
+            return e;
+          };
+
+          /* 조닝 영역(업무·진입) */
+          (doc.store?.zones || []).forEach((z) =>
+            push({
+              type: "zone",
+              name: z.name,
+              x: z.x, y: z.y, w: z.w, h: z.d,
+              zHeight: 0,
+              zone: ZONES[z.zone] ? z.zone : "공용동선",
+              note: z.note || "",
+            }),
+          );
+          /* 후방 업무영역 · 출입구. 원문 기준 냉장고·POS는 315구획에 포함하지 않는다. */
+          (doc.store?.backOffice || []).forEach((b) =>
+            push({
+              type: b.id === "BOH-POS" ? "checkout" : b.id === "BOH-FRIDGE" ? "fridge" : "storageRoom",
+              name: b.name,
+              x: b.x, y: b.y, w: b.w, h: b.d,
+              zHeight: b.h || 2100,
+              levels: 1,
+              code: b.id === "BOH-FRIDGE" ? "REF" : "",
+              zone: "조제·BOH",
+              category: b.id === "BOH-FRIDGE" ? "냉장·보관" : "조제실",
+              categoryZone: "조제·BOH",
+              levelDetails: [
+                { zone: "조제·BOH",
+                  category: b.id === "BOH-FRIDGE" ? "냉장·보관" : "조제실",
+                  note: "조닝 대상 외 · 보조 공간", status: "info" },
+              ],
+              note: "315구획 비포함 · 보조 공간",
+            }),
+          );
+          (doc.store?.entrances || []).forEach((n) =>
+            push({
+              type: "door",
+              name: n.name,
+              x: n.x, y: n.y, w: n.w, h: n.d,
+              zHeight: 2100,
+              zone: "공용동선",
+            }),
+          );
+
+          /* 곤돌라 본체는 모듈이 앞뒤로 배치되므로 별도 집기를 만들지 않는다.
+             엔드(EL·ER)와 벽면·진입 모듈, 곤돌라 양면 모듈을 각각 1개 요소로 전개한다. */
+          (doc.modules || []).forEach((m) => {
+            const g = m.geometry || {},
+              ko = themeKo[m.theme] || "추천·상담 안내",
+              shelves = (m.shelves || []).slice().sort((a, b) => a.level - b.level),
+              levels = Math.max(1, shelves.length || P.levels || 5),
+              /* 문서는 level 1 = 최상단. 내부 levelDetails 도 index 0 = 최상단이라 순서가 일치한다. */
+              details = shelves.map((s) => ({
+                zone: ko,
+                category: firstGroup(s.group),
+                note: s.symptom || "",
+                status: STATUS_KEYS.includes(s.status) ? s.status : "info",
+                shelfId: s.id || "",
+                examples: (s.examples || []).slice(0, 6),
+                criteria: s.criteria || "",
+              }));
+            push({
+              type: m.face === "end-left" || m.face === "end-right" ? "endcap" : "wallShelf",
+              name: m.name || m.id,
+              code: m.id,
+              x: g.x, y: g.y, w: g.w, h: g.d,
+              zHeight: g.h || 2100,
+              levels,
+              levelDetails: details,
+              zone: ko,
+              category: firstGroup(shelves[0]?.group),
+              categoryZone: ko,
+              theme: m.theme,
+              moduleFace: m.face,
+              role: m.role || "",
+              skuCandidates: Number(m.skuCandidates) || 0,
+              note: [m.role, m.brandOps, m.note].filter(Boolean).join(" · "),
+            });
+          });
+
+          state.project = {
+            ...state.project,
+            name: doc.meta?.project || state.project.name,
+            levelOrder: doc.meta?.levelOrder === "bottomUp" ? "bottomUp" : "topDown",
+            zoningMeta: {
+              baseDate: doc.meta?.baseDate || "",
+              counts: doc.meta?.counts || {},
+              geometryStatus: doc.meta?.geometryStatus || "assumed",
+              disclaimer: doc.meta?.disclaimer || "",
+            },
+          };
+          state.elements = els;
+          state.selected = [];
+          paletteHtml();
+          clearAudit();
+          syncInputs();
+          fitView();
+          const c = doc.meta?.counts || {};
+          showHint(
+            `조닝 문서 적용 · ${c.modules || 0}모듈 / ${c.shelves || 0}선반 / SKU ${fmt(c.skus || 0)}건`,
+          );
+        }
+
+        /** 현재 도면을 kpharmacy.zoning/1.0 문서로 역직렬화 */
+        function exportZoningDoc() {
+          const themeOf = {};
+          Object.entries(ZONES).forEach(([ko, z]) => (themeOf[ko] = z));
+          const mods = state.elements
+            .filter((e) => SHELF_TYPES.has(e.type) && !e.hidden)
+            .map((e) => ({
+              id: e.code || e.name,
+              fixture: String(e.code || "").split("-")[0] || "",
+              face: e.moduleFace || "",
+              name: e.name,
+              theme: e.theme || "",
+              themeKo: e.zone,
+              role: e.role || "",
+              note: e.note || "",
+              geometry: {
+                x: Math.round(e.x), y: Math.round(e.y),
+                w: Math.round(e.w), d: Math.round(e.h),
+                h: Math.round(e.zHeight), rotation: Math.round(e.rotation || 0),
+                status: state.project.zoningMeta?.geometryStatus || "assumed",
+              },
+              skuCandidates: e.skuCandidates || 0,
+              shelves: e.levelDetails.map((v, i) => ({
+                id: v.shelfId || `${e.code || e.name}/S${i + 1}`,
+                level: i + 1,
+                status: v.status || "info",
+                symptom: v.note || "",
+                group: v.category || "",
+                examples: v.examples || [],
+                criteria: v.criteria || "",
+              })),
+            }));
+          const doc = {
+            schema: ZONING_SCHEMA,
+            meta: {
+              project: state.project.name,
+              baseDate: state.project.zoningMeta?.baseDate || "",
+              generatedAt: new Date().toISOString().slice(0, 10),
+              units: "mm",
+              levelOrder: state.project.levelOrder || "topDown",
+              levelOrderNote:
+                (state.project.levelOrder || "topDown") === "topDown"
+                  ? "S1 = 최상단, S5 = 최하단"
+                  : "S1 = 최하단, S5 = 최상단",
+              geometryStatus: state.project.zoningMeta?.geometryStatus || "assumed",
+              counts: {
+                modules: mods.length,
+                shelves: mods.reduce((s, m) => s + m.shelves.length, 0),
+              },
+              disclaimer: state.project.zoningMeta?.disclaimer || "",
+            },
+            store: {
+              w: Math.round(state.store.w),
+              h: Math.round(state.store.h),
+              ceiling: Math.round(state.store.ceiling),
+              minAisle: Math.round(state.store.minAisle),
+            },
+            taxonomy: {
+              themes: [...new Set(mods.map((m) => m.themeKo))].map((ko) => ({
+                id: ko, ko, color: ZONES[ko]?.color || "#98A2B3",
+              })),
+              statuses: STATUS_KEYS.map((k) => ({
+                id: k, ko: SHELF_STATUS[k].ko, color: SHELF_STATUS[k].color,
+              })),
+            },
+            modules: mods,
+          };
+          const safe = state.project.name.replace(/[\\/:*?"<>|]/g, "_").slice(0, 50);
+          download(
+            `${safe || "zoning"}_조닝문서_${new Date().toISOString().slice(0, 10)}.json`,
+            new Blob([JSON.stringify(doc, null, 1)], { type: "application/json" }),
+          );
+          showHint(`조닝 문서 저장 · ${mods.length}모듈`);
+        }
+
+        /* ---------- 운영상태 · 적재 분석 ---------- */
+        function statusCounts(e) {
+          const c = { permanent: 0, rotating: 0, conditional: 0, info: 0 };
+          (e.levelDetails || []).forEach((v) => {
+            c[STATUS_KEYS.includes(v.status) ? v.status : "info"]++;
+          });
+          return c;
+        }
+        /** 모듈의 SKU 후보 대비 상설 선반 수용력 */
+        function moduleLoad(e) {
+          const perm = statusCounts(e).permanent,
+            cap = perm * SHELF_SKU_CAPACITY,
+            sku = e.skuCandidates || 0;
+          return { perm, cap, sku, ratio: cap ? sku / cap : sku ? Infinity : 0 };
+        }
+        function zoningStats() {
+          const mods = state.elements.filter(
+            (e) => SHELF_TYPES.has(e.type) && !e.hidden && e.code,
+          );
+          const tot = { permanent: 0, rotating: 0, conditional: 0, info: 0 };
+          let sku = 0, cap = 0, over = [], noPerm = [];
+          mods.forEach((e) => {
+            const c = statusCounts(e);
+            STATUS_KEYS.forEach((k) => (tot[k] += c[k]));
+            const l = moduleLoad(e);
+            sku += l.sku;
+            cap += l.cap;
+            if (!l.sku) return;
+            if (!l.perm) noPerm.push({ e, ...l });
+            else if (l.ratio > 1.5) over.push({ e, ...l });
+          });
+          over.sort((a, b) => b.ratio - a.ratio);
+          noPerm.sort((a, b) => b.sku - a.sku);
+          return { mods, tot, sku, cap, over, noPerm,
+                   shelves: mods.reduce((s, e) => s + e.levels, 0) };
         }
 
         function bindEvents() {
@@ -8255,6 +8730,29 @@
             renderPlanogram();
           };
           $("#pgCsvBtn").onclick = exportPlanogramCsv;
+          $("#exportZoningBtn").onclick = exportZoningDoc;
+          $("#stripModeBtn").onclick = () => {
+            state.store.stripMode =
+              state.store.stripMode === "status" ? "category" : "status";
+            render();
+            showHint(
+              state.store.stripMode === "status"
+                ? "단 스트립: 운영 상태 색"
+                : "단 스트립: 분류 색",
+            );
+          };
+          $("#levelOrderSel").onchange = (ev) => {
+            checkpoint();
+            state.project.levelOrder =
+              ev.target.value === "bottomUp" ? "bottomUp" : "topDown";
+            render();
+            if ($("#planogramDialog")?.open) renderPlanogram();
+            showHint(
+              state.project.levelOrder === "topDown"
+                ? "S1 = 최상단 표기"
+                : "S1 = 최하단 표기",
+            );
+          };
           $("#pgSuggestBtn").onclick = () => {
             const targets = shelfList().filter((e) =>
               e.levelDetails.some((v) => !v.category),
