@@ -3510,10 +3510,52 @@
               ? d.examples.slice(0, 8).map((v) => String(v).slice(0, 120))
               : [];
             d.criteria = String(d.criteria || "").slice(0, 600);
+            d.group = String(d.group || "").slice(0, 120);
+            d.need = String(d.need || "").slice(0, 160);
           });
+          hydrateZoning(e);
           e.calibRealW = Number(e.calibRealW) || 900;
           e.calibRealH = Number(e.calibRealH) || 450;
           return e;
+        }
+        /** 요소에 실린 zoning 블록(모듈·면·주테마·원본 선반)을 편집 필드로 끌어올린다.
+         *  도면 기반 모델을 그대로 두고도 운영상태 표시·적재 진단이 동작하도록 한다. */
+        const STATUS_FROM_KO = {
+          "상설 선택": "permanent",
+          "교체 전시": "rotating",
+          "조건부 확장": "conditional",
+          안내: "info",
+        };
+        function hydrateZoning(e) {
+          const z = e.zoning;
+          if (!z || typeof z !== "object") return;
+          if (!e.code && z.moduleId) e.code = String(z.moduleId).slice(0, 12);
+          if (!e.theme && z.theme) e.theme = String(z.theme).slice(0, 40);
+          if (!e.moduleFace && z.face) e.moduleFace = String(z.face).slice(0, 40);
+          if (!e.role && z.fixtureTitle) e.role = String(z.fixtureTitle).slice(0, 200);
+          if (!e.skuCandidates && Number(z.skuCandidates))
+            e.skuCandidates = Math.max(0, Math.round(Number(z.skuCandidates)));
+          const src = Array.isArray(z.sourceShelves) ? z.sourceShelves : [];
+          if (!src.length) return;
+          /* sourceShelves 는 원안 S1(최상단)부터이고 levelDetails 인덱스 0도 최상단이라
+             순서가 1:1로 대응한다. 배열을 뒤집지 않는다. */
+          src.forEach((s, i) => {
+            const d = e.levelDetails[i];
+            if (!d) return;
+            const st = STATUS_FROM_KO[String(s.status || "").trim()];
+            if (st) d.status = st;
+            if (!d.shelfId && s.sourceId) d.shelfId = String(s.sourceId).slice(0, 48);
+            if (!d.group && s.productGroup) d.group = String(s.productGroup).slice(0, 120);
+            if (!d.need && s.need) d.need = String(s.need).slice(0, 160);
+            if (!d.examples?.length && s.representativeCandidates)
+              d.examples = String(s.representativeCandidates)
+                .split(/\n|,/)
+                .map((v) => v.trim())
+                .filter(Boolean)
+                .slice(0, 8);
+            if (!d.criteria && s.selectionNotes)
+              d.criteria = String(s.selectionNotes).slice(0, 600);
+          });
         }
         function normalizeState() {
           state.version = 7;
@@ -4104,8 +4146,15 @@
           const codeW = e.code ? Math.max(260, e.code.length * 105 + 90) : 0,
             codeBadge = e.code
               ? `<rect class="code-badge" x="0" y="-210" width="${codeW}" height="170" rx="46"/><text class="shelf-code" x="${codeW / 2}" y="-122">${esc(e.code)}</text>`
-              : "";
-          return `<rect class="main-shape" x="0" y="0" width="${e.w}" height="${e.h}" rx="${e.type === "pillar" || e.type === "wall" ? 20 : 60}" fill="${fill}" opacity="${e.opacity}" filter="${e.type === "wall" ? "" : "url(#shadow)"}"/>${inner}${codeBadge}${e.type === "wall" || e.type === "pillar" ? "" : `${textLines(label, e.w / 2, e.h * 0.43, fs, 1.12, `class="element-label" text-anchor="middle" style="font-size:${fs}px"`)}<text class="element-sub" x="${e.w / 2}" y="${e.h * 0.76}">${esc(sub)}</text>`}`;
+              : "",
+            /* 집기를 180° 돌려 등판을 맞대는 모델에서는 글자까지 뒤집힌다.
+               도형은 그대로 두고 글자만 되돌려 평면에서 읽히게 한다. */
+            flipped = Math.abs(normalizeAngle(e.rotation || 0)) > 90,
+            upright = flipped
+              ? `<g transform="rotate(180 ${e.w / 2} ${e.h / 2})">`
+              : "",
+            uprightEnd = flipped ? "</g>" : "";
+          return `<rect class="main-shape" x="0" y="0" width="${e.w}" height="${e.h}" rx="${e.type === "pillar" || e.type === "wall" ? 20 : 60}" fill="${fill}" opacity="${e.opacity}" filter="${e.type === "wall" ? "" : "url(#shadow)"}"/>${inner}${upright}${codeBadge}${e.type === "wall" || e.type === "pillar" ? "" : `${textLines(label, e.w / 2, e.h * 0.43, fs, 1.12, `class="element-label" text-anchor="middle" style="font-size:${fs}px"`)}<text class="element-sub" x="${e.w / 2}" y="${e.h * 0.76}">${esc(sub)}</text>`}${uprightEnd}`;
         }
         function selectionOverlay(e) {
           if (
@@ -5511,7 +5560,7 @@
             addIssue({
               severity: "warning",
               title: "단별 분류 미완성",
-              detail: `전체 ${md.levels}단 중 ${md.filled}단(${(md.fillRatio * 100).toFixed(0)}%)만 분류가 지정되었습니다.`,
+              detail: `상품을 채우는 ${md.levels}단 중 ${md.filled}단(${(md.fillRatio * 100).toFixed(0)}%)만 분류가 지정되었습니다.${md.planned ? ` 안내·조건부 ${md.planned}단은 계획상 공백이므로 제외했습니다.` : ""}`,
               suggestion:
                 "‘진열 계획표’에서 단별 중카테고리를 채우면 3D·리포트에 즉시 반영됩니다.",
               ids: shelfList()
@@ -5547,7 +5596,7 @@
             addIssue({
               severity: "warning",
               title: "모듈 적재 과부하",
-              detail: `상설 선반 수용 추정(1선반 ${SHELF_SKU_CAPACITY}품목) 대비 1.5배를 넘는 모듈 ${zs.over.length}개. 최다 ${zs.over[0].e.code || zs.over[0].e.name} ${zs.over[0].sku}품목 / 상설 ${zs.over[0].perm}단 = ${zs.over[0].ratio.toFixed(1)}배.`,
+              detail: `상설 선반 수용 추정(모듈 실폭 ÷ 포장별 페이싱 폭) 대비 1.5배를 넘는 모듈 ${zs.over.length}개. 최다 ${zs.over[0].e.code || zs.over[0].e.name} ${zs.over[0].sku}품목 / 상설 ${zs.over[0].perm}단×${zs.over[0].per} = ${zs.over[0].ratio.toFixed(1)}배.`,
               suggestion:
                 "상설 단을 늘리거나, 후보 품목을 조건부 확장으로 내리거나, 인접 모듈로 분산하세요.",
               ids: zs.over.slice(0, 40).map((o) => o.e.id),
@@ -5645,6 +5694,24 @@
               Object.values(scores).reduce((s, v) => s + v, 0),
             ),
             rank = { critical: 0, warning: 1, info: 2 };
+          /* 같은 유형이 수십 건 반복되면 중요한 단일 지적이 목록 밖으로 밀려난다.
+             제목이 같은 항목은 한 건으로 묶고 건수·대상만 합친다. */
+          const merged = [];
+          for (const it of issues) {
+            const prev = merged.find(
+              (m) => m.title === it.title && m.severity === it.severity,
+            );
+            if (!prev) {
+              merged.push({ ...it, count: it.count || 1 });
+              continue;
+            }
+            prev.count += it.count || 1;
+            prev.ids = [...new Set([...prev.ids, ...it.ids])];
+            if (prev.count === 2) prev.detail = `${prev.detail} 외 ${prev.count - 1}건`;
+            else prev.detail = prev.detail.replace(/외 \d+건$/, `외 ${prev.count - 1}건`);
+          }
+          issues.length = 0;
+          issues.push(...merged);
           issues.sort((a, b) => rank[a.severity] - rank[b.severity]);
           return {
             overlap: [...overlap],
@@ -5863,7 +5930,7 @@
                 }</td></tr>`,
             ).join("")}</tbody></table>${
               z.over.length
-                ? `<div class="report-note" style="margin-top:8px">상설 선반 수용 추정(1선반 ${SHELF_SKU_CAPACITY}품목) 대비 과적 모듈 ${z.over.length}개: ${z.over.slice(0, 8).map((o) => `${esc(o.e.code || o.e.name)} ${o.ratio.toFixed(1)}배`).join(" · ")}. 수용 추정치는 실측 전 가정값입니다.</div>`
+                ? `<div class="report-note" style="margin-top:8px">상설 선반 수용 추정 대비 과적 모듈 ${z.over.length}개: ${z.over.slice(0, 8).map((o) => `${esc(o.e.code || o.e.name)} ${o.ratio.toFixed(1)}배`).join(" · ")}. 수용력은 모듈 실폭에서 측판 ${SHELF_SIDE_PANEL}mm를 뺀 유효폭을 포장 형태별 페이싱 폭(${Object.entries(FACING_WIDTH).map(([k, v]) => `${k} ${v}mm`).join(" · ")})으로 나눈 가정값입니다.</div>`
                 : ""
             }</section>`;
           })()}<section class="report-section"><h3>평면 배치도 <span>${analysis.metrics.fixtures}개 집기</span></h3><div class="report-plan">${exportSvgString()}</div></section><section class="report-section"><h3>우선 검토 항목 <span>${analysis.issues.length}건</span></h3><div class="report-issues">${analysis.issues.length ? analysis.issues.map((issue) => `<div class="report-issue ${issue.severity}"><strong>${severityLabel[issue.severity]}</strong><div><b>${esc(issue.title)}</b><br>${esc(issue.detail)}${issue.suggestion ? `<br><span style="color:#667085">권장: ${esc(issue.suggestion)}</span>` : ""}</div></div>`).join("") : '<div class="audit-box">중요한 설계 문제가 발견되지 않았습니다.</div>'}</div></section><section class="report-section"><h3>조닝 배분</h3><table class="report-table"><thead><tr><th>대카테고리</th><th class="num">면적</th><th class="num">전체 대비</th><th class="num">배정 집기</th><th class="num">중카테고리</th></tr></thead><tbody>${zones.length ? zones.map((row) => `<tr><td><i class="zone-dot" style="display:inline-block;margin-right:6px;background:${ZONES[row.name]?.color || "#98a2b3"}"></i>${esc(row.name)}</td><td class="num">${row.area.toFixed(1)}㎡</td><td class="num">${analysis.metrics.totalArea ? ((row.area / analysis.metrics.totalArea) * 100).toFixed(1) : 0}%</td><td class="num">${row.fixtures}개</td><td class="num">${row.categories}개</td></tr>`).join("") : '<tr><td colspan="5">조닝 영역이 없습니다.</td></tr>'}</tbody></table></section><section class="report-section"><h3>진열대별 단 배정 <span>${analysis.metrics.merch.shelves}대 · ${analysis.metrics.merch.filled}/${analysis.metrics.merch.levels}단 분류</span></h3><table class="report-table"><thead><tr><th>코드</th><th>진열대</th><th>대카테고리</th><th class="num">규격 W×D×H</th><th>단별 배정 (최하단 1단 →)</th><th class="num">골든존</th></tr></thead><tbody>${
@@ -8283,6 +8350,7 @@
         function merchandisingStats() {
           const shelves = shelfList();
           let levels = 0,
+            planned = 0,
             filled = 0,
             golden = 0,
             goldenFilled = 0,
@@ -8300,6 +8368,13 @@
                 state.store.h - b.maxY <= near;
             if ((e.zHeight || 0) > 1800 && !onWall) tallBlockers++;
             e.levelDetails.forEach((v, i) => {
+              /* '안내'·'조건부 확장' 칸은 상품을 채우지 않는 계획 칸이다.
+                 분류 완성도 분모에서 빼야 의도적 공백이 미완성으로 잡히지 않는다. */
+              const st = v.status || "permanent";
+              if (st === "info" || st === "conditional") {
+                planned++;
+                return;
+              }
               levels++;
               const g = isGoldenLevel(e, i);
               if (g) golden++;
@@ -8312,6 +8387,7 @@
           return {
             shelves: shelves.length,
             levels,
+            planned,
             filled,
             golden,
             goldenFilled,
@@ -8337,8 +8413,26 @@
         };
         const STATUS_KEYS = Object.keys(SHELF_STATUS);
         const ZONING_SCHEMA = "kpharmacy.zoning/1.0";
-        /** 1선반이 현실적으로 감당하는 SKU 수(가정치). 실측 전 과부하 판정 기준. */
-        const SHELF_SKU_CAPACITY = 14;
+        /** 포장 형태별 평균 페이싱 폭(mm). 모듈 실폭에서 측판을 뺀 유효폭을
+         *  이 값으로 나눠 1선반 수용 품목 수를 구한다. 전부 가정치이며 실측 시 교체한다. */
+        const FACING_WIDTH = {
+          "더마·세정·선케어": 85,
+          "피부약·상처 보호": 55,
+          "일반약·여행·생활": 60,
+          "영양·건강 선물": 75,
+          "립·눈·다리·구강": 45,
+          "추천·상담 안내": 85,
+        };
+        const FACING_DEFAULT = 75,
+          SHELF_SIDE_PANEL = 60;
+        /** 모듈 1선반이 수용하는 품목 수(1페이싱 기준) */
+        function shelfCapacity(e) {
+          const face =
+              FACING_WIDTH[e.theme] || FACING_WIDTH[e.zone] || FACING_DEFAULT,
+            span = Math.max(e.w, e.h),
+            eff = Math.max(120, span - SHELF_SIDE_PANEL);
+          return Math.max(1, Math.floor(eff / face));
+        }
 
         /** 조닝 문서의 주테마·대표 상품군을 현재 분류 체계에 등록한다. */
         function registerZoningTaxonomy(doc) {
@@ -8589,9 +8683,10 @@
         /** 모듈의 SKU 후보 대비 상설 선반 수용력 */
         function moduleLoad(e) {
           const perm = statusCounts(e).permanent,
-            cap = perm * SHELF_SKU_CAPACITY,
+            per = shelfCapacity(e),
+            cap = perm * per,
             sku = e.skuCandidates || 0;
-          return { perm, cap, sku, ratio: cap ? sku / cap : sku ? Infinity : 0 };
+          return { perm, per, cap, sku, ratio: cap ? sku / cap : sku ? Infinity : 0 };
         }
         function zoningStats() {
           const mods = state.elements.filter(
