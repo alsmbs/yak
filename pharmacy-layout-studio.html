@@ -3432,6 +3432,7 @@
           e.direction = ["right", "down", "left", "up"].includes(e.direction)
             ? e.direction
             : "right";
+          e.doorType = e.doorType === "slide" ? "slide" : "swing";
           e.color = /^#[0-9a-f]{6}$/i.test(String(e.color || ""))
             ? String(e.color).toUpperCase()
             : null;
@@ -5414,14 +5415,20 @@
                     w: door.w + reach * 2,
                     h: door.h,
                   };
+            /* 미닫이는 문짝이 벽면을 따라 움직이므로 전후 여닫이 여유를 요구하지 않는다.
+               개구를 실제로 막는 경우(겹침)만 지적한다. */
+            const zone = door.doorType === "slide" ? door : approach;
             fixtures.forEach((fixture) => {
-              if (!orientedIntersection(approach, fixture).intersects) return;
+              if (!orientedIntersection(zone, fixture).intersects) return;
               clearance.add(door.id);
               clearance.add(fixture.id);
               pairStats.door++;
               addIssue({
                 severity: "critical",
-                title: "출입구 접근공간 방해",
+                title:
+                  door.doorType === "slide"
+                    ? "출입구 개구 막힘"
+                    : "출입구 접근공간 방해",
                 detail: `${door.name} 앞에 ${fixture.name}이(가) 배치되어 있습니다.`,
                 suggestion: `출입구 전후 ${fmt(reach)}mm 범위에서 집기를 이동하세요.`,
                 ids: [door.id, fixture.id],
