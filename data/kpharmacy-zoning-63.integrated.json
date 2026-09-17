@@ -58,6 +58,70 @@
   },
   "backgroundImage": "생략(업로드 원본에 포함)"
  },
+ "floorContext": {
+  "source": "해당 층 전체 건축도면 (2026-09-17 제공)",
+  "floor": "2F (도면 집기 태그 P-2F-xx 기준)",
+  "buildingGrid": {
+   "axes": [
+    "X1",
+    "X2",
+    "X3",
+    "X4",
+    "X5",
+    "X6",
+    "X7"
+   ],
+   "totalWidthMm": 31650,
+   "baySpacingMm": [
+    5050,
+    5400,
+    5400,
+    5400,
+    5400,
+    5000
+   ],
+   "note": "5,400mm 반복 = 표준 기둥 그리드. 약국은 X4~X6 2베이를 점유하는 것으로 읽힘(미확인)."
+  },
+  "tenancy": {
+   "assumedSpan": "X4 ~ X6",
+   "gridSpanMm": 10800,
+   "interiorWidthMm": 10512,
+   "wallAllowanceMm": 288,
+   "perSideMm": 144,
+   "confidence": "arithmetic-fit / 도면 대조 필요"
+  },
+  "adjacency": {
+   "front(하단)": "하부 OPEN 아트리움 보이드. 좌·우 개방 진입 2개소(1,502 / 1,490mm)",
+   "right(우측)": "화장실(남) · 승강기 · MIRROR · AV — 상시 통행 코어",
+   "left(좌측)": "인접 테넌트(자체 진열 그리드 1,320×1,400) · 에스컬레이터/계단 코어(UP·DN)",
+   "rear(상단)": "조제실 · POS 4대 · 후방 업무"
+  },
+  "verifyOnDrawing": [
+   {
+    "id": "V1",
+    "item": "중앙 1,000mm 간격의 X5 기둥 유무",
+    "finding": "X5 그리드선이 중앙 간격(x 4,756~5,756)의 정중앙에 떨어짐(편차 0mm).",
+    "impact": "기둥이면 좌우 횡단 불가. 통로가 아니라 기둥 이격으로 보아야 하며 동선 모델이 바뀐다.",
+    "ifColumn": {
+     "400mm": "잔여 300+300",
+     "500mm": "잔여 250+250",
+     "600mm": "잔여 200+200"
+    }
+   },
+   {
+    "id": "V2",
+    "item": "P-2F-01 ~ P-2F-08 집기 타입 코드",
+    "finding": "도면에 집기 타입 태그가 있으나 조닝 코드(W/L/B/G)와 연결되지 않음.",
+    "impact": "발주 수량·사양 산출 시 타입별 집계가 필요."
+   },
+   {
+    "id": "V3",
+    "item": "가로 치수열 6mm 불일치",
+    "finding": "상·하단 치수열 합이 약 6mm 다름. 하단 10,512mm를 기준으로 채택.",
+    "impact": "우측 이격이 1,360(도면) vs 1,366(모델)으로 갈림. 실측 시 확정."
+   }
+  ]
+ },
  "drawingDimensions": {
   "longGondolaOverallWidth": 3390,
   "shortGondolaOverallWidth": 2465,
